@@ -8,7 +8,7 @@
 
   ###
 
-  <a href="https://youtu.be/svUj_aHjNVk" target="_blank"><img src="https://github.com/user-attachments/assets/fbb339e6-2832-45fd-8da5-33dd3a77a915" width="720" height="400" /></a>
+  <a href="https://youtu.be/svUj_aHjNVk" target="_blank"><img src="https://github.com/user-attachments/assets/d0953b7c-1ff4-4445-bc63-f7f014832cf7" width="720" height="400" /></a>
 
   ### 1. Open IAM Console
   - [ ] **Go to the AWS Management Console.**
