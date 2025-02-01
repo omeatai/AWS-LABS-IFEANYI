@@ -238,11 +238,11 @@
 
 <details>
 
-<summary>Project 7 - </summary>
+<summary>Project 7 - Lunch an EC2 Instance with a Web Server </summary>
 
  ###
 
-<a href="" target="_blank"><img src="" width="720" height="400" /></a>
+<a href="https://youtu.be/GyQrcAfVxBE" target="_blank"><img src="https://github.com/user-attachments/assets/4257d01e-d253-41af-9cf2-8288834e065b" width="720" height="400" /></a>
 
 ### 1. Launch an Instance
 - [ ] Go to **EC2 Console** → Click **Instances** → Select **Launch Instances**.
@@ -266,7 +266,7 @@
   - [ ] Update system packages.
   - [ ] Install the **HTTPD web server**.
   - [ ] Deploy a **"Hello World"** HTML page.
-  ```html
+  ```bash
     #!/bin/bash
     # Executed when instance is first launched, to automate the setup and configuration of instance.
     # Update all the packages on the system to their latest versions
