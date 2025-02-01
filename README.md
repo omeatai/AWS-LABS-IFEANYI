@@ -5,7 +5,7 @@
 
 <details>
   <summary> 1-Create an IAM User and Group in AWS</summary>
-
+  [VIDEO LINK](https://youtu.be/svUj_aHjNVk)
 - [ ] **Open IAM Console**  
   - [ ] **Go to the AWS Management Console.**
   - [ ] **Enter "IAM" in the search bar and go to the IAM console.**
