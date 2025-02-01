@@ -196,6 +196,46 @@
 
 </details>
 
+<details>
+  <summary>Project 6 - Generate Credentials Report and Use IAM Last Accessed</summary>
+
+  ###
+
+  <a href="https://youtu.be/T0fCqBq8QOI" target="_blank"><img src="https://github.com/user-attachments/assets/b6007b82-fcd1-49f0-ac0e-7a7c27af9025" width="720" height="400" /></a>
+
+  ### 1. Generate a Credentials Report
+  - [ ] Navigate to the **IAM Console**.
+  - [ ] On the left-hand menu, click on **"Credential report"**.
+  - [ ] Click **"Download credential report"** to generate a CSV file.
+  - [ ] Open the downloaded CSV file.
+
+  ### 2. Open and Review CSV file  
+  - [ ] Review the following details for user accounts:
+    - User creation date.
+    - Password status (enabled or not).
+    - Last password usage and change dates.
+    - MFA (Multi-Factor Authentication) status.
+    - Access keys status (created, rotated, last used).
+    - Password rotation policy (if enabled).
+  - [ ] Use the report to identify security concerns, such as:
+    - Users who haven’t changed their passwords recently.
+    - Accounts without MFA enabled.
+    - Unused or outdated access keys.
+  - [ ] Use the **Credentials Report** for periodic security audits.
+
+  ### 3. Access IAM Last Accessed
+  - [ ] Go back to the **IAM Console** and select a specific user (e.g., "ifeanyi").
+  - [ ] On the user’s detail page, click on **"Last Accessed"** on the right-hand side.
+  - [ ] Check the list of AWS services accessed by the user, including:
+    - Services that were accessed and the last access date.
+    - Services not accessed by the user.
+  - [ ] Identify which permissions granted access to specific services (e.g., Amazon EC2 via AdministratorAccess policy).
+  - [ ] Use the data from Access Advisor to determine if the user requires access to all granted services.
+  - [ ] Consider removing unnecessary permissions for enhanced security.
+  - [ ] Use **Access Advisor** to perform a granular review of user permissions and optimize access policies.
+
+</details>
+
 
 
 
