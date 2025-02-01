@@ -294,5 +294,110 @@
 
 </details>
 
+<details> 
+  <summary>Project 8 - Lunch an EC2 Instance with a Web Server (2) </summary>
+
+ ###
+ 
+<a href="" target="_blank"><img src="" width="720" height="400" /></a>
+
+
+### Task 1: Sign in to AWS Management Console
+- [ ] Click on the **Open Console** button to get redirected to the AWS Console.
+- [ ] On the AWS sign-in page:
+  - [ ] Leave the **Account ID** as default.
+- [ ] Copy your **User Name** and **Password** from the Lab Console:
+  - [ ] Paste them into the IAM Username and Password fields in the AWS Console.
+  - [ ] Click on the **Sign in** button.
+- [ ] Ensure the default AWS Region is set to **US East (N. Virginia) us-east-1**.
+
+### Task 2: Provision Default VPC
+- [ ] Navigate to **VPC** either through:
+  - [ ] Clicking on the **Services** menu → VPC.
+  - [ ] Or directly via [Amazon VPC console](https://console.aws.amazon.com/vpc/).
+- [ ] Delete the default VPC:
+  - [ ] Select **Your VPCs** from the navigation pane.
+  - [ ] Choose the **VPC** with "yes" in the default VPC column.
+  - [ ] Click on the **Actions** button → **Delete VPC**.
+  - [ ] Check **I acknowledge that I want to delete my default VPC**.
+  - [ ] Confirm by typing "delete default VPC" and click on **Delete**.
+- [ ] Create a new Default VPC:
+  - [ ] Refresh console, go to **Actions** → **Create default VPC**.
+  - [ ] Click **Create default VPC** button.
+
+### Task 3: Launch an EC2 Instance
+- [ ] Ensure you are in the **US East (N. Virginia) us-east-1** Region.
+- [ ] Navigate to **EC2**:
+  - [ ] Click on the **Services** menu → EC2 in the Compute section.
+- [ ] Launch a new instance:
+  - [ ] Click **Instances** → **Launch Instances**.
+  - [ ] Name: Enter **"MyEC2Server"**.
+  - [ ] Search and select **Amazon Linux 2 AMI**.
+  - [ ] For Instance Type: Select **t2.micro**.
+- [ ] Configure the Key Pair:
+  - [ ] Click **Create a new key pair**.
+  - [ ] Name: **WhizKey** with type **RSA** and format **.pem**.
+- [ ] Modify Network Settings:
+  - [ ] Enable **Auto-assign public IP**.
+  - [ ] Create a security group: **MyEC2Server_SG**.
+    - [ ] Description: **Security Group to allow traffic to EC2**.
+    - [ ] Add **Security Group Rules**:
+      - [ ] SSH (already present).
+      - [ ] HTTP: **Type: HTTP**, **Source: Anywhere**.
+- [ ] Proceed to launch the instance with default settings.
+  - [ ] Click **Launch Instance**.
+- [ ] View Instance:
+  - [ ] Choose **View all Instances**.
+  - [ ] Wait for instance state to become **Running** and health check status to pass 2/2.
+
+### Task 4: SSH into EC2 Instance
+- [ ] Select the **MyEC2Server** instance and click **Connect**.
+- [ ] Use **EC2 Instance Connect** and click **Connect**.
+- [ ] A new tab opens where you can execute Linux commands.
+
+### Task 5: Install an Apache Server
+- [ ] Switch to root user:
+  ```bash
+  sudo su
+  ```
+- [ ] Update system packages:
+  ```bash
+  yum -y update
+  ```
+- [ ] Install Apache Web Server:
+  ```bash
+  yum install httpd -y
+  ```
+- [ ] Start and Enable the Web Server:
+  ```bash
+  systemctl start httpd
+  systemctl enable httpd
+  ```
+- [ ] Verify Web Server Status:
+  ```bash
+  systemctl status httpd
+  ```
+- [ ] Test Web Server:
+  - [ ] Enter the **Public IPv4 address** of your instance in a web browser.
+
+### Task 6: Create a Web Page
+- [ ] Add content to the web page:
+  ```bash
+  echo "<html>Hi Whizlabs, I am a public page</html>" > /var/www/html/index.html
+  ```
+- [ ] Restart the Web Server:
+  ```bash
+  systemctl restart httpd
+  ```
+- [ ] Access your content in a web browser with:
+  - [ ] **http://<Your_Public_IPv4_Address>/index.html**
+
+### Task 7: Validate the Lab
+- [ ] Click the **Validation** button on the left panel to ensure completion.
+
+</details>
+
+
+
 
 
