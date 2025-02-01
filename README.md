@@ -83,3 +83,37 @@
 
 </details>
 
+<details>
+  <summary>LAB 3 - Install AWS CLI on Windows PC</summary>
+
+  ###
+
+  <a href="https://youtu.be/h5HW1z7BS9M" target="_blank"><img src="https://github.com/user-attachments/assets/e89b6c6f-a2c1-4988-b50b-7e0e5eba1883" width="720" height="400" /></a>
+
+  ### 1. Search for AWS CLI Installation
+  - [ ] **Open a web browser.**
+  - [ ] **Search for "aws CLI install windows" using a search engine like Google.**
+
+  ### 2. Download and Run AWS CLI Version 2 Installer
+  - [ ] **Find the official AWS CLI Version 2 download link for Windows.**
+  - [ ] **Scroll to the "AWS CLI install and update instructions" section.**
+  - [ ] **Select the drop-down for Windows option.**
+  - [ ] **Click the link to download the MSI installer for AWS CLI Version 2.**
+  - [ ] **Locate the downloaded MSI installer file.**
+  - [ ] **Double-click the file to run the installer.**
+  - [ ] **Click "Next" to proceed with the installation.**
+  - [ ] **Accept the license agreement terms.**
+  - [ ] **Click "Next" and then click "Install."**
+  - [ ] **Allow any necessary permissions for the installer to proceed.**
+  - [ ] **Wait for the installation to finish.**
+  - [ ] **Click "Finish" to complete the setup.**
+
+  ### 3. Verify AWS CLI Installation
+  - [ ] **Open "Command Prompt" on Windows.**
+  - [ ] **Type `aws --version` and press Enter.**
+  - [ ] **Check for output that starts with "aws-cli/2" followed by the Python version and Windows details.**
+  - [ ] **Confirm that AWS CLI version 2 is installed and working correctly.**
+
+</details>
+
+
