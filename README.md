@@ -236,8 +236,44 @@
 
 </details>
 
+ ###
 
+<a href="https://youtu.be/T0fCqBq8QOI" target="_blank"><img src="https://github.com/user-attachments/assets/b6007b82-fcd1-49f0-ac0e-7a7c27af9025" width="720" height="400" /></a>
 
+### 1. Launch an Instance
+- [ ] Go to **EC2 Console** → Click **Instances** → Select **Launch Instances**.
+- [ ] Add Name: Enter **"My First VM Instance"**.
+- [ ] Select **Amazon Linux (free tier eligible)**.
+- [ ] Use **t2.micro instance type** (free tier eligible for 750 hours/month).
+
+### 2. Set Up a Key Pair
+- [ ] Create a new key pair (e.g., **EC2 key**).
+- [ ] Download the **.pem file** (essential for SSH access).
+
+### 3. Configure Network Security and Storage Configuration
+- [ ] Automatically assign a **Public IP Address**.
+- [ ] Set up Security Groups:
+  - [ ] Allow **SSH (port 22)**.
+  - [ ] Allow **HTTP (port 80)**.
+- [ ] Use the default **8 GB gp2 root volume** (free tier allows up to 30 GB).
+
+### 4. Add User Data and Launch the Instance
+- [ ] Include a script to:
+  - [ ] Update system packages.
+  - [ ] Install the **HTTPD web server**.
+  - [ ] Deploy a **"Hello World"** HTML page.
+- [ ] Review all settings.
+- [ ] Click **Launch Instance**.
+
+### 5. Testing and Managing the Instance
+- [ ] Check the **Instance Name, ID, and State**.
+- [ ] Copy the **Public IPv4 Address**.
+- [ ] Open it in a browser using **http://<Public_IP>**.
+  - [ ] Ensure the URL uses **HTTP**, not HTTPS.
+- [ ] Stop Instance: Pause the instance to save costs.
+- [ ] Review attached **Storage Volumes** and **Security Groups**.
+
+</details>
 
 
 
