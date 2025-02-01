@@ -5,7 +5,7 @@
 
 <details>
   <summary> 1-Create an IAM User and Group in AWS</summary>
-  <img src="https://github.com/user-attachments/assets/f6ef721f-2f2d-48eb-8ac7-7246ed0a6aec" width="200" height="200" />
+  <img src="https://github.com/user-attachments/assets/f6ef721f-2f2d-48eb-8ac7-7246ed0a6aec" width="120" height="80" />
 
 
   [VIDEO LINK](https://youtu.be/svUj_aHjNVk)
