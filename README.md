@@ -60,3 +60,22 @@
 
 </details>
 
+<details>
+  <summary>Project 2 - Create IAM Policies</summary>
+
+  ### 1. Inspect IAM Policies and Explore Read-Only Policy
+  - [ ] **On the left-hand side, click "Policies."**
+  - [ ] **Look at the "AdministratorAccess" policy details.**
+  - [ ] **Review the summary and JSON format of the policy.**
+  - [ ] **Look at the "IAMReadOnlyAccess" policy details.**
+  - [ ] **Inspect the API calls allowed and view the JSON representation.**
+
+  ### 2. Create a Custom Policy
+  - [ ] **Click "Create policy."**
+  - [ ] **Use the "Visual editor" or “JSON” to select actions like "ListUsers" and "GetUser."**
+  - [ ] **Authorize on "All resources."**
+  - [ ] **Name the policy (e.g., MyNewIAMPermissions) and create it.**
+  - [ ] **Inspect the JSON document of the newly created policy.**
+
+</details>
+
