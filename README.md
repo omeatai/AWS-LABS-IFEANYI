@@ -1,4 +1,4 @@
-# AWS-LABS-IFEANYI
+# AWS-LABS
 ### by Ifeanyi Omeata
 
 #### Join me as I complete 300+ Labs and Projects in the AWS Cloud. Follow my Youtube channel at https://www.youtube.com/@omeatai
