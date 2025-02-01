@@ -121,7 +121,7 @@
 
   ###
 
-  <a href="https://youtu.be/YFVP_o9Z_1k?si=G9YztGEFBk1NUC1-" target="_blank"><img src="https://github.com/user-attachments/assets/a3a7667a-22db-4c9a-b64e-9f5f850e24e5" width="720" height="400" /></a>
+  <a href="https://youtu.be/YFVP_o9Z_1k" target="_blank"><img src="https://github.com/user-attachments/assets/a3a7667a-22db-4c9a-b64e-9f5f850e24e5" width="720" height="400" /></a>
 
   ### 1. Navigate to Security Credentials
   - [ ] **Open the IAM Console.**
@@ -163,6 +163,41 @@
   - [ ] **Verify that the user permissions have been successfully restored.**
 
 </details>
+
+<details>
+  <summary>Project 5 - Create IAM Roles for EC2 Access</summary>
+
+  ###
+
+  <a href="https://youtu.be/Ek2348dchLI" target="_blank"><img src="https://github.com/user-attachments/assets/5ccf2c8a-ccb7-4013-8852-bf981045da49" width="720" height="400" /></a>
+ 
+  ### 1. Open the Roles Section
+  - [ ] Navigate to the IAM Console.
+  - [ ] On the left-hand side, click on "Roles."
+  - [ ] Observe any pre-existing roles in your account.
+
+  ### 2. Create and Choose a New Role
+  - [ ] Click on "Create role."
+  - [ ] Select "AWS service" as the trust entity type.
+  - [ ] Choose the service for this role, such as EC2.
+  - [ ] Identify the use case for the selected service, e.g., "EC2."
+
+  ### 3. Attach Permissions Policy and Role Name
+  - [ ] Attach a permissions policy to the role.
+  - [ ] Select "IAMReadOnlyAccess" to allow EC2 instances to read from IAM.
+  - [ ] Review the selected permissions for the role.
+  - [ ] Enter a role name, e.g., "DemoRoleForEC2."
+  - [ ] Confirm the trusted entity is EC2, indicating that EC2 instances can assume this role.
+
+  ### 4. Create the Role
+  - [ ] Verify all settings and click "Create role."
+  - [ ] Ensure the newly created role appears in the role list.
+  - [ ] Check role details to confirm correct permissions are attached.
+
+</details>
+
+
+
 
 
 
