@@ -4,6 +4,8 @@
 <details>
   <summary>LAB 1 - Create an IAM User and Group in AWS</summary>
 
+  ###
+
   <a href="https://youtu.be/svUj_aHjNVk" target="_blank"><img src="https://github.com/user-attachments/assets/fbb339e6-2832-45fd-8da5-33dd3a77a915" width="720" height="400" /></a>
 
   ### 1. Open IAM Console
