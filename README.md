@@ -5,10 +5,13 @@
 
 <details>
   <summary> 1-Create an IAM User and Group in AWS</summary>
+  [![Watch Video](https://github.com/user-attachments/assets/f6ef721f-2f2d-48eb-8ac7-7246ed0a6aec)](https://www.youtube.com/watch?v=VIDEO_ID)
+
+
   [VIDEO LINK](https://youtu.be/svUj_aHjNVk)
-- [ ] **Open IAM Console**  
-  - [ ] **Go to the AWS Management Console.**
-  - [ ] **Enter "IAM" in the search bar and go to the IAM console.**
-  - [ ] **Notice the IAM service is global and doesn't require region selection.**
+  - [ ] **Open IAM Console**  
+    - [ ] **Go to the AWS Management Console.**
+    - [ ] **Enter "IAM" in the search bar and go to the IAM console.**
+    - [ ] **Notice the IAM service is global and doesn't require region selection.**
 
 </details>
