@@ -84,7 +84,7 @@
 </details>
 
 <details>
-  <summary>LAB 3 - Install AWS CLI on Windows PC</summary>
+  <summary>Project 3 - Install AWS CLI on Windows PC</summary>
 
   ###
 
