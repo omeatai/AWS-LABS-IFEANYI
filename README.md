@@ -1,7 +1,7 @@
 # AWS-LABS-IFEANYI
 ### by Ifeanyi Omeata
 
-<img src="https://github.com/user-attachments/assets/86d5c182-8292-40b4-ac6e-f7bd1d782460" width="400" height="400" />
+<img src="https://github.com/user-attachments/assets/86d5c182-8292-40b4-ac6e-f7bd1d782460" width="720" height="420" />
 
 <details>
   <summary> 1-Create an IAM User and Group in AWS</summary>
