@@ -238,9 +238,11 @@
 
 <details>
 
+<summary>Project 7 - </summary>
+
  ###
 
-<a href="https://youtu.be/T0fCqBq8QOI" target="_blank"><img src="https://github.com/user-attachments/assets/b6007b82-fcd1-49f0-ac0e-7a7c27af9025" width="720" height="400" /></a>
+<a href="" target="_blank"><img src="" width="720" height="400" /></a>
 
 ### 1. Launch an Instance
 - [ ] Go to **EC2 Console** → Click **Instances** → Select **Launch Instances**.
@@ -264,6 +266,21 @@
   - [ ] Update system packages.
   - [ ] Install the **HTTPD web server**.
   - [ ] Deploy a **"Hello World"** HTML page.
+  ```html
+    #!/bin/bash
+    # Executed when instance is first launched, to automate the setup and configuration of instance.
+    # Update all the packages on the system to their latest versions
+    yum update -y
+    # install Apache HTTP server (httpd - Linux 2 version)
+    yum install -y httpd
+    # starts the Apache HTTP server
+    systemctl start httpd
+    # Enable auto server boot
+    systemctl enable httpd
+    # Hello World HTTP Page
+    echo "<h1>Hello World from Private Host $(hostname -f)</h1>" > /var/www/html/index.html
+    echo "<br/><br/><p>Created by Ifeanyi Omeata</p>" >> /var/www/html/index.html
+  ```
 - [ ] Review all settings.
 - [ ] Click **Launch Instance**.
 
