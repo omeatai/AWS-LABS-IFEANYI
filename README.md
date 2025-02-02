@@ -242,7 +242,7 @@
 
  ###
 
-<a href="https://youtu.be/GyQrcAfVxBE" target="_blank"><img src="https://github.com/user-attachments/assets/4257d01e-d253-41af-9cf2-8288834e065b" width="720" height="400" /></a>
+<a href="https://youtu.be/GyQrcAfVxBE" target="_blank"><img src="https://github.com/user-attachments/assets/43b8e9a0-3034-4412-91ae-cfaa486ec932" width="720" height="400" /></a>
 
 ### 1. Launch an Instance
 - [ ] Go to **EC2 Console** → Click **Instances** → Select **Launch Instances**.
@@ -299,7 +299,7 @@
 
  ###
  
-<a href="" target="_blank"><img src="https://github.com/user-attachments/assets/1078fb47-baee-48da-9131-e4687564f118" width="720" height="400" /></a>
+<a href="" target="_blank"><img src="https://github.com/user-attachments/assets/808897ed-83fc-4280-bb88-cf1254d6bdea" width="720" height="400" /></a>
 
 ### Task 1: Provision Default VPC
 - [ ] Ensure the default AWS Region is set to **US East (N. Virginia) us-east-1**.
