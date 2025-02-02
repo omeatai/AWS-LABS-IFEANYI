@@ -510,11 +510,7 @@
 - [ ] Copy **Load Balancer DNS**.
 - [ ] Paste in browser to confirm traffic routing.
 
-## ✅ Task 11: Validate the Lab
-- [ ] Click **Validation** in the right-side panel.
-- [ ] Confirm successful completion.
-
-## ✅ Task 12: Delete AWS Resources
+## ✅ Task 11: Delete AWS Resources
 ### (I) Delete Auto Scaling Group
 - [ ] Navigate to **EC2** > **Auto Scaling Groups**.
 - [ ] Select `My-ASG` > **Actions** > **Delete**.
