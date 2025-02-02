@@ -295,11 +295,11 @@
 </details>
 
 <details> 
-  <summary>Project 8 - Lunch an EC2 Instance with a Web Server (2) </summary>
+  <summary>Project 8 - Lunch an EC2 Instance with a Web Server on VPC </summary>
 
  ###
  
-<a href="" target="_blank"><img src="https://github.com/user-attachments/assets/808897ed-83fc-4280-bb88-cf1254d6bdea" width="720" height="400" /></a>
+<a href="" target="_blank"><img src="https://github.com/user-attachments/assets/192d830e-5143-4083-ae73-706cb4dfb789" width="720" height="400" /></a>
 
 ### Task 1: Provision Default VPC
 - [ ] Ensure the default AWS Region is set to **US East (N. Virginia) us-east-1**.
