@@ -382,7 +382,172 @@
 
 </details>
 
+<details> 
+  <summary>Project 9 - AWS Lab: Configure Load Balancer and Auto Scaling Group with Launch templates</summary>
+  
+  ###
+     
+  <a href="" target="_blank"><img src="" width="720" height="400" /></a>
 
+  ## ✅ Task 1: Sign in to AWS Management Console
+- [ ] Click on **Open Console** to open AWS Console in a new tab.
+- [ ] **Do not** edit/remove the 12-digit **Account ID**.
+- [ ] Copy **User Name** and **Password** from Lab Console.
+- [ ] Paste into **IAM Username** and **Password** in AWS Console.
+- [ ] Click **Sign In**.
+- [ ] Set **default AWS Region** to **US East (N. Virginia) us-east-1**.
+
+## ✅ Task 2: Create a Security Group for Load Balancer
+- [ ] Navigate to **EC2** > **Security Groups**.
+- [ ] Click **Create security group**.
+- [ ] **Security group name:** `Load-balancer-SG`
+- [ ] **Description:** `Security group for Load balancer`
+- [ ] **VPC:** Select **Default VPC**
+- [ ] **Add Inbound Rule:**
+  - Type: `HTTP`
+  - Source: `Custom`
+  - Value: `0.0.0.0/0`
+- [ ] Click **Create security group**.
+
+## ✅ Task 3: Create a Security Group for Launch Template
+- [ ] Click **Create security group**.
+- [ ] **Security group name:** `Launch-template-SG`
+- [ ] **Description:** `Security group for Launch template`
+- [ ] **VPC:** Select **Default VPC**
+- [ ] **Add Inbound Rules:**
+  - Type: `SSH`
+  - Source: `Custom`
+  - Value: `0.0.0.0/0`
+  - Type: `HTTP`
+  - Source: `Custom`
+  - Value: `Load-balancer-SG`
+- [ ] Click **Create security group**.
+
+## ✅ Task 4: Create a Key Pair for Launch Template
+- [ ] Navigate to **EC2** > **Key Pairs**.
+- [ ] Click **Create key pair**.
+- [ ] **Name:** `WhizKeyPair`
+- [ ] **File format:** `pem` (Linux & Mac) or `ppk` (Windows)
+- [ ] Click **Create key pair**.
+
+## ✅ Task 5: Create a Launch Template
+- [ ] Navigate to **EC2** > **Launch Templates**.
+- [ ] Click **Create launch template**.
+- [ ] **Launch template name:** `whizlabsLC`
+- [ ] **Template version description:** `Launch template for whizdemo`
+- [ ] Select **Amazon Linux 2 AMI (HVM), SSD Volume Type**
+- [ ] **Instance type:** `t2.micro`
+- [ ] **Key pair:** `WhizKeyPair`
+- [ ] **Subnet:** Choose any subnet
+- [ ] **Security groups:** `Launch-template-SG`
+- [ ] Expand **Advanced details** > **User data:**
+  ```bash
+  #!/bin/bash
+  sudo su
+  yum update -y
+  yum install -y httpd
+  systemctl start httpd
+  systemctl enable httpd
+  echo "Hello World from $(hostname -f)" > /var/www/html/index.html
+  echo "Healthy" > /var/www/html/health.html
+  ```
+- [ ] Click **Create launch template**.
+
+## ✅ Task 6: Create Target Group and Load Balancer
+### (I) Create Target Group
+- [ ] Navigate to **EC2** > **Target Groups**.
+- [ ] Click **Create Target Group**.
+- [ ] **Target Type:** `Instances`
+- [ ] **Name:** `web-server-TG`
+- [ ] **Protocol:** `HTTP`
+- [ ] **Port:** `80`
+- [ ] **Health check protocol:** `HTTP`
+- [ ] **Path:** `/health.html`
+- [ ] Click **Next** > **Create target group**.
+
+### (II) Create Load Balancer
+- [ ] Navigate to **EC2** > **Load Balancers**.
+- [ ] Click **Create load balancer**.
+- [ ] Choose **Application Load Balancer**.
+- [ ] **Name:** `Web-server-LB`
+- [ ] **Scheme:** `Internet-facing`
+- [ ] **IP address type:** `IPv4`
+- [ ] **VPC:** `Default`
+- [ ] **Availability Zones:** `us-east-1a` and `us-east-1b`
+- [ ] **Security Group:** `Load-balancer-SG`
+- [ ] **Listener:** Select **Target group** created earlier.
+- [ ] Click **Create Load Balancer**.
+
+## ✅ Task 7: Create an Auto Scaling Group
+- [ ] Navigate to **EC2** > **Auto Scaling Groups**.
+- [ ] Click **Create Auto Scaling group**.
+- [ ] **Name:** `Whiz-ASG`
+- [ ] **Launch template:** `whizlabsLC`
+- [ ] **VPC:** `Default`
+- [ ] **Subnets:** `us-east-1a`, `us-east-1b`
+- [ ] **Attach to Load Balancer:** `web-server-TG`
+- [ ] **Health Check Type:** `EC2 + ELB`
+- [ ] **Health Check Grace Period:** `60 seconds`
+- [ ] **Desired Capacity:** `1`
+- [ ] **Minimum Capacity:** `1`
+- [ ] **Maximum Capacity:** `4`
+- [ ] **Scaling Policy:** `Target tracking` > `CPU Utilization` > `30%`
+- [ ] Click **Create Auto Scaling Group**.
+
+## ✅ Task 8: SSH into EC2 Instance
+- [ ] Use SSH to connect to the EC2 instance.
+
+## ✅ Task 9: Install Stress Tool
+- [ ] Switch to root user:
+  ```bash
+  sudo su
+  ```
+- [ ] Run updates:
+  ```bash
+  yum -y update
+  ```
+- [ ] Install stress tool:
+  ```bash
+  amazon-linux-extras install epel -y
+  yum install stress -y
+  stress --cpu 8 --timeout 300s
+  ```
+
+## ✅ Task 10: Test Auto Scaling and Load Balancer
+- [ ] Observe EC2 instances scaling up in **Auto Scaling Group**.
+- [ ] Copy **Load Balancer DNS**.
+- [ ] Paste in browser to confirm traffic routing.
+
+## ✅ Task 11: Validate the Lab
+- [ ] Click **Validation** in the right-side panel.
+- [ ] Confirm successful completion.
+
+## ✅ Task 12: Delete AWS Resources
+### (I) Delete Auto Scaling Group
+- [ ] Navigate to **EC2** > **Auto Scaling Groups**.
+- [ ] Select `Whiz-ASG` > **Actions** > **Delete**.
+- [ ] Confirm by typing `delete`.
+
+### (II) Delete Launch Template
+- [ ] Navigate to **EC2** > **Launch Templates**.
+- [ ] Select `whizlabsLC` > **Actions** > **Delete template**.
+
+### (III) Delete Load Balancer
+- [ ] Navigate to **EC2** > **Load Balancers**.
+- [ ] Select `Web-server-LB` > **Actions** > **Delete**.
+
+### (IV) Delete Target Group
+- [ ] Navigate to **EC2** > **Target Groups**.
+- [ ] Select `web-server-TG` > **Actions** > **Delete**.
+
+## ✅ Completion and Conclusion
+- [ ] Sign out of AWS.
+- [ ] Click **End Lab** on Whizlabs dashboard.
+
+---
+🎉 **Congratulations! You have successfully completed the AWS Auto Scaling and Load Balancer Lab!**
+
+</details>
 
 
 
