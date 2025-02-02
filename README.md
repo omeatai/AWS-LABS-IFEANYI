@@ -380,9 +380,6 @@
 - [ ] Access your content in a web browser with:
   - [ ] **http://<Your_Public_IPv4_Address>/index.html**
 
-### Task 7: Validate the Lab
-- [ ] Click the **Validation** button on the left panel to ensure completion.
-
 </details>
 
 
