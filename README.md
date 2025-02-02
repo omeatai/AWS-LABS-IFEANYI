@@ -480,7 +480,7 @@
 - [ ] **Attach to Load Balancer:** `web-server-TG`
 - [ ] **Health Check Type:** `EC2 + ELB`
 - [ ] **Health Check Grace Period:** `60 seconds`
-- [ ] **Desired Capacity:** `1`
+- [ ] **Desired Capacity:** `2`
 - [ ] **Minimum Capacity:** `1`
 - [ ] **Maximum Capacity:** `4`
 - [ ] **Scaling Policy:** `Target tracking` > `CPU Utilization` > `30%`
@@ -491,28 +491,13 @@
 - [ ] Syntax : ssh -i keypair_filename UserName@publicIPAddress (enter the username and public IP address)
 - [ ] Example : ssh -i ec2_connect.pem ec2-user@54.172.93.175  --> Click Enter
 
-## ✅ Task 9: Install Stress Tool
-- [ ] Switch to root user:
-  ```bash
-  sudo su
-  ```
-- [ ] Run updates:
-  ```bash
-  yum -y update
-  ```
-- [ ] Install stress tool:
-  ```bash
-  amazon-linux-extras install epel -y
-  yum install stress -y
-  stress --cpu 8 --timeout 300s
-  ```
-
-## ✅ Task 10: Test Auto Scaling and Load Balancer
-- [ ] Observe EC2 instances scaling up in **Auto Scaling Group**.
+## ✅ Task 9: Test Auto Scaling and Load Balancer
 - [ ] Copy **Load Balancer DNS**.
 - [ ] Paste in browser to confirm traffic routing.
+- [ ] Stop one of the EC2 instance.
+- [ ] Check browser for change in server.
 
-## ✅ Task 11: Delete AWS Resources
+## ✅ Task 10: Delete AWS Resources
 ### (I) Delete Auto Scaling Group
 - [ ] Navigate to **EC2** > **Auto Scaling Groups**.
 - [ ] Select `My-ASG` > **Actions** > **Delete**.
