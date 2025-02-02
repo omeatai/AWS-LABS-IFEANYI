@@ -488,6 +488,8 @@
 
 ## ✅ Task 8: SSH into EC2 Instance
 - [ ] Use SSH to connect to the EC2 instance.
+- [ ] Syntax : ssh -i keypair_filename UserName@publicIPAddress (enter the username and public IP address)
+- [ ] Example : ssh -i ec2_connect.pem ec2-user@54.172.93.175  --> Click Enter
 
 ## ✅ Task 9: Install Stress Tool
 - [ ] Switch to root user:
