@@ -419,18 +419,18 @@
 ## ✅ Task 3: Create a Key Pair for Launch Template
 - [ ] Navigate to **EC2** > **Key Pairs**.
 - [ ] Click **Create key pair**.
-- [ ] **Name:** `WhizKeyPair`
+- [ ] **Name:** `MyKeyPair`
 - [ ] **File format:** `pem` (Linux & Mac) or `ppk` (Windows)
 - [ ] Click **Create key pair**.
 
 ## ✅ Task 4: Create a Launch Template
 - [ ] Navigate to **EC2** > **Launch Templates**.
 - [ ] Click **Create launch template**.
-- [ ] **Launch template name:** `whizlabsLC`
-- [ ] **Template version description:** `Launch template for whizdemo`
+- [ ] **Launch template name:** `MylabsLC`
+- [ ] **Template version description:** `Launch template for Mydemo`
 - [ ] Select **Amazon Linux 2 AMI (HVM), SSD Volume Type**
 - [ ] **Instance type:** `t2.micro`
-- [ ] **Key pair:** `WhizKeyPair`
+- [ ] **Key pair:** `MyKeyPair`
 - [ ] **Subnet:** Choose any subnet
 - [ ] **Security groups:** `Launch-template-SG`
 - [ ] Expand **Advanced details** > **User data:**
@@ -473,8 +473,8 @@
 ## ✅ Task 7: Create an Auto Scaling Group
 - [ ] Navigate to **EC2** > **Auto Scaling Groups**.
 - [ ] Click **Create Auto Scaling group**.
-- [ ] **Name:** `Whiz-ASG`
-- [ ] **Launch template:** `whizlabsLC`
+- [ ] **Name:** `My-ASG`
+- [ ] **Launch template:** `MylabsLC`
 - [ ] **VPC:** `Default`
 - [ ] **Subnets:** `us-east-1a`, `us-east-1b`
 - [ ] **Attach to Load Balancer:** `web-server-TG`
@@ -517,12 +517,12 @@
 ## ✅ Task 12: Delete AWS Resources
 ### (I) Delete Auto Scaling Group
 - [ ] Navigate to **EC2** > **Auto Scaling Groups**.
-- [ ] Select `Whiz-ASG` > **Actions** > **Delete**.
+- [ ] Select `My-ASG` > **Actions** > **Delete**.
 - [ ] Confirm by typing `delete`.
 
 ### (II) Delete Launch Template
 - [ ] Navigate to **EC2** > **Launch Templates**.
-- [ ] Select `whizlabsLC` > **Actions** > **Delete template**.
+- [ ] Select `MylabsLC` > **Actions** > **Delete template**.
 
 ### (III) Delete Load Balancer
 - [ ] Navigate to **EC2** > **Load Balancers**.
