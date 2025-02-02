@@ -327,7 +327,7 @@
   - [ ] For Instance Type: Select **t2.micro**.
 - [ ] Configure the Key Pair:
   - [ ] Click **Create a new key pair**.
-  - [ ] Name: **WhizKey** with type **RSA** and format **.pem**.
+  - [ ] Name: **SecKey** with type **RSA** and format **.pem**.
 - [ ] Modify Network Settings:
   - [ ] Enable **Auto-assign public IP**.
   - [ ] Create a security group: **MyEC2Server_SG**.
