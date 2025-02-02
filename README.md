@@ -389,15 +389,8 @@
      
   <a href="" target="_blank"><img src="" width="720" height="400" /></a>
 
-  ## ✅ Task 1: Sign in to AWS Management Console
-- [ ] Click on **Open Console** to open AWS Console in a new tab.
-- [ ] **Do not** edit/remove the 12-digit **Account ID**.
-- [ ] Copy **User Name** and **Password** from Lab Console.
-- [ ] Paste into **IAM Username** and **Password** in AWS Console.
-- [ ] Click **Sign In**.
+## ✅ Task 1: Create a Security Group for Load Balancer
 - [ ] Set **default AWS Region** to **US East (N. Virginia) us-east-1**.
-
-## ✅ Task 2: Create a Security Group for Load Balancer
 - [ ] Navigate to **EC2** > **Security Groups**.
 - [ ] Click **Create security group**.
 - [ ] **Security group name:** `Load-balancer-SG`
@@ -409,7 +402,7 @@
   - Value: `0.0.0.0/0`
 - [ ] Click **Create security group**.
 
-## ✅ Task 3: Create a Security Group for Launch Template
+## ✅ Task 2: Create a Security Group for Launch Template
 - [ ] Click **Create security group**.
 - [ ] **Security group name:** `Launch-template-SG`
 - [ ] **Description:** `Security group for Launch template`
@@ -423,14 +416,14 @@
   - Value: `Load-balancer-SG`
 - [ ] Click **Create security group**.
 
-## ✅ Task 4: Create a Key Pair for Launch Template
+## ✅ Task 3: Create a Key Pair for Launch Template
 - [ ] Navigate to **EC2** > **Key Pairs**.
 - [ ] Click **Create key pair**.
 - [ ] **Name:** `WhizKeyPair`
 - [ ] **File format:** `pem` (Linux & Mac) or `ppk` (Windows)
 - [ ] Click **Create key pair**.
 
-## ✅ Task 5: Create a Launch Template
+## ✅ Task 4: Create a Launch Template
 - [ ] Navigate to **EC2** > **Launch Templates**.
 - [ ] Click **Create launch template**.
 - [ ] **Launch template name:** `whizlabsLC`
@@ -453,8 +446,7 @@
   ```
 - [ ] Click **Create launch template**.
 
-## ✅ Task 6: Create Target Group and Load Balancer
-### (I) Create Target Group
+## ✅ Task 5: Create Target Group
 - [ ] Navigate to **EC2** > **Target Groups**.
 - [ ] Click **Create Target Group**.
 - [ ] **Target Type:** `Instances`
@@ -465,7 +457,7 @@
 - [ ] **Path:** `/health.html`
 - [ ] Click **Next** > **Create target group**.
 
-### (II) Create Load Balancer
+## ✅ Task 6: Create Load Balancer
 - [ ] Navigate to **EC2** > **Load Balancers**.
 - [ ] Click **Create load balancer**.
 - [ ] Choose **Application Load Balancer**.
@@ -539,10 +531,7 @@
 ### (IV) Delete Target Group
 - [ ] Navigate to **EC2** > **Target Groups**.
 - [ ] Select `web-server-TG` > **Actions** > **Delete**.
-
-## ✅ Completion and Conclusion
 - [ ] Sign out of AWS.
-- [ ] Click **End Lab** on Whizlabs dashboard.
 
 ---
 🎉 **Congratulations! You have successfully completed the AWS Auto Scaling and Load Balancer Lab!**
