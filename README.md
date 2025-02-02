@@ -383,7 +383,7 @@
 </details>
 
 <details> 
-  <summary>Project 9 - AWS Lab: Configure Load Balancer and Auto Scaling Group with Launch templates</summary>
+  <summary>Project 9 - Configure Load Balancer and Auto Scaling Group with Launch templates</summary>
   
   ###
      
