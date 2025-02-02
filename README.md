@@ -301,17 +301,8 @@
  
 <a href="" target="_blank"><img src="" width="720" height="400" /></a>
 
-
-### Task 1: Sign in to AWS Management Console
-- [ ] Click on the **Open Console** button to get redirected to the AWS Console.
-- [ ] On the AWS sign-in page:
-  - [ ] Leave the **Account ID** as default.
-- [ ] Copy your **User Name** and **Password** from the Lab Console:
-  - [ ] Paste them into the IAM Username and Password fields in the AWS Console.
-  - [ ] Click on the **Sign in** button.
+### Task 1: Provision Default VPC
 - [ ] Ensure the default AWS Region is set to **US East (N. Virginia) us-east-1**.
-
-### Task 2: Provision Default VPC
 - [ ] Navigate to **VPC** either through:
   - [ ] Clicking on the **Services** menu → VPC.
   - [ ] Or directly via [Amazon VPC console](https://console.aws.amazon.com/vpc/).
@@ -325,7 +316,7 @@
   - [ ] Refresh console, go to **Actions** → **Create default VPC**.
   - [ ] Click **Create default VPC** button.
 
-### Task 3: Launch an EC2 Instance
+### Task 2: Launch an EC2 Instance
 - [ ] Ensure you are in the **US East (N. Virginia) us-east-1** Region.
 - [ ] Navigate to **EC2**:
   - [ ] Click on the **Services** menu → EC2 in the Compute section.
@@ -350,33 +341,30 @@
   - [ ] Choose **View all Instances**.
   - [ ] Wait for instance state to become **Running** and health check status to pass 2/2.
 
-### Task 4: SSH into EC2 Instance
+### Task 3: SSH into EC2 Instance
 - [ ] Select the **MyEC2Server** instance and click **Connect**.
 - [ ] Use **EC2 Instance Connect** and click **Connect**.
 - [ ] A new tab opens where you can execute Linux commands.
 
-### Task 5: Install an Apache Server
-- [ ] Switch to root user:
+### Task 4: Install an Apache Server
   ```bash
+  # Switch to root user
   sudo su
-  ```
-- [ ] Update system packages:
-  ```bash
+
+  # Update system packages
   yum -y update
-  ```
-- [ ] Install Apache Web Server:
-  ```bash
+
+  # Install Apache Web Server
   yum install httpd -y
-  ```
-- [ ] Start and Enable the Web Server:
-  ```bash
+
+  # Start and Enable the Web Server
   systemctl start httpd
   systemctl enable httpd
-  ```
-- [ ] Verify Web Server Status:
-  ```bash
+
+  # Verify Web Server Status
   systemctl status httpd
   ```
+
 - [ ] Test Web Server:
   - [ ] Enter the **Public IPv4 address** of your instance in a web browser.
 
