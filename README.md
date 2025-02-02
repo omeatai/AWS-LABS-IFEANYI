@@ -371,7 +371,7 @@
 ### Task 6: Create a Web Page
 - [ ] Add content to the web page:
   ```bash
-  echo "<html>Hi Whizlabs, I am a public page</html>" > /var/www/html/index.html
+  echo "<html>Hi Ifeanyi, I am a public page</html>" > /var/www/html/index.html
   ```
 - [ ] Restart the Web Server:
   ```bash
