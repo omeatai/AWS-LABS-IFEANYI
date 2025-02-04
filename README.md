@@ -388,7 +388,9 @@
   ###
      
   <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/055f47bd-07b2-4129-b479-fbd5f7a64eeb" width="720" height="400" /></a>
-    ###
+  
+  ###
+  
   <img src="https://github.com/user-attachments/assets/59e9595b-b4e8-45e8-a8d3-d0e4b3d36adc" width="720" height="720" />
 
 ## ✅ Task 1: Create a Security Group for Load Balancer
