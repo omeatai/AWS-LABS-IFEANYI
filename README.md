@@ -391,7 +391,7 @@
   
   ###
   
-  <img src="https://github.com/user-attachments/assets/59e9595b-b4e8-45e8-a8d3-d0e4b3d36adc" width="720" height="720" />
+  <img src="https://github.com/user-attachments/assets/59e9595b-b4e8-45e8-a8d3-d0e4b3d36adc" width="720" height="520" />
 
 ## ✅ Task 1: Create a Security Group for Load Balancer
 - [ ] Set **default AWS Region** to **US East (N. Virginia) us-east-1**.
