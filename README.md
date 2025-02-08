@@ -525,5 +525,129 @@
 
 </details>
 
+<details> 
+  <summary>Project 10 - Configure AWS Lambda S3 File Copy</summary>
+  
+  ###
+     
+  <a href="https://youtu.be/hiFPfd2WG8A" target="_blank"><img src="https://github.com/user-attachments/assets/055f47bd-07b2-4129-b479-fbd5f7a64eeb" width="720" height="400" /></a>
+  
+  ###
+  
+  <img src="https://github.com/user-attachments/assets/59e9595b-b4e8-45e8-a8d3-d0e4b3d36adc" width="720" height="520" />
+
+## ✅ Task 1: Create Two Amazon S3 Buckets
+
+### Create Source Bucket
+
+- [ ] # Set the default **AWS Region** to **US East (N. Virginia) (us-east-1)**.
+- [ ] # Navigate to **Services > S3** under the **Storage** section.
+- [ ] # Click on **Create Bucket**.
+- [ ] # Enter **Bucket Name**: `mysourcebucket12345` _(Choose a unique name)_.
+- [ ] # Select **AWS Region**: **US East (N. Virginia) (us-east-1)**.
+- [ ] # Leave other settings as **default** and click **Create bucket**.
+- [ ] # Select your bucket and **copy the ARN**.
+- [ ] # Save the **source bucket ARN** in a text file: arn:aws:s3:::mysourcebucket12345
+
+### Create Destination Bucket
+
+- [ ] # Click on **Create Bucket** again.
+- [ ] # Enter **Bucket Name**: `mydestinationbucket12345` _(Choose a unique name)_.
+- [ ] # Select **AWS Region**: **US East (N. Virginia) (us-east-1)**.
+- [ ] # Leave other settings as **default** and click **Create bucket**.
+- [ ] # Select your bucket and **copy the ARN**.
+- [ ] # Save the **destination bucket ARN** in a text file: arn:aws:s3:::mydestinationbucket12345
+
+## ✅ Task 2: Create a Lambda Function
+
+- [ ] # Ensure you are in the **US East (N. Virginia) (us-east-1)** region.
+- [ ] # Navigate to **Services > Lambda** under the **Compute** section.
+- [ ] # Click on **Create Function**.
+- [ ] # Select **Author from scratch**.
+- [ ] # Enter **Function Name**: `mylambdafunction`.
+- [ ] # Choose **Runtime**: `Python 3.13`.
+- [ ] # Under **Permissions**, select **Change default execution role**.
+- [ ] # Choose **Use an existing role** and select `Lambda_role`.
+- [ ] # Click **Create function**.
+
+## ✅ Task 3: Add Code to Lambda Function
+
+- [ ] # Scroll down to the **Code source** section.
+- [ ] # Remove existing code in `index.js`.
+- [ ] # Copy and paste the following **Python** code into `index.js`:
+
+```python
+import boto3
+import urllib.parse
+
+def lambda_handler(event, context):
+    s3 = boto3.client('s3')
+
+    source_bucket = "mysourcebucket12345"
+    destination_bucket = "mydestinationbucket12345"
+
+    # Extract the object key from the event
+    object_key = event['Records'][0]['s3']['object']['key']
+
+    # URL encode the source object key
+    copy_source = urllib.parse.quote(f"{source_bucket}/{object_key}")
+
+    # Set up the parameters for the copy operation
+    copy_params = {
+        'Bucket': destination_bucket,
+        'CopySource': copy_source,
+        'Key': object_key
+    }
+
+    try:
+        # Perform the copy operation
+        result = s3.copy_object(**copy_params)
+        print("S3 object copy successful.")
+    except Exception as e:
+        print(f"Error copying object: {str(e)}")
+```
+
+- [ ] # Replace mysourcebucket12345 and mydestinationbucket12345 with your actual bucket names.
+- [ ] # Click Deploy to save the function.
+
+## ✅ Task 4: Adding Triggers to Lambda Function
+
+- [ ] # Scroll up to Function overview and click + Add trigger.
+- [ ] # Select S3 from the trigger list.
+- [ ] # Set Bucket: mysourcebucket12345.
+- [ ] # Choose Event Type: All object create events.
+- [ ] # Enable Recursive invocation to prevent failures when uploading multiple files.
+- [ ] # Check the acknowledge option.
+- [ ] # Click Add.
+
+## ✅ Task 5: Test Lambda Function
+
+### Upload a Test Image
+
+- [ ] # Download a test image and save it as image.jpeg (Do not rename it to variations like image (2).jpeg).
+- [ ] # Go to S3 Bucket list and open the source bucket (mysourcebucket12345).
+- [ ] # Click Upload > Add files.
+- [ ] # Select image.jpeg and click Upload.
+
+### Verify the File Transfer
+
+- [ ] # Open the destination bucket (mydestinationbucket12345).
+- [ ] # Ensure that a copy of image.jpeg is present in the destination bucket.
+
+## ✅ Task 6: (Optional) Debugging Lambda Function Using CloudWatch
+
+- [ ] # If the file is not copied, debug the Lambda function using CloudWatch.
+- [ ] # Navigate to Services > CloudWatch.
+- [ ] # Select Logs > Log Groups.
+- [ ] # Find the log group /aws/lambda/mylambdafunction.
+- [ ] # Select the latest log stream.
+- [ ] # Expand Log events to check for error messages.
+- [ ] # If sourceBucket is not defined, update the Lambda function with the correct bucket names.
+- [ ] # Click Deploy after making corrections.
+
+---
+🎉 **Congratulations! You have successfully automated S3 file transfers using AWS Lambda. 🚀**
+
+</details>
 
 
