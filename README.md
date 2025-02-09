@@ -526,7 +526,7 @@
 </details>
 
 <details> 
-  <summary>Project 10 - Configure AWS Lambda S3 File Copy</summary>
+  <summary>Project 10 - Automating S3 File Transfers with AWS Lambda </summary>
   
   ###
      
