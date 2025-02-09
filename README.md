@@ -526,7 +526,7 @@
 </details>
 
 <details> 
-  <summary>Project 10 - Automating S3 File Transfers with AWS Lambda </summary>
+  <summary>Project 10 - Automating S3 File Copy and Transfer with AWS Lambda </summary>
   
   ###
      
@@ -534,7 +534,7 @@
   
   ###
   
-  <img src="https://github.com/user-attachments/assets/59e9595b-b4e8-45e8-a8d3-d0e4b3d36adc" width="720" height="520" />
+  <img src="https://github.com/user-attachments/assets/93ee9208-4e31-4faf-b506-a0bb3f85c85d" width="720" height="520" />
 
 ## ✅ Task 1: Create Two Amazon S3 Buckets
 
