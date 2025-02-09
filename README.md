@@ -573,8 +573,8 @@
 ## ✅ Task 3: Add Code to Lambda Function
 
 - [ ] # Scroll down to the **Code source** section.
-- [ ] # Remove existing code in `index.js`.
-- [ ] # Copy and paste the following **Python** code into `index.js`:
+- [ ] # Remove existing code in `lambda_function.py`.
+- [ ] # Copy and paste the following **Python** code into `lambda_function.py`:
 
 ```python
 import boto3
