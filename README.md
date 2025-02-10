@@ -656,10 +656,10 @@ def lambda_handler(event, context):
   ###
      
   <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/69448d93-e021-4c3e-97b8-97e1de828596" width="720" height="400" /></a>
-  
+
   ###
   
-  <img src="https://github.com/user-attachments/assets/93ee9208-4e31-4faf-b506-a0bb3f85c85d" width="720" height="520" />
+  <img src="https://github.com/user-attachments/assets/f2b269aa-72be-4695-a678-e84cbce0bbb9" width="720" height="520" />
 
 ## ✅ Task 1: Create IAM Users
 
