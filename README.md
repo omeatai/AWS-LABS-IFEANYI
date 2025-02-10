@@ -650,4 +650,76 @@ def lambda_handler(event, context):
 
 </details>
 
+<details> 
+  <summary>Project 11 - Managing IAM Users and Groups in AWS </summary>
+  
+  ###
+     
+  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/69448d93-e021-4c3e-97b8-97e1de828596" width="720" height="400" /></a>
+  
+  ###
+  
+  <img src="https://github.com/user-attachments/assets/93ee9208-4e31-4faf-b506-a0bb3f85c85d" width="720" height="520" />
+
+## ✅ Task 1: Sign in to the AWS Management Console
+
+- [ ] # Click on the **Open Console** button to open the AWS Console in a new tab.
+- [ ] # On the AWS sign-in page:
+  - Leave the **Account ID** as default (Do NOT edit the 12-digit Account ID).
+  - Copy the **Username** and **Password** from the Lab Console.
+  - Paste them into the IAM Username and Password fields in the AWS Console.
+  - Click **Sign-in**.
+- [ ] # Set the default **AWS Region** to **US East (N. Virginia) (us-east-1)**.
+
+## ✅ Task 2: Create IAM Users
+
+- [ ] # Navigate to **Services > IAM** under **Security, Identity, & Compliance**.
+- [ ] # In the IAM dashboard, select **Users** from the left panel.
+- [ ] # Click **Create User**.
+- [ ] # Under **User Details**, fill in the following:
+  - **User name**: `John` (or any desired name).
+  - **Check** the **Provide user access to the AWS Management Console - optional** checkbox.
+  - **Select** `Custom password` under **Console Password**.
+  - **Enter Password**: `whizlabs@123` (or any desired password).
+  - **Uncheck** `Users must create a new password at the next sign-in (recommended)`.
+  - Click **Next**.
+- [ ] # In the **Set permissions** section, keep settings as default and click **Next**.
+- [ ] # Under **Tags**, click **Add new tag**:
+  - **Key**: `Dev-Team`
+  - **Value**: `Developers`
+- [ ] # Click **Create User**.
+- [ ] # If you see an error, ignore it and click **Close**.
+- [ ] # Click **Return to users list** and then **Continue**.
+- [ ] # Repeat the same steps to create an IAM user named **Sarah** with the same **Dev-Team** tag.
+- [ ] # Repeat the steps to create IAM users named **Ted** and **Rita** with the following details:
+  - **Custom password**: `whizlabs@123`
+  - **Key**: `HR-Team`
+  - **Value**: `HR`
+- [ ] # You have now created **four IAM users**: `John, Sarah, Ted, and Rita`.
+
+## ✅ Task 3: Create IAM Groups and Add IAM Users
+
+### Create **Dev-Team** Group and Add Users
+- [ ] # Navigate to **User groups** in the left panel.
+- [ ] # Click **Create group**.
+- [ ] # **User group name**: `Dev-Team`
+- [ ] # Scroll down and **add users**: `John` and `Sarah`.
+- [ ] # Under **Attach permissions policies**, search for:
+  - `AmazonEC2ReadOnlyAccess`
+  - `AmazonS3ReadOnlyAccess`
+- [ ] # **Select both policies** (These provide read access for EC2 and S3).
+- [ ] # **Review** all details and click **Create group**.
+
+### Create **HR-Team** Group and Add Users
+- [ ] # Click **Create group**.
+- [ ] # **User group name**: `HR-Team`
+- [ ] # Scroll down and **add users**: `Ted` and `Rita`.
+- [ ] # Under **Attach permissions policies**, search for:
+  - `Billing`
+- [ ] # **Select the Billing policy** (grants billing-related permissions).
+- [ ] # **Review** all details and click **Create group**.
+
+✅ # Congratulations! You have successfully created IAM users, groups, and assigned permissions in AWS. 🚀
+
+
 
