@@ -661,18 +661,9 @@ def lambda_handler(event, context):
   
   <img src="https://github.com/user-attachments/assets/93ee9208-4e31-4faf-b506-a0bb3f85c85d" width="720" height="520" />
 
-## ✅ Task 1: Sign in to the AWS Management Console
+## ✅ Task 1: Create IAM Users
 
-- [ ] # Click on the **Open Console** button to open the AWS Console in a new tab.
-- [ ] # On the AWS sign-in page:
-  - Leave the **Account ID** as default (Do NOT edit the 12-digit Account ID).
-  - Copy the **Username** and **Password** from the Lab Console.
-  - Paste them into the IAM Username and Password fields in the AWS Console.
-  - Click **Sign-in**.
 - [ ] # Set the default **AWS Region** to **US East (N. Virginia) (us-east-1)**.
-
-## ✅ Task 2: Create IAM Users
-
 - [ ] # Navigate to **Services > IAM** under **Security, Identity, & Compliance**.
 - [ ] # In the IAM dashboard, select **Users** from the left panel.
 - [ ] # Click **Create User**.
@@ -680,7 +671,7 @@ def lambda_handler(event, context):
   - **User name**: `John` (or any desired name).
   - **Check** the **Provide user access to the AWS Management Console - optional** checkbox.
   - **Select** `Custom password` under **Console Password**.
-  - **Enter Password**: `whizlabs@123` (or any desired password).
+  - **Enter Password**: `mylabs@123` (or any desired password).
   - **Uncheck** `Users must create a new password at the next sign-in (recommended)`.
   - Click **Next**.
 - [ ] # In the **Set permissions** section, keep settings as default and click **Next**.
@@ -692,12 +683,12 @@ def lambda_handler(event, context):
 - [ ] # Click **Return to users list** and then **Continue**.
 - [ ] # Repeat the same steps to create an IAM user named **Sarah** with the same **Dev-Team** tag.
 - [ ] # Repeat the steps to create IAM users named **Ted** and **Rita** with the following details:
-  - **Custom password**: `whizlabs@123`
+  - **Custom password**: `mylabs@123`
   - **Key**: `HR-Team`
   - **Value**: `HR`
 - [ ] # You have now created **four IAM users**: `John, Sarah, Ted, and Rita`.
 
-## ✅ Task 3: Create IAM Groups and Add IAM Users
+## ✅ Task 2: Create IAM Groups and Add IAM Users
 
 ### Create **Dev-Team** Group and Add Users
 - [ ] # Navigate to **User groups** in the left panel.
