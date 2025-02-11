@@ -712,5 +712,118 @@ def lambda_handler(event, context):
 
 ✅ # Congratulations! You have successfully created IAM users, groups, and assigned permissions in AWS. 🚀
 
+</details> 
+  
+<details> 
+  <summary>Project 12 - Configuring a Custom VPC with Public and Private Subnets </summary>
+  
+  ###
+     
+  <a href="https://youtu.be/gFaFEb3K9EI" target="_blank"><img src="https://github.com/user-attachments/assets/69448d93-e021-4c3e-97b8-97e1de828596" width="720" height="400" /></a>
+
+  ###
+  
+  <img src="https://github.com/user-attachments/assets/f2b269aa-72be-4695-a678-e84cbce0bbb9" width="720" height="520" />
+
+# Project: Configuring a Custom VPC with Public and Private Subnets in AWS ✅
+
+## ✅ Task 1: Create a New VPC
+
+- [ ] # Once signed in, set the **AWS Region** to **US East (N. Virginia) (us-east-1)**.
+- [ ] # Ensure you are in the **US East (N. Virginia) (us-east-1)** region.
+- [ ] # Navigate to **VPC** by:
+  - Clicking on **Services** (top menu).
+  - Searching for **VPC** and selecting it under **Networking & Content Delivery**.
+- [ ] # Click on **Your VPCs** (left menu).
+- [ ] # Click on **Create VPC**.
+- [ ] # In the **Create VPC** form:
+  - Select **VPC Only**.
+  - **Name tag**: Enter `MyVPC`.
+  - **IPv4 CIDR block**: Enter `10.0.0.0/16`.
+  - **IPv6 CIDR block**: Ensure **No IPv6 CIDR Block** is selected.
+  - **Tenancy**: Keep as **Default**.
+- [ ] # Click on **Create VPC**.
+- [ ] # Confirm that the VPC appears in the list.
+
+---
+
+## ✅ Task 2: Create Public and Private Subnets
+
+### **Create a Public Subnet**
+- [ ] # Click on **Subnets** (left menu).
+- [ ] # Click on **Create subnet**.
+- [ ] # In the **Create Subnet** form:
+  - **VPC ID**: Select `MyVPC`.
+  - **Subnet Name**: Enter `MyPublicSubnet`.
+  - **Availability Zone**: Select `us-east-1a`.
+  - **IPv4 CIDR block**: Enter `10.0.1.0/24`.
+- [ ] # Click **Create subnet**.
+
+### **Create a Private Subnet**
+- [ ] # Click on **Create subnet** again.
+- [ ] # In the **Create Subnet** form:
+  - **VPC ID**: Select `MyVPC`.
+  - **Subnet Name**: Enter `MyPrivateSubnet`.
+  - **Availability Zone**: Select `us-east-1b`.
+  - **IPv4 CIDR block**: Enter `10.0.2.0/24`.
+- [ ] # Click **Create subnet**.
+
+---
+
+## ✅ Task 3: Create and Attach an Internet Gateway
+
+- [ ] # Click on **Internet Gateways** (left menu).
+- [ ] # Click **Create internet gateway**.
+- [ ] # **Name Tag**: Enter `MyInternetGateway`.
+- [ ] # Click **Create internet gateway**.
+- [ ] # Select the created Internet Gateway from the list.
+- [ ] # Click on **Actions > Attach to VPC**.
+- [ ] # Select **MyVPC** from the dropdown list.
+- [ ] # Click **Attach internet gateway**.
+
+---
+
+## ✅ Task 4: Create and Configure Route Tables
+
+### **Create a Public Route Table**
+- [ ] # Click on **Route Tables** (left menu).
+- [ ] # Click on **Create route table**.
+- [ ] # **Name**: Enter `PublicRouteTable`.
+- [ ] # **VPC**: Select `MyVPC`.
+- [ ] # Click **Create route table**.
+
+### **Create a Private Route Table**
+- [ ] # Click on **Create route table** again.
+- [ ] # **Name**: Enter `PrivateRouteTable`.
+- [ ] # **VPC**: Select `MyVPC`.
+- [ ] # Click **Create route table**.
+
+### **Associate Public Subnet with the Public Route Table**
+- [ ] # Select `PublicRouteTable` from the list.
+- [ ] # Go to **Subnet Associations** tab.
+- [ ] # Click **Edit subnet associations**.
+- [ ] # Select **MyPublicSubnet** from the list.
+- [ ] # Click **Save associations**.
+
+### **Associate Private Subnet with the Private Route Table**
+- [ ] # Select `PrivateRouteTable` from the list.
+- [ ] # Go to **Subnet Associations** tab.
+- [ ] # Click **Edit subnet associations**.
+- [ ] # Select **MyPrivateSubnet** from the list.
+- [ ] # Click **Save associations**.
+
+### **Configure Public Route Table to Allow Internet Traffic**
+- [ ] # Select `PublicRouteTable` from the list.
+- [ ] # Go to **Routes** tab.
+- [ ] # Click **Edit routes**.
+- [ ] # Click **Add route**.
+- [ ] # Set:
+  - **Destination**: `0.0.0.0/0`
+  - **Target**: Select **Internet Gateway** (`MyInternetGateway`).
+- [ ] # Click **Save changes**.
+
+✅ **Congratulations! You have successfully configured a custom VPC with public and private subnets in AWS. 🚀**
+
+</details> 
 
 
