@@ -723,7 +723,7 @@ def lambda_handler(event, context):
 
   ###
   
-  <img src="https://github.com/user-attachments/assets/f2b269aa-72be-4695-a678-e84cbce0bbb9" width="720" height="520" />
+  <img src="https://github.com/user-attachments/assets/42f30705-4bfc-4ce2-aaf1-faf37755903a" width="720" height="520" />
 
 # Project: Configuring a Custom VPC with Public and Private Subnets in AWS ✅
 
