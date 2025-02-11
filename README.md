@@ -719,11 +719,11 @@ def lambda_handler(event, context):
   
   ###
      
-  <a href="https://youtu.be/gFaFEb3K9EI" target="_blank"><img src="https://github.com/user-attachments/assets/69448d93-e021-4c3e-97b8-97e1de828596" width="920" height="400" /></a>
+  <a href="https://youtu.be/gFaFEb3K9EI" target="_blank"><img src="https://github.com/user-attachments/assets/69448d93-e021-4c3e-97b8-97e1de828596" width="720" height="400" /></a>
 
   ###
   
-  <img src="https://github.com/user-attachments/assets/42f30705-4bfc-4ce2-aaf1-faf37755903a" width="720" height="520" />
+  <img src="https://github.com/user-attachments/assets/42f30705-4bfc-4ce2-aaf1-faf37755903a" width="920" height="520" />
 
 # Project: Configuring a Custom VPC with Public and Private Subnets in AWS ✅
 
