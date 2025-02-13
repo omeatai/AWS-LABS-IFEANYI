@@ -837,13 +837,140 @@ def lambda_handler(event, context):
   
   <img src="https://github.com/user-attachments/assets/42f30705-4bfc-4ce2-aaf1-faf37755903a" width="920" height="520" />
 
-# Project: Configuring a Custom VPC with Public and Private Subnets in AWS ✅
+# Project: Deploying a Secure AWS NAT Network with Public and Private Subnets ✅
 
+## **Task 1: Create a VPC**
+- [ ] Ensure the default AWS Region is **US East (N. Virginia) (us-east-1)**.
+- [ ] Navigate to **VPC > Your VPCs**.
+- [ ] Click **Create VPC**.
+- [ ] Select **VPC Only**.
+- [ ] Set **Name Tag**: `MyVPC`.
+- [ ] Set **IPv4 CIDR Block**: `10.0.0.0/16`.
+- [ ] Ensure **No IPv6 CIDR Block** is selected.
+- [ ] Ensure **Tenancy** is set to **Default**.
+- [ ] Click **Create VPC**.
 
+## **Task 2: Create Public and Private Subnets**
+- [ ] Navigate to **VPC > Subnets**.
+- [ ] Click **Create Subnet**.
 
+### **Create Public Subnet**
+- [ ] Select **VPC ID**: `MyVPC`.
+- [ ] Set **Subnet Name**: `MyPublicSubnet`.
+- [ ] Select **Availability Zone**: `No Preference`.
+- [ ] Set **IPv4 CIDR Block**: `10.0.0.0/24`.
+- [ ] Click **Create Subnet**.
+- [ ] Select `MyPublicSubnet`, go to **Actions > Edit subnet settings**.
+- [ ] Enable **Auto-assign public IPv4 address**.
+- [ ] Click **Save**.
 
+### **Create Private Subnet**
+- [ ] Click **Create Subnet**.
+- [ ] Select **VPC ID**: `MyVPC`.
+- [ ] Set **Subnet Name**: `MyPrivateSubnet`.
+- [ ] Select **Availability Zone**: `No Preference`.
+- [ ] Set **IPv4 CIDR Block**: `10.0.1.0/24`.
+- [ ] Click **Create Subnet**.
 
+## **Task 3: Create and Attach an Internet Gateway**
+- [ ] Navigate to **VPC > Internet Gateways**.
+- [ ] Click **Create Internet Gateway**.
+- [ ] Set **Name Tag**: `MyIGW`.
+- [ ] Click **Create Internet Gateway**.
+- [ ] Select `MyIGW`, go to **Actions > Attach to VPC**.
+- [ ] Select `MyVPC`.
+- [ ] Click **Attach Internet Gateway**.
 
+## **Task 4: Create and Configure a Public Route Table**
+- [ ] Navigate to **VPC > Route Tables**.
+- [ ] Click **Create Route Table**.
+- [ ] Set **Name Tag**: `PublicRouteTable`.
+- [ ] Select **VPC**: `MyVPC`.
+- [ ] Click **Create Route Table**.
+- [ ] Select `PublicRouteTable`, go to **Routes tab > Edit Routes**.
+- [ ] Click **Add Route**.
+- [ ] Set **Destination**: `0.0.0.0/0`.
+- [ ] Set **Target**: `MyIGW (Internet Gateway)`.
+- [ ] Click **Save Changes**.
+- [ ] Select `PublicRouteTable`, go to **Subnet Associations > Edit Subnet Associations**.
+- [ ] Select **MyPublicSubnet**.
+- [ ] Click **Save Associations**.
+
+## **Task 5: Launch an EC2 Instance in Public Subnet**
+- [ ] Navigate to **EC2 > Instances**.
+- [ ] Click **Launch Instances**.
+- [ ] Set **Name**: `MyPublicServer`.
+- [ ] Select **Amazon Linux 2 AMI**.
+- [ ] Choose **Instance Type**: `t2.micro`.
+- [ ] Under **Key Pair**, click **Create new Key Pair**.
+  - **Key Pair Name**: `MyKey`.
+  - **Key Pair Type**: `RSA`.
+  - **Private Key Format**: `.pem`.
+- [ ] Click **Create Key Pair**.
+- [ ] Under **Network Settings**, click **Edit**.
+  - **VPC**: `MyVPC`.
+  - **Subnet**: `MyPublicSubnet`.
+  - **Auto-assign Public IP**: **Enabled**.
+  - **Create new Security Group**:
+    - **Name**: `MyEC2Server_SG`
+    - **Description**: `Security Group to allow traffic to EC2`
+    - **Inbound Rule**: **Allow SSH (Port 22) from Anywhere**.
+- [ ] Click **Launch Instance**.
+- [ ] Click **View all Instances** and wait for status **Running**.
+
+## **Task 6: Launch an EC2 Instance in Private Subnet**
+- [ ] Click **Launch Instances**.
+- [ ] Set **Name**: `MyPrivateServer`.
+- [ ] Select **Amazon Linux 2 AMI**.
+- [ ] Choose **Instance Type**: `t2.micro`.
+- [ ] Under **Key Pair**, select **MyKey**.
+- [ ] Under **Network Settings**, click **Edit**.
+  - **VPC**: `MyVPC`.
+  - **Subnet**: `MyPrivateSubnet`.
+  - **Auto-assign Public IP**: **Disabled**.
+  - **Select Existing Security Group**: `MyEC2Server_SG`.
+- [ ] Click **Launch Instance**.
+- [ ] Click **View all Instances** and wait for status **Running**.
+- [ ] Note the **Private IP Address** of `MyPrivateServer`.
+
+## **Task 7: SSH into Public and Private EC2 Instances**
+
+### **SSH into MyPublicServer**
+- [ ] Select `MyPublicServer`, click **Connect**.
+- [ ] Choose **EC2 Instance Connect**, click **Connect**.
+- [ ] Switch to root user:  
+  ```bash
+  sudo su
+  ```
+- [ ]  Update instance:
+  ```bash
+  yum -y update
+  ```
+  
+### **SSH into MyPublicServer**
+- [ ] Open MyKey.pem in a text editor on your local machine and copy its contents.
+- [ ] In MyPublicServer, create the key file:
+  ```bash
+  vi MyKey.pem
+  ```
+- [ ] Press i to insert, paste the key, then press Esc and type :wq to save.
+- [ ] Set correct permissions:
+  ```bash
+  chmod 400 MyKey.pem
+  ```
+- [ ] SSH into MyPrivateServer:
+  ```bash
+  ssh ec2-user@<Private IP> -i MyKey.pem
+  ```
+- [ ] Switch to root user:
+  ```bash
+   sudo su
+  ```
+- [ ] Attempt update:
+  ```bash
+  yum -y update
+  ```
+- [ ] Expected result: No internet access.
 
 
 
