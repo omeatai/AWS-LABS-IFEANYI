@@ -972,6 +972,47 @@ def lambda_handler(event, context):
   ```
 - [ ] Expected result: No internet access.
 
+## **Task 8: Create a NAT Gateway**
+ - [ ] Navigate to VPC > NAT Gateways.
+ - [ ] Click Create NAT Gateway.
+ - [ ] Set Name Tag: MyNATGateway.
+ - [ ] Select Subnet: MyPublicSubnet.
+ - [ ] Click Allocate Elastic IP.
+ - [ ] Click Create NAT Gateway.
+ - [ ] Wait for status Available.
+
+## **Task 9: Update Private Route Table for NAT Gateway**
+ - [ ] Navigate to VPC > Route Tables.
+ - [ ] Select Main Route Table.
+ - [ ] Click Edit Routes.
+ - [ ] Click Add Route.
+ - [ ] Set Destination: 0.0.0.0/0.
+ - [ ] Set Target: MyNATGateway.
+ - [ ] Click Save Changes.
+
+## **Task 10: Test Internet Connection from Private Subnet**
+- [ ] SSH into MyPublicServer.
+- [ ]  Switch to root:
+```bash
+   sudo su
+```
+- [ ] SSH into MyPrivateServer: 
+```bash
+   ssh ec2-user@<Private IP> -i MyKey.pem
+```
+- [ ] Switch to root:
+```bash
+   sudo su
+```
+- [ ] Run updates: 
+```bash
+   yum -y update
+```
+- [ ] Expected result: Update should complete successfully, confirming internet access via NAT Gateway.
+
+Completion
+✅ AWS VPC with Public & Private Subnets Successfully Deployed!
+
 
 
 
