@@ -1010,7 +1010,7 @@ def lambda_handler(event, context):
 ```
 - [ ] Expected result: Update should complete successfully, confirming internet access via NAT Gateway.
 
-Completion
+Completion:
 ✅ AWS VPC with Public & Private Subnets Successfully Deployed!
 
 
