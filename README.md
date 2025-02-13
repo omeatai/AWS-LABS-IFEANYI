@@ -826,4 +826,29 @@ def lambda_handler(event, context):
 
 </details> 
 
+<details> 
+  <summary>Project 13 - Configuring NAT Gateways with AWS Subnets </summary>
+  
+  ###
+     
+  <a href="https://youtu.be/gFaFEb3K9EI" target="_blank"><img src="https://github.com/user-attachments/assets/e5e81af1-cc92-4cd9-8f33-0b30f8b88418" width="720" height="400" /></a>
+
+  ###
+  
+  <img src="https://github.com/user-attachments/assets/42f30705-4bfc-4ce2-aaf1-faf37755903a" width="920" height="520" />
+
+# Project: Configuring a Custom VPC with Public and Private Subnets in AWS ✅
+
+
+
+
+
+
+
+
+
+
+</details> 
+
+
 
