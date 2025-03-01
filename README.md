@@ -835,7 +835,7 @@ def lambda_handler(event, context):
 
   ###
   
-  <img src="https://github.com/user-attachments/assets/42f30705-4bfc-4ce2-aaf1-faf37755903a" width="920" height="520" />
+  <img src="https://github.com/user-attachments/assets/321db31a-370c-4809-82d0-832da55e9e60" width="920" height="520" />
 
 # Project 13: Deploying a Secure AWS NAT Network with Public and Private Subnets ✅
 
