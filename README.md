@@ -837,7 +837,7 @@ def lambda_handler(event, context):
   
   <img src="https://github.com/user-attachments/assets/42f30705-4bfc-4ce2-aaf1-faf37755903a" width="920" height="520" />
 
-# Project: Deploying a Secure AWS NAT Network with Public and Private Subnets ✅
+# Project 13: Deploying a Secure AWS NAT Network with Public and Private Subnets ✅
 
 ## **Task 1: Create a VPC**
 - [ ] Ensure the default AWS Region is **US East (N. Virginia) (us-east-1)**.
