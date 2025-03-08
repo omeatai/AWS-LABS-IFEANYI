@@ -1013,10 +1013,116 @@ def lambda_handler(event, context):
 Completion:
 ✅ AWS VPC with Public & Private Subnets Successfully Deployed!
 
-
-
-
 </details> 
 
+<details> 
+  <summary>Project 14 - AWS Multi-Layered VPC Setup </summary>
+  
+  ###
+     
+  <a href="https://youtu.be/E8-pe2m5qYE" target="_blank"><img src="https://github.com/user-attachments/assets/e5e81af1-cc92-4cd9-8f33-0b30f8b88418" width="720" height="400" /></a>
 
+  ###
+  
+  <img src="https://github.com/user-attachments/assets/321db31a-370c-4809-82d0-832da55e9e60" width="920" height="520" />
 
+# Project 14: AWS Multi-Layered VPC Setup ✅
+
+## **Task 1: Create a VPC**
+
+## ** ✅ Task 2: Create a New VPC**  
+- Navigate to **VPC** under **Networking & Content Delivery**.  
+- Click **Create VPC** and enter:  
+  - **Name tag:** `whizlabs_VPC`  
+  - **IPv4 CIDR Block:** `10.0.0.0/16`  
+  - **IPv6 CIDR Block:** `No IPv6 CIDR block`  
+  - **Tenancy:** `Default`  
+- Click **Create VPC**.  
+
+## ** ✅ Task 3: Create and Attach an Internet Gateway**  
+- Navigate to **Internet Gateways**.  
+- Click **Create internet gateway** and enter:  
+  - **Name tag:** `whizlabs_IGW`  
+- Click **Create Internet Gateway**.  
+- Attach the Internet Gateway to `whizlabs_VPC`.  
+
+## ** ✅ Task 4: Create Two Subnets ** 
+- Navigate to **Subnets** and create the following:  
+  - **Public Subnet:**  
+    - **VPC ID:** `whizlabs_VPC`  
+    - **Name tag:** `public_subnet`  
+    - **CIDR Block:** `10.0.1.0/24`  
+  - **Private Subnet:**  
+    - **VPC ID:** `whizlabs_VPC`  
+    - **Name tag:** `private_subnet`  
+    - **CIDR Block:** `10.0.2.0/24`  
+
+## ** ✅ Task 5: Create Route Tables and Associate Subnets ** 
+- Create a **Public Route Table**:  
+  - **Name tag:** `public_route`  
+  - **VPC ID:** `whizlabs_VPC`  
+  - **Destination:** `0.0.0.0/0`  
+  - **Target:** `whizlabs_IGW`  
+  - **Associate with:** `public_subnet`  
+
+- Create a **Private Route Table**:  
+  - **Name tag:** `private_route`  
+  - **VPC ID:** `whizlabs_VPC`  
+  - **Associate with:** `private_subnet`  
+
+## ** ✅ Task 6: Create a Security Group ** 
+- Navigate to **Security Groups** and create:  
+  - **Name:** `whizlabs_securitygroup`  
+  - **Description:** `Security group for multilayered VPC`  
+  - **VPC:** `whizlabs_VPC`  
+  - **Inbound Rules:**  
+    - **SSH (22):** `0.0.0.0/0`  
+    - **All ICMP - IPv4:** `Anywhere IPv4`  
+
+## ** ✅ Task 7: Create and Configure Network ACL ** 
+- Navigate to **Network ACLs** and create:  
+  - **Name:** `whizlabs_NACL`  
+  - **VPC ID:** `whizlabs_VPC`  
+- Add **Inbound Rules**:  
+  - **SSH (22):** `0.0.0.0/0` (Allow)  
+  - **All ICMP - IPv4:** `0.0.0.0/0` (Allow)  
+- Add **Outbound Rules**:  
+  - **All ICMP - IPv4:** `0.0.0.0/0` (Allow)  
+  - **Custom TCP Rule (1024-65535):** `0.0.0.0/0` (Allow)  
+- Associate both `public_subnet` and `private_subnet` with `whizlabs_NACL`.  
+
+## ** ✅ Task 8: Launch Two EC2 Instances ** 
+- **Public Instance (`public_instance`)**:  
+  - **AMI:** Amazon Linux 2  
+  - **Instance Type:** `t2.micro`  
+  - **Key Pair:** Create `WhizKey`  
+  - **VPC:** `whizlabs_VPC`  
+  - **Subnet:** `public_subnet`  
+  - **Auto-assign Public IP:** Enabled  
+  - **Security Group:** `whizlabs_securitygroup`  
+
+- **Private Instance (`private_instance`)**:  
+  - **AMI:** Amazon Linux 2  
+  - **Instance Type:** `t2.micro`  
+  - **Key Pair:** `WhizKey`  
+  - **VPC:** `whizlabs_VPC`  
+  - **Subnet:** `private_subnet`  
+  - **Auto-assign Public IP:** Disabled  
+  - **Security Group:** `whizlabs_securitygroup`  
+
+## ** ✅ Task 9: Test EC2 Instances ** 
+- **Connect to `public_instance` via SSH**:  
+
+  ```bash
+  ssh -i WhizKey.pem ec2-user@<public_instance_IP>
+  ```
+
+- **Ping private_instance from public_instance**:
+
+  ```bash
+  ping <private_instance_IP>
+  ```
+
+  - **Ensure the private instance responds successfully.**
+
+</details> 
