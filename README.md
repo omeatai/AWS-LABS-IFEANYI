@@ -1028,15 +1028,8 @@ Completion:
 
 # Project 14: Deploying a Multi-Layered VPC on AWS ✅
 
-## **Task 1: Sign in to AWS Management Console**
-- [ ] Click **Open Console** to access the AWS Console.
-- [ ] On the **AWS Sign-in Page**, do not modify the **Account ID**.
-- [ ] Copy **User Name** and **Password** from the Lab Console.
-- [ ] Paste credentials into AWS IAM sign-in fields.
-- [ ] Click **Sign in**.
+## **Task 1: Create a New VPC**
 - [ ] Set AWS **Region** to **US East (N. Virginia) (us-east-1)**.
-
-## **Task 2: Create a New VPC**
 - [ ] Navigate to **VPC > Your VPCs**.
 - [ ] Click **Create VPC**.
 - [ ] Select **VPC Only**.
@@ -1046,7 +1039,7 @@ Completion:
 - [ ] **Tenancy**: `Default`.
 - [ ] Click **Create VPC**.
 
-## **Task 3: Create and Attach an Internet Gateway**
+## **Task 2: Create and Attach an Internet Gateway**
 - [ ] Navigate to **VPC > Internet Gateways**.
 - [ ] Click **Create Internet Gateway**.
 - [ ] Name: `whizlabs_IGW`.
@@ -1056,7 +1049,7 @@ Completion:
 - [ ] Select `whizlabs_VPC`.
 - [ ] Click **Attach Internet Gateway**.
 
-## **Task 4: Create Two Subnets**
+## **Task 3: Create Two Subnets**
 - [ ] Navigate to **VPC > Subnets**.
 - [ ] Click **Create Subnet**.
 
@@ -1075,7 +1068,7 @@ Completion:
 - [ ] **IPv4 CIDR Block**: `10.0.2.0/24`.
 - [ ] Click **Create Subnet**.
 
-## **Task 5: Create Route Tables and Configure Routes**
+## **Task 4: Create Route Tables and Configure Routes**
 - [ ] Navigate to **VPC > Route Tables**.
 - [ ] Click **Create Route Table**.
 
@@ -1110,7 +1103,7 @@ Completion:
 - [ ] Select `private_subnet`.
 - [ ] Click **Save Associations**.
 
-## **Task 6: Create a Security Group**
+## **Task 5: Create a Security Group**
 - [ ] Navigate to **VPC > Security Groups**.
 - [ ] Click **Create Security Group**.
 - [ ] Name: `whizlabs_securitygroup`.
@@ -1127,7 +1120,7 @@ Completion:
 
 - [ ] Click **Create Security Group**.
 
-## **Task 7: Create and Configure Network ACL**
+## **Task 6: Create and Configure Network ACL**
 - [ ] Navigate to **VPC > Network ACLs**.
 - [ ] Click **Create Network ACL**.
 - [ ] Name: `whizlabs_NACL`.
@@ -1166,7 +1159,7 @@ Completion:
 - [ ] Select **public_subnet** and **private_subnet**.
 - [ ] Click **Save Changes**.
 
-## **Task 8: Launch Two EC2 Instances**
+## **Task 7: Launch Two EC2 Instances**
 - [ ] Navigate to **EC2 > Instances**.
 - [ ] Click **Launch Instances**.
 
@@ -1191,7 +1184,7 @@ Completion:
 - [ ] **Security Group**: `whizlabs_securitygroup`.
 - [ ] Click **Launch Instance**.
 
-## **Task 9: Test Connectivity**
+## **Task 8: Test Connectivity**
 - [ ] Copy **Public IPv4 Address** of `public_instance`.
 - [ ] Copy **Private IPv4 Address** of `private_instance`.
 - [ ] SSH into `public_instance`:
