@@ -1016,17 +1016,17 @@ Completion:
 </details> 
 
 <details> 
-  <summary>Project 14 - Deploying a Multi-Layered VPC on AWS </summary>
+  <summary>Project 14 - Deploying a Secured Multi-Layered VPC on AWS </summary>
   
   ###
      
-  <a href="https://youtu.be/E8-pe2m5qYE" target="_blank"><img src="https://github.com/user-attachments/assets/e5e81af1-cc92-4cd9-8f33-0b30f8b88418" width="720" height="400" /></a>
+  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/0b86b6e0-69fe-4306-973d-d63478f2eb22" width="720" height="400" /></a>
 
   ###
   
   <img src="https://github.com/user-attachments/assets/321db31a-370c-4809-82d0-832da55e9e60" width="920" height="520" />
 
-# Project 14: Deploying a Multi-Layered VPC on AWS ✅
+# Project 14: Deploying a Secured Multi-Layered VPC on AWS ✅
 
 ## **Task 1: Create a New VPC**
 - [ ] Set AWS **Region** to **US East (N. Virginia) (us-east-1)**.
