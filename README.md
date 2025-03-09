@@ -1024,7 +1024,7 @@ Completion:
 
   ###
   
-  <img src="https://github.com/user-attachments/assets/321db31a-370c-4809-82d0-832da55e9e60" width="920" height="520" />
+  <img src="https://github.com/user-attachments/assets/29fee6cf-a194-4ea3-be7e-be2071fee8f7" width="920" height="520" />
 
 # Project 14: Deploying a Secured Multi-Layered VPC on AWS ✅
 
