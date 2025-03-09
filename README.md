@@ -1209,10 +1209,10 @@ Completion:
     -  Open command prompt or PowerShell in your windows.
     -  Check where the PEM file has downloaded in your local.
     -  Change your path to downloads section. Example of command <cd downloads>
-    -  With the key which you have copied, we have to use now: 
-      ```bs
-      ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws.com
-      ```
+    -  With the key which you have copied, we have to use now:
+```bash
+ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws.com
+```   
     - You have successfully connected to ec2 instance via windows PowerShell.
 - [ ] For Microsoft Windows Users( Putty):
     - Download putty and puttygen from this link : https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html
