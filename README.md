@@ -1,7 +1,7 @@
 # AWS-LABS
 ### by Ifeanyi Omeata
 
-#### Join me as I complete 300+ Labs and Projects in the AWS Cloud. Follow my Youtube channel at https://www.youtube.com/@omeatai
+#### Join me as I complete 200+ Labs and Projects in the AWS Cloud. Follow my Youtube channel at https://www.youtube.com/@omeatai
 
 <details>
   <summary>Project 1 - Create an IAM User and Group in AWS</summary>
