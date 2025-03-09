@@ -1213,7 +1213,7 @@ Completion:
 ```bash
 ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws.com
 ```   
-    - You have successfully connected to ec2 instance via windows PowerShell.
+- You have successfully connected to ec2 instance via windows PowerShell.
 - [ ] For Microsoft Windows Users( Putty):
     - Download putty and puttygen from this link : https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html
     - To convert your key pair .pem to .ppk.
