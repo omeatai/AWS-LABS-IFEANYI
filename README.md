@@ -1186,6 +1186,57 @@ Completion:
 
 ## **Task 8: Test Connectivity**
 - [ ] Copy **Public IPv4 Address** of `public_instance`.
+- [ ] Select EC2 Instance Connect option and click on Connect button.
+- [ ] A new tab will open in the browser where you can execute the CLI Commands.
+- [ ] For MAC & Linux Users:
+  - Open Terminal application in your local system.
+  - Navigate to the location where .pem key is downloaded and stored in your local.
+  - To update Permissions, run command
+    -  Syntax : chmod 400 keypair_filename
+    -  Example : chmod 400 ec2_connect.pem
+  - User Name of the server:
+    -  Amazon Linux AMI : ec2-user
+    -  Ubuntu AMI : ubuntu
+    -  OPENVPN AMI : root
+  - To SSH and connect to the EC2 Instance, Enter the following command:
+    -  Syntax : ssh -i keypair_filename UserName@publicIPAddress (enter the username and public IP address)
+    -  Example : ssh -i ec2_connect.pem ec2-user@54.172.93.175  --> Click Enter
+    -  Up next, type yes and Enter, you will be successfully logged into EC2 Instance.
+- [ ] For Windows (10,11) Users in command prompt and PowerShell:
+    -  Use PEM file from the EC2 Instance.
+    -  Once instance is launched, click on connect button and go to SSH client section.
+    -  Copy the SSH client key.
+    -  Open command prompt or PowerShell in your windows.
+    -  Check where the PEM file has downloaded in your local.
+    -  Change your path to downloads section. Example of command <cd downloads>
+    -  With the key which you have copied, we have to use now: 
+      ```bs
+      ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws.com
+      ```
+    - You have successfully connected to ec2 instance via windows PowerShell.
+- [ ] For Microsoft Windows Users( Putty):
+    - Download putty and puttygen from this link : https://www.chiark.greenend.org.uk/~sgtatham/putty/releases/0.74.html
+    - To convert your key pair .pem to .ppk.
+      - Open PuttyGen.
+      - Click on Load
+      - Click on All files to show your .pem file and select the .pem keypair file.
+      - And Click on open, You will get uccess message if done correctly.
+      - Click on the Save Private Key button.
+      - Enter keypairname and Save.
+      - keypairname.ppk file will be saved to your local machine.
+    - Navigate to the EC2 instance page and get the public IP of the machine.
+    - Open Putty
+      - Host Name: Enter the public IP address.
+      - Click SSH, select AUTH, and again click credentials, then Browse to select the private key (.ppk) that you converted from the .pem file.
+      - Click on Open
+      - Select accept to connect to the machine
+      - If you are using Amazon Linux AMI  for the lab:
+        - Enter user name: ec2-user and hit Enter.
+      - If you are using Ubuntu AMI for the lab:
+        - Enter user name: ubuntu and hit Enter.
+      - If you are using OPENVPN AMI for the lab:
+        - Enter user name: root and hit Enter.
+      - You will see the console after a successful login.         
 - [ ] Copy **Private IPv4 Address** of `private_instance`.
 - [ ] SSH into `public_instance`:
   ```bash
