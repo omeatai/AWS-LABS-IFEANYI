@@ -1033,7 +1033,7 @@ Completion:
 - [ ] Navigate to **VPC > Your VPCs**.
 - [ ] Click **Create VPC**.
 - [ ] Select **VPC Only**.
-- [ ] Name: `whizlabs_VPC`.
+- [ ] Name: `my_VPC`.
 - [ ] **IPv4 CIDR Block**: `10.0.0.0/16`.
 - [ ] **IPv6 CIDR Block**: `No IPv6 CIDR Block`.
 - [ ] **Tenancy**: `Default`.
@@ -1042,11 +1042,11 @@ Completion:
 ## **Task 2: Create and Attach an Internet Gateway**
 - [ ] Navigate to **VPC > Internet Gateways**.
 - [ ] Click **Create Internet Gateway**.
-- [ ] Name: `whizlabs_IGW`.
+- [ ] Name: `my_IGW`.
 - [ ] Click **Create Internet Gateway**.
-- [ ] Select `whizlabs_IGW` from the list.
+- [ ] Select `my_IGW` from the list.
 - [ ] Click **Actions > Attach to VPC**.
-- [ ] Select `whizlabs_VPC`.
+- [ ] Select `my_VPC`.
 - [ ] Click **Attach Internet Gateway**.
 
 ## **Task 3: Create Two Subnets**
@@ -1054,7 +1054,7 @@ Completion:
 - [ ] Click **Create Subnet**.
 
 ### **Create Public Subnet**
-- [ ] **VPC ID**: `whizlabs_VPC`.
+- [ ] **VPC ID**: `my_VPC`.
 - [ ] **Name**: `public_subnet`.
 - [ ] **Availability Zone**: `No Preference`.
 - [ ] **IPv4 CIDR Block**: `10.0.1.0/24`.
@@ -1062,7 +1062,7 @@ Completion:
 
 ### **Create Private Subnet**
 - [ ] Click **Create Subnet**.
-- [ ] **VPC ID**: `whizlabs_VPC`.
+- [ ] **VPC ID**: `my_VPC`.
 - [ ] **Name**: `private_subnet`.
 - [ ] **Availability Zone**: `No Preference`.
 - [ ] **IPv4 CIDR Block**: `10.0.2.0/24`.
@@ -1074,13 +1074,13 @@ Completion:
 
 ### **Create Public Route Table**
 - [ ] Name: `public_route`.
-- [ ] **VPC**: `whizlabs_VPC`.
+- [ ] **VPC**: `my_VPC`.
 - [ ] Click **Create Route Table**.
 
 ### **Create Private Route Table**
 - [ ] Click **Create Route Table**.
 - [ ] Name: `private_route`.
-- [ ] **VPC**: `whizlabs_VPC`.
+- [ ] **VPC**: `my_VPC`.
 - [ ] Click **Create Route Table**.
 
 ### **Configure Public Route**
@@ -1088,7 +1088,7 @@ Completion:
 - [ ] Go to **Routes > Edit Routes**.
 - [ ] Click **Add Route**.
 - [ ] **Destination**: `0.0.0.0/0`.
-- [ ] **Target**: `whizlabs_IGW (Internet Gateway)`.
+- [ ] **Target**: `my_IGW (Internet Gateway)`.
 - [ ] Click **Save Changes**.
 
 ### **Associate Public Subnet**
@@ -1106,9 +1106,9 @@ Completion:
 ## **Task 5: Create a Security Group**
 - [ ] Navigate to **VPC > Security Groups**.
 - [ ] Click **Create Security Group**.
-- [ ] Name: `whizlabs_securitygroup`.
+- [ ] Name: `my_securitygroup`.
 - [ ] Description: `Security group for multilayered VPC`.
-- [ ] **VPC**: `whizlabs_VPC`.
+- [ ] **VPC**: `my_VPC`.
 
 ### **Inbound Rules**
 - [ ] **SSH**:
@@ -1123,8 +1123,8 @@ Completion:
 ## **Task 6: Create and Configure Network ACL**
 - [ ] Navigate to **VPC > Network ACLs**.
 - [ ] Click **Create Network ACL**.
-- [ ] Name: `whizlabs_NACL`.
-- [ ] **VPC**: `whizlabs_VPC`.
+- [ ] Name: `my_NACL`.
+- [ ] **VPC**: `my_VPC`.
 - [ ] Click **Create Network ACL**.
 
 ### **Inbound Rules**
@@ -1153,7 +1153,7 @@ Completion:
 - [ ] Click **Save Changes**.
 
 ### **Associate NACL with Subnets**
-- [ ] Select `whizlabs_NACL`.
+- [ ] Select `my_NACL`.
 - [ ] Go to **Subnet Associations**.
 - [ ] Click **Edit Subnet Associations**.
 - [ ] Select **public_subnet** and **private_subnet**.
@@ -1169,19 +1169,19 @@ Completion:
 - [ ] **Instance Type**: `t2.micro`.
 - [ ] **Key Pair**: Create `WhizKey.pem`.
 - [ ] **Network Settings**:
-  - **VPC**: `whizlabs_VPC`.
+  - **VPC**: `my_VPC`.
   - **Subnet**: `public_subnet`.
   - **Auto-assign Public IP**: Enabled.
-  - **Security Group**: `whizlabs_securitygroup`.
+  - **Security Group**: `my_securitygroup`.
 - [ ] Click **Launch Instance**.
 
 ### **Private Instance**
 - [ ] Name: `private_instance`.
 - [ ] **Key Pair**: Use `WhizKey.pem`.
-- [ ] **VPC**: `whizlabs_VPC`.
+- [ ] **VPC**: `my_VPC`.
 - [ ] **Subnet**: `private_subnet`.
 - [ ] **Auto-assign Public IP**: Disabled.
-- [ ] **Security Group**: `whizlabs_securitygroup`.
+- [ ] **Security Group**: `my_securitygroup`.
 - [ ] Click **Launch Instance**.
 
 ## **Task 8: Test Connectivity**
