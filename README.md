@@ -1167,7 +1167,7 @@ Completion:
 - [ ] Name: `public_instance`.
 - [ ] **AMI**: `Amazon Linux 2 AMI`.
 - [ ] **Instance Type**: `t2.micro`.
-- [ ] **Key Pair**: Create `WhizKey.pem`.
+- [ ] **Key Pair**: Create `myKey.pem`.
 - [ ] **Network Settings**:
   - **VPC**: `my_VPC`.
   - **Subnet**: `public_subnet`.
@@ -1177,7 +1177,7 @@ Completion:
 
 ### **Private Instance**
 - [ ] Name: `private_instance`.
-- [ ] **Key Pair**: Use `WhizKey.pem`.
+- [ ] **Key Pair**: Use `myKey.pem`.
 - [ ] **VPC**: `my_VPC`.
 - [ ] **Subnet**: `private_subnet`.
 - [ ] **Auto-assign Public IP**: Disabled.
@@ -1240,7 +1240,7 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 - [ ] Copy **Private IPv4 Address** of `private_instance`.
 - [ ] SSH into `public_instance`:
   ```bash
-  ssh -i WhizKey.pem ec2-user@<Public_IP>
+  ssh -i myKey.pem ec2-user@<Public_IP>
   ```
 - [ ] Ping private_instance from public_instance:
   ```bash
