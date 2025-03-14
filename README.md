@@ -1739,40 +1739,42 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 }
 ```
 - [ ] Copy the Object URL and save it for later.
-      
-🛠️ Task 3: Create a CloudFormation Stack
- Navigate to CloudFormation (Services → Management & Governance).
- Click Create Stack.
-Select Template
- Choose Template is ready.
- Select Amazon S3 URL as the template source.
- Paste the copied S3 Object URL (e.g., https://whizlabs90553761.s3.amazonaws.com/LAMP_template.json).
- Click Next.
-Specify Stack Details
- Stack Name: MyFirstCFStack.
- DB Name: MyDatabase.
- DB Password: whizlabsdb123.
- DB Root Password: whizlabsdbroot123.
- DB User: WhizlabsDBUser.
- Instance Type: t2.micro.
- Key Name: whizlabs-key.
- SSH Location: 0.0.0.0/0.
- Click Next.
-Configure Stack Options
- Add a new Tag:
-Key: Name
-Value: MyCF
- Leave Permissions and other fields as default.
- Click Next → Review & Submit.
-Monitor Stack Creation
- The stack will show CREATE_IN_PROGRESS.
- Wait 1-5 minutes until status changes to CREATE_COMPLETE.
- Click Refresh to check the progress.
-✅ Task 4: Test the LAMP Server
- Navigate to the Outputs tab in CloudFormation.
- Copy the generated URL (e.g., http://ec2-18-212-56-170.compute-1.amazonaws.com/).
- Open the URL in a browser.
- If PHP info and database connection are visible, the setup is successful! 🎉
+
+## **Task 2: Create a CloudFormation Stack**   
+- [ ] Navigate to CloudFormation (Services → Management & Governance).
+- [ ] Click Create Stack.
+- [ ] Select Template
+ - [ ] Choose Template is ready.
+ - [ ] Select Amazon S3 URL as the template source.
+ - [ ] Paste the copied S3 Object URL (e.g., https://whizlabs90553761.s3.amazonaws.com/LAMP_template.json).
+ - [ ] Click Next.
+- [ ] Specify Stack Details
+ - [ ] Stack Name: MyFirstCFStack.
+ - [ ] DB Name: MyDatabase.
+ - [ ] DB Password: whizlabsdb123.
+ - [ ] DB Root Password: whizlabsdbroot123.
+ - [ ] DB User: WhizlabsDBUser.
+ - [ ] Instance Type: t2.micro.
+ - [ ] Key Name: whizlabs-key.
+ - [ ] SSH Location: 0.0.0.0/0.
+ - [ ] Click Next.
+- [ ] Configure Stack Options
+ - [ ] Add a new Tag:
+ - [ ] Key: Name
+ - [ ] Value: MyCF
+ - [ ] Leave Permissions and other fields as default.
+ - [ ] Click Next → Review & Submit.
+       
+## **Task 3: Monitor Stack Creation**   
+- [ ] The stack will show CREATE_IN_PROGRESS.
+- [ ] Wait 1-5 minutes until status changes to CREATE_COMPLETE.
+- [ ] Click Refresh to check the progress.
+
+## **Task 4: Test the LAMP Server** 
+- [ ] Navigate to the Outputs tab in CloudFormation.
+- [ ] Copy the generated URL (e.g., http://ec2-18-212-56-170.compute-1.amazonaws.com/).
+- [ ] Open the URL in a browser.
+- [ ] If PHP info and database connection are visible, the setup is successful! 🎉
 
 ✅ LAMP Server Using AWS CloudFormation Successfully Deployed!
 
