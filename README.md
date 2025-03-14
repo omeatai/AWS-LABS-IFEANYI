@@ -1270,6 +1270,9 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 - [ ] Locate the S3 bucket (or Create one)
 - [ ] Open the bucket and find LAMP_template.json (or Create one).
 - [ ] LAMP_template.json content:
+<details>
+  <summary>VIEW JSON CODE</summary>
+  
 ```json
 {
   "AWSTemplateFormatVersion": "2010-09-09",
@@ -1738,6 +1741,7 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
   }
 }
 ```
+</details>
 - [ ] Copy the Object URL and save it for later.
 
 ## **Task 2: Create a CloudFormation Stack**   
