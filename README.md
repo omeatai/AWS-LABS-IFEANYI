@@ -1744,26 +1744,26 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 - [ ] Navigate to CloudFormation (Services → Management & Governance).
 - [ ] Click Create Stack.
 - [ ] Select Template
- - Choose Template is ready.
- - Select Amazon S3 URL as the template source.
- - Paste the copied S3 Object URL (e.g., https://mylabs90553761.s3.amazonaws.com/LAMP_template.json).
- - Click Next.
+  - Choose Template is ready.
+  - Select Amazon S3 URL as the template source.
+  - Paste the copied S3 Object URL (e.g., https://mylabs90553761.s3.amazonaws.com/LAMP_template.json).
+  - Click Next.
 - [ ] Specify Stack Details
- - Stack Name: MyFirstCFStack.
- - DB Name: MyDatabase.
- - DB Password: mylabsdb123.
- - DB Root Password: mylabsdbroot123.
- - DB User: mylabsDBUser.
- - Instance Type: t2.micro.
- - Key Name: mylabs-key.
- - SSH Location: 0.0.0.0/0.
- - Click Next.
+  - Stack Name: MyFirstCFStack.
+  - DB Name: MyDatabase.
+  - DB Password: mylabsdb123.
+  - DB Root Password: mylabsdbroot123.
+  - DB User: mylabsDBUser.
+  - Instance Type: t2.micro.
+  - Key Name: mylabs-key.
+  - SSH Location: 0.0.0.0/0.
+  - Click Next.
 - [ ] Configure Stack Options
- - Add a new Tag:
- - Key: Name
- - Value: MyCF
- - Leave Permissions and other fields as default.
- - Click Next → Review & Submit.
+  - Add a new Tag:
+  - Key: Name
+  - Value: MyCF
+  - Leave Permissions and other fields as default.
+  - Click Next → Review & Submit.
        
 ## **Task 3: Monitor Stack Creation**   
 - [ ] The stack will show CREATE_IN_PROGRESS.
