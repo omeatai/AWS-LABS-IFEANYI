@@ -1269,9 +1269,9 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 - [ ] Navigate to S3 → Storage section.
 - [ ] Locate the S3 bucket (or Create one)
 - [ ] Open the bucket and find LAMP_template.json (or Create one).
-- [ ] LAMP_template.json content:
+
 <details>
-  <summary>VIEW JSON CODE</summary>
+  <summary>VIEW LAMP_template.json CODE</summary>
   
 ```json
 {
