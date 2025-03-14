@@ -1278,7 +1278,7 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
     "KeyName": {
       "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance",
       "Type": "AWS::EC2::KeyPair::KeyName",
-      "Default": "whizlabs-key",
+      "Default": "mylabs-key",
       "ConstraintDescription": "must be the name of an existing EC2 KeyPair."
     },
     "DBName": {
@@ -1746,16 +1746,16 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 - [ ] Select Template
  - [ ] Choose Template is ready.
  - [ ] Select Amazon S3 URL as the template source.
- - [ ] Paste the copied S3 Object URL (e.g., https://whizlabs90553761.s3.amazonaws.com/LAMP_template.json).
+ - [ ] Paste the copied S3 Object URL (e.g., https://mylabs90553761.s3.amazonaws.com/LAMP_template.json).
  - [ ] Click Next.
 - [ ] Specify Stack Details
  - [ ] Stack Name: MyFirstCFStack.
  - [ ] DB Name: MyDatabase.
- - [ ] DB Password: whizlabsdb123.
- - [ ] DB Root Password: whizlabsdbroot123.
- - [ ] DB User: WhizlabsDBUser.
+ - [ ] DB Password: mylabsdb123.
+ - [ ] DB Root Password: mylabsdbroot123.
+ - [ ] DB User: mylabsDBUser.
  - [ ] Instance Type: t2.micro.
- - [ ] Key Name: whizlabs-key.
+ - [ ] Key Name: mylabs-key.
  - [ ] SSH Location: 0.0.0.0/0.
  - [ ] Click Next.
 - [ ] Configure Stack Options
