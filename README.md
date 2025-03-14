@@ -1742,6 +1742,7 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 }
 ```
 </details>
+
 - [ ] Copy the Object URL and save it for later.
 
 ## **Task 2: Create a CloudFormation Stack**   
