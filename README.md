@@ -1020,7 +1020,7 @@ Completion:
   
   ###
      
-  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/0b86b6e0-69fe-4306-973d-d63478f2eb22" width="720" height="400" /></a>
+  <a href="https://youtu.be/uU9PZN12oGc" target="_blank"><img src="https://github.com/user-attachments/assets/0b86b6e0-69fe-4306-973d-d63478f2eb22" width="720" height="400" /></a>
 
   ###
   
@@ -1257,7 +1257,7 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
   
   ###
      
-  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/0d2596ce-4005-4895-8fac-a69d2ada84f8" width="720" height="400" /></a>
+  <a href="https://youtu.be/mmPR3ITv58k" target="_blank"><img src="https://github.com/user-attachments/assets/0d2596ce-4005-4895-8fac-a69d2ada84f8" width="720" height="400" /></a>
 
   ###
   
