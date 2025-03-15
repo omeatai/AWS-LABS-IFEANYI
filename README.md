@@ -1784,3 +1784,96 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 ✅ LAMP Server Using AWS CloudFormation Successfully Deployed!
 
 </details> 
+
+<details>
+  <summary>Project 16 - Creating a VPC Using AWS CloudFormation</summary>
+
+  ###
+
+  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/sample-image-1.png" width="720" height="400" /></a>
+
+  ###
+
+  <img src="https://github.com/user-attachments/assets/sample-image-2.png" width="920" height="520" />
+
+# Project 16: Creating a VPC Using AWS CloudFormation ✅
+
+## **Introduction**
+This project walks through how to create a VPC using an AWS CloudFormation Stack.  
+We will launch an AWS CloudFormation template to create two subnets initially and later update it to a four-subnet Amazon VPC spanning two Availability Zones.
+
+- **Duration:** 55 minutes  
+- **AWS Region:** US East (N. Virginia) `us-east-1`
+
+### **What is a VPC?**
+A VPC (Virtual Private Cloud) is like a computer network in an on-premises data center. It allows logically isolated networking within the AWS cloud.
+
+- **Subnet:** A subnetwork dividing the VPC for access control.  
+- **CloudFormation:** AWS service for Infrastructure as Code (IaC), supporting JSON and YAML templates.  
+
+## **Task 1: Sign in to AWS Management Console**
+- [ ] Click **Open Console** to navigate to AWS Console.  
+- [ ] On the AWS sign-in page:
+  - **DO NOT** edit/remove the 12-digit Account ID.
+  - Copy and paste the **IAM Username** and **Password** from the lab console.  
+  - Click **Sign in**.  
+- [ ] Set the **default AWS Region** to **US East (N. Virginia) `us-east-1`**.  
+
+## **Task 2: Create Subnets Using the VPC_Template CloudFormation Stack**
+- [ ] Navigate to **S3** (Services → Storage).  
+- [ ] Locate and open the bucket (e.g., `whizlab1234564543`).  
+- [ ] Click on `VPC_template.json` and copy the **Object URL**.  
+- [ ] Navigate to **CloudFormation** (Services → Management & Governance).  
+- [ ] Click **Create Stack** → Choose an existing template.  
+- [ ] Select **Amazon S3 URL** and paste the copied **Object URL**.  
+- [ ] Click **Next**.  
+
+  **Stack Configuration:**  
+  - **Stack Name:** `MyStack123`  
+  - **Tags:**  
+    - Key: `Name`  
+    - Value: `MyCF`  
+  - **Leave other options as default**  
+  - Click **Next** → **Review & Submit**.  
+
+- [ ] Wait **5-10 minutes** until the stack status changes to `CREATE_COMPLETE`.  
+- [ ] Navigate to the **Resources** tab in CloudFormation to verify the created VPC resources.  
+
+## **Task 3: Update Stack Using VPC_II_Template CloudFormation**
+- [ ] Navigate to **S3** → Open the bucket (e.g., `whizlab1234564543`).  
+- [ ] Click on `VPC_II_template.json` and copy the **Object URL**.  
+- [ ] Navigate to **CloudFormation**.  
+- [ ] Select **MyStack123** → Click **Update**.  
+- [ ] Choose **Replace existing template** and paste the copied **Object URL**.  
+- [ ] Click **Next** (No parameters needed) → Click **Next** again.  
+- [ ] Review details and **Submit**.  
+- [ ] Wait **5-10 minutes** for `UPDATE_COMPLETE` status.  
+
+### **Verify Subnets Update**
+- [ ] Navigate to **VPC** → Select `Lab VPC`.  
+- [ ] Click **Subnets** in the left panel.  
+- [ ] Verify the new subnets (updated from 2 to 4 subnets).  
+
+## **Task 4: Deep Dive into VPC Templates**
+### **VPC_Template.json**
+- Creates a **VPC (Lab VPC)** with **CIDR block 10.0.0.0/16**.  
+- Creates an **Internet Gateway** and attaches it to Lab VPC.  
+- Defines **Public Subnet 1 (10.0.0.0/24) in AZ-1**.  
+- Defines **Private Subnet 1 (10.0.1.0/24) in AZ-1**.  
+- Creates a **Public Route Table** (associated with Public Subnet 1).  
+- Creates a **Private Route Table** (associated with Private Subnet 1).  
+
+### **VPC_II_Template.json**
+- Updates the **VPC** with additional subnets:
+  - **Public Subnet 1 (10.0.0.0/24) - AZ-1**
+  - **Public Subnet 2 (10.0.2.0/24) - AZ-2**
+  - **Private Subnet 1 (10.0.1.0/24) - AZ-1**
+  - **Private Subnet 2 (10.0.3.0/24) - AZ-2**
+- Associates:
+  - Public Subnets → **Public Route Table**.  
+  - Private Subnets → **Private Route Table**.  
+
+✅ **VPC Successfully Created & Updated Using AWS CloudFormation!** 🎉  
+
+</details>
+
