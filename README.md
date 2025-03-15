@@ -1798,13 +1798,6 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 
 # Project 16: Creating a VPC Using AWS CloudFormation ✅
 
-## **Introduction**
-This project walks through how to create a VPC using an AWS CloudFormation Stack.  
-We will launch an AWS CloudFormation template to create two subnets initially and later update it to a four-subnet Amazon VPC spanning two Availability Zones.
-
-- **Duration:** 55 minutes  
-- **AWS Region:** US East (N. Virginia) `us-east-1`
-
 ### **What is a VPC?**
 A VPC (Virtual Private Cloud) is like a computer network in an on-premises data center. It allows logically isolated networking within the AWS cloud.
 
