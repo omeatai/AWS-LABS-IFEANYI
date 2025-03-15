@@ -1786,17 +1786,17 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 </details> 
 
 <details>
-  <summary>Project 16 - Creating a VPC Using AWS CloudFormation</summary>
+  <summary>Project 16 - Creating a VPC with Subnets Using AWS CloudFormation</summary>
 
   ###
      
-  <a href="https://youtu.be/mmPR3ITv58k" target="_blank"><img src="https://github.com/user-attachments/assets/0d2596ce-4005-4895-8fac-a69d2ada84f8" width="720" height="400" /></a>
+  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/95d9c15a-8e4e-4075-ba38-ec948f8c816a" width="720" height="400" /></a>
 
   ###
   
   <img src="https://github.com/user-attachments/assets/7b211ad1-0565-4e69-a0cd-16b2be952332" width="920" height="520" />
 
-# Project 16: Creating a VPC Using AWS CloudFormation ✅
+# Project 16: Creating a VPC with Subnets Using AWS CloudFormation ✅
 
 ### **What is a VPC?**
 A VPC (Virtual Private Cloud) is like a computer network in an on-premises data center. It allows logically isolated networking within the AWS cloud.
