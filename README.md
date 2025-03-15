@@ -1804,15 +1804,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 - **Subnet:** A subnetwork dividing the VPC for access control.  
 - **CloudFormation:** AWS service for Infrastructure as Code (IaC), supporting JSON and YAML templates.  
 
-## **Task 1: Sign in to AWS Management Console**
-- [ ] Click **Open Console** to navigate to AWS Console.  
-- [ ] On the AWS sign-in page:
-  - **DO NOT** edit/remove the 12-digit Account ID.
-  - Copy and paste the **IAM Username** and **Password** from the lab console.  
-  - Click **Sign in**.  
-- [ ] Set the **default AWS Region** to **US East (N. Virginia) `us-east-1`**.  
-
-## **Task 2: Create Subnets Using the VPC_Template CloudFormation Stack**
+## **Task 1: Create Subnets Using the VPC_Template CloudFormation Stack**
 - [ ] Navigate to **S3** (Services → Storage).  
 - [ ] Locate and open the bucket (e.g., `whizlab1234564543`).  
 - [ ] Click on `VPC_template.json` and copy the **Object URL**.  
@@ -1832,7 +1824,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 - [ ] Wait **5-10 minutes** until the stack status changes to `CREATE_COMPLETE`.  
 - [ ] Navigate to the **Resources** tab in CloudFormation to verify the created VPC resources.  
 
-## **Task 3: Update Stack Using VPC_II_Template CloudFormation**
+## **Task 2: Update Stack Using VPC_II_Template CloudFormation**
 - [ ] Navigate to **S3** → Open the bucket (e.g., `whizlab1234564543`).  
 - [ ] Click on `VPC_II_template.json` and copy the **Object URL**.  
 - [ ] Navigate to **CloudFormation**.  
@@ -1847,7 +1839,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 - [ ] Click **Subnets** in the left panel.  
 - [ ] Verify the new subnets (updated from 2 to 4 subnets).  
 
-## **Task 4: Deep Dive into VPC Templates**
+## **Task 3: Deep Dive into VPC Templates**
 ### **VPC_Template.json**
 - Creates a **VPC (Lab VPC)** with **CIDR block 10.0.0.0/16**.  
 - Creates an **Internet Gateway** and attaches it to Lab VPC.  
