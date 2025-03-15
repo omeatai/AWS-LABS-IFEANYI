@@ -1789,12 +1789,12 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
   <summary>Project 16 - Creating a VPC Using AWS CloudFormation</summary>
 
   ###
-
-  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/sample-image-1.png" width="720" height="400" /></a>
+     
+  <a href="https://youtu.be/mmPR3ITv58k" target="_blank"><img src="https://github.com/user-attachments/assets/0d2596ce-4005-4895-8fac-a69d2ada84f8" width="720" height="400" /></a>
 
   ###
-
-  <img src="https://github.com/user-attachments/assets/sample-image-2.png" width="920" height="520" />
+  
+  <img src="https://github.com/user-attachments/assets/7b211ad1-0565-4e69-a0cd-16b2be952332" width="920" height="520" />
 
 # Project 16: Creating a VPC Using AWS CloudFormation ✅
 
