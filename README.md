@@ -1794,7 +1794,7 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 
   ###
   
-  <img src="https://github.com/user-attachments/assets/7b211ad1-0565-4e69-a0cd-16b2be952332" width="920" height="520" />
+  <img src="https://github.com/user-attachments/assets/82667bf4-8a34-4246-a904-4d8cec98f147" width="920" height="520" />
 
 # Project 16: Creating a VPC with Subnets Using AWS CloudFormation ✅
 
