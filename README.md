@@ -1790,7 +1790,7 @@ ssh -i "<your pem file name>" ec2-user@ec2-<your ip address>.compute-1.amazonaws
 
   ###
      
-  <a href="" target="_blank"><img src="https://github.com/user-attachments/assets/95d9c15a-8e4e-4075-ba38-ec948f8c816a" width="720" height="400" /></a>
+  <a href="https://youtu.be/_QhKVSCGwCw" target="_blank"><img src="https://github.com/user-attachments/assets/95d9c15a-8e4e-4075-ba38-ec948f8c816a" width="720" height="400" /></a>
 
   ###
   
