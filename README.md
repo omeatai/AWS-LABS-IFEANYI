@@ -2289,3 +2289,57 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 
 </details>
 
+<details>
+  <summary>Project 17 - Creating VPC Flow Logs in AWS</summary>
+
+  ###
+     
+  <a href="https://youtu.be/_QhKVSCGwCw" target="_blank"><img src="https://github.com/user-attachments/assets/95d9c15a-8e4e-4075-ba38-ec948f8c816a" width="720" height="400" /></a>
+
+  ###
+  
+  <img src="https://github.com/user-attachments/assets/82667bf4-8a34-4246-a904-4d8cec98f147" width="920" height="520" />
+
+# Project 17: Creating VPC Flow Logs in AWS ✅
+
+## **Task 1: Create a CloudWatch Log Group**
+- [ ] Navigate to **CloudWatch** under **Management and Governance** in the **Services** menu.
+- [ ] Click **Log Groups** in the left-side panel.
+- [ ] Click **Create Log Group**.
+- [ ] Enter **Log Group Name**: `myvpclogs`
+- [ ] Click **Create**.
+
+## **Task 2: Create a VPC**
+- [ ] Navigate to **VPC** under **Networking and Content Delivery** in the **Services** menu.
+- [ ] Click **Your VPCs** in the left-side panel.
+- [ ] Click **Create VPC**.
+  - **Select**: VPC only.
+  - **Name tag**: `myvpc`
+  - **IPv4 CIDR block**: `10.1.0.0/16`
+  - Leave other options as default.
+- [ ] Click **Create**.
+
+## **Task 3: Create VPC Flow Logs**
+- [ ] Inside **myvpc**, scroll down and click on the **Flow Logs** tab.
+- [ ] Click **Create Flow Log**.
+- [ ] Configure the **Flow log settings**:
+  - **Name**: `myflow`
+  - **Filter**: `Accept`
+  - **Destination**: `Send to CloudWatch Logs`
+  - **Select CloudWatch Logs Group**: `myvpclogs`
+  - **Choose IAM Role**: `EC2Role_<RANDOM_NUMBER>`
+  - Leave other options as default.
+- [ ] Click **Create Flow Log**.
+- [ ] Once created, scroll down and verify the **Flow Logs** section.
+
+✅ Successfully created VPC Flow Logs in AWS!
+
+</details>
+
+
+
+
+
+
+
+
