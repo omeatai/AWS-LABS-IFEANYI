@@ -2394,7 +2394,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
   
   <img src="https://github.com/user-attachments/assets/785cb386-7ec8-49e1-bb27-5629ba512e5c" width="920" height="520" />
 
-# Project 17: Creating Secure Access to S3 via VPC Endpoint and Bastion Host ✅
+# Project 18: Creating Secure Access to S3 via VPC Endpoint and Bastion Host ✅
 
 ## **Overview**
 - [ ] This project demonstrates how to create an Amazon S3 VPC endpoint and access it from an EC2 instance in a private subnet using a bastion host and VPC Endpoint.
