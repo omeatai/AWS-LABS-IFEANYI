@@ -2327,7 +2327,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
   - **Filter**: `Accept`
   - **Destination**: `Send to CloudWatch Logs`
   - **Select CloudWatch Logs Group**: `myvpclogs`
-  - **Choose IAM Role**: `EC2Role_<RANDOM_NUMBER>`
+  - **Choose IAM Role**: `EC2Role_<RANDOM_NUMBER>` (or Create one for EC2 Access)
   - Leave other options as default.
 - [ ] Click **Create Flow Log**.
 - [ ] Once created, scroll down and verify the **Flow Logs** section.
