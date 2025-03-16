@@ -2474,7 +2474,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
   - **Name**: Bastion-Host
   - **AMI**: Amazon Linux 2
   - **Instance Type**: t2.micro
-  - **Key Pair**: WhizKey.pem
+  - **Key Pair**: myKey.pem
   - Network:
     - **VPC**: MyVPC
     - **Subnet**: Public Subnet
@@ -2487,7 +2487,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
   - **Name**: Endpoint-Instance
   - **AMI**: Amazon Linux 2
   - **Instance Type**: t2.micro
-  - **Key Pair**: WhizKey.pem
+  - **Key Pair**: myKey.pem
   - Network:
     - **VPC**: MyVPC
     - **Subnet**: Private Subnet
@@ -2498,20 +2498,20 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 - [ ] SSH into Bastion Host:
 
 ```bash
-ssh -i WhizKey.pem ec2-user@<Bastion_Public_IP>
+ssh -i myKey.pem ec2-user@<Bastion_Public_IP>
 ```
 
 - [ ] Transfer key to Bastion:
 
 ```bash
-vi WhizKey.pem # Paste key content and save
-chmod 400 WhizKey.pem
+vi myKey.pem # Paste key content and save
+chmod 400 myKey.pem
 ```
 
 - [ ] SSH into Endpoint Instance from Bastion:
 
 ```bash
-ssh -i WhizKey.pem ec2-user@<Endpoint_Private_IP>
+ssh -i myKey.pem ec2-user@<Endpoint_Private_IP>
 ```
 
 ## **Task 10: Create a VPC Endpoint for S3**
