@@ -2332,7 +2332,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 - [ ] Click **Create Flow Log**.
 - [ ] Once created, scroll down and verify the **Flow Logs** section.
 
-✅ Successfully created VPC Flow Logs in AWS!
+✅ Successfully created VPC Flow Logs in AWS! 🎉
 
 </details>
 
