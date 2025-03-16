@@ -2298,7 +2298,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 
   ###
   
-  <img src="https://github.com/user-attachments/assets/82667bf4-8a34-4246-a904-4d8cec98f147" width="920" height="520" />
+  <img src="https://github.com/user-attachments/assets/785cb386-7ec8-49e1-bb27-5629ba512e5c" width="920" height="520" />
 
 # Project 17: Creating CloudWatch Logs with VPC Flow Logs in AWS ✅
 
