@@ -2328,6 +2328,53 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
   - **Destination**: `Send to CloudWatch Logs`
   - **Select CloudWatch Logs Group**: `myvpclogs`
   - **Choose IAM Role**: `EC2Role_<RANDOM_NUMBER>` (or Create one for EC2 Access)
+
+<details>
+<summary>VIEW EC2 IAM ROLE - EC2Role_<RANDOM_NUMBER></summary>
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AssociateVpcCidrBlock",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateEgressOnlyInternetGateway",
+                "ec2:CreateFlowLogs",
+                "ec2:CreateRoute",
+                "ec2:CreateRouteTable",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateSubnet",
+                "ec2:CreateTags",
+                "ec2:CreateVpc",
+                "ec2:Describe*",
+                "ec2:EnableVgwRoutePropagation",
+                "ec2:EnableVpcClassicLink",
+                "ec2:EnableVpcClassicLinkDnsSupport",
+                "ec2:MoveAddressToVpc",
+                "ec2:RestoreAddressToClassic",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:UnassignPrivateIpAddresses",
+                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
+                "ec2:UpdateSecurityGroupRuleDescriptionsIngress"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestedRegion": "us-east-1"
+                }
+            }
+        }
+    ]
+}
+```
+
+</details>
+
   - Leave other options as default.
 - [ ] Click **Create Flow Log**.
 - [ ] Once created, scroll down and verify the **Flow Logs** section.
