@@ -2383,6 +2383,155 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 
 </details>
 
+<details>
+  <summary>Project 18 - Creating Secure Access to S3 via VPC Endpoint and Bastion Host</summary>
+
+  ###
+     
+  <a href="https://youtu.be/OptGOuCqIgA" target="_blank"><img src="https://github.com/user-attachments/assets/f1e97bca-b020-4f0f-adc1-518315738dd2" width="720" height="400" /></a>
+
+  ###
+  
+  <img src="https://github.com/user-attachments/assets/785cb386-7ec8-49e1-bb27-5629ba512e5c" width="920" height="520" />
+
+# Project 17: Creating Secure Access to S3 via VPC Endpoint and Bastion Host ✅
+
+## **Overview**
+- [ ] This project demonstrates how to create an Amazon S3 VPC endpoint and access it from an EC2 instance in a private subnet using a bastion host and VPC Endpoint.
+- [ ] Bastion Host: Publicly accessible EC2 instance for SSH access to private instances.
+- [ ] Bastion Host provides a secure way to access private instances.
+- [ ] Private Endpoint Instance: Privately accessible EC2 instance with no internet access.
+- [ ] Proper security group rules are critical for secure connections.
+- [ ] VPC Endpoint for S3: Secure connection to S3 without a NAT gateway or internet access.
+
+## **Task 1: Create a VPC**
+- [ ] Navigate to **VPC service**.
+- [ ] Click Create VPC → Choose VPC only.
+- [ ] VPC Name: MyVPC
+- [ ] IPv4 CIDR Block: 192.168.0.0/26
+- [ ] IPv6 CIDR Block: No IPv6
+- [ ] Tenancy: Default
+- [ ] Click Create VPC.
+
+## **Task 2: Create and Attach an Internet Gateway**
+- [ ] Go to Internet Gateways → Click Create Internet Gateway.
+- [ ] Name: MyInternetGateway → Click Create.
+- [ ] Select MyInternetGateway → Click Actions → Attach to MyVPC.
+
+## **Task 3: Create Public and Private Subnets**
+- [ ] Go to Subnets → Click Create Subnet.
+- [ ] Public Subnet:
+  - [ ] VPC: MyVPC
+  - [ ] Name: Public Subnet
+  - [ ] AZ: us-east-1a
+  - [ ] CIDR Block: 192.168.0.1/27
+- [ ] Private Subnet:
+  - [ ] VPC: MyVPC
+  - [ ] Name: Private Subnet
+  - [ ] AZ: us-east-1b
+  - [ ] CIDR Block: 192.168.0.32/27
+
+## **Task 4: Enable Auto-Assign Public IPv4 for Public Subnet**
+- [ ] Select Public Subnet → Click Edit subnet settings.
+- [ ] Check Enable auto-assign public IPv4 → Click Save.
+
+## **Task 5: Create Route Tables and Associate Subnets**
+- [ ] Public Route Table:
+  - [ ] Name: PublicRouteTable
+  - [ ] VPC: MyVPC
+- [ ] Private Route Table:
+  - [ ] Name: PrivateRouteTable
+  - [ ] VPC: MyVPC
+- [ ] Associate Public Subnet with PublicRouteTable.
+- [ ] Associate Private Subnet with PrivateRouteTable.
+- [ ] Add Internet Access to Public Route Table:
+  - [ ] Destination: 0.0.0.0/0
+  - [ ] Target: MyInternetGateway
+
+## **Task 6: Create Security Groups**
+- [ ] Bastion Security Group (Bastion-SG):
+  - [ ] Inbound Rules:
+    - [ ] SSH: 0.0.0.0/0
+    - [ ] HTTP: 0.0.0.0/0
+    - [ ] HTTPS: 0.0.0.0/0
+
+- [ ] Endpoint Security Group (Endpoint-SG)
+  - [ ] Inbound Rule:
+    - [ ] SSH: Source = Bastion-SG
+
+Task 8: Create a Bastion Host (Public EC2 Instance)
+
+✅ Launch an EC2 instance:
+
+Name: Bastion-Host
+AMI: Amazon Linux 2
+Instance Type: t2.micro
+Key Pair: WhizKey.pem
+Network:
+VPC: MyVPC
+Subnet: Public Subnet
+Auto-assign Public IP: Enabled
+Security Group: Bastion-SG
+Task 9: Create an Endpoint Instance (Private EC2 Instance)
+✅ Launch an EC2 instance:
+
+Name: Endpoint-Instance
+AMI: Amazon Linux 2
+Instance Type: t2.micro
+Key Pair: WhizKey.pem
+Network:
+VPC: MyVPC
+Subnet: Private Subnet
+Security Group: Endpoint-SG
+Task 10: SSH into Private Instance via Bastion Host
+✅ SSH into Bastion Host:
+
+bash
+Copy
+Edit
+ssh -i WhizKey.pem ec2-user@<Bastion_Public_IP>
+✅ Transfer key to Bastion:
+
+bash
+Copy
+Edit
+vi WhizKey.pem   # Paste key content and save
+chmod 400 WhizKey.pem
+✅ SSH into Endpoint Instance from Bastion:
+
+bash
+Copy
+Edit
+ssh -i WhizKey.pem ec2-user@<Endpoint_Private_IP>
+Task 11: Create a VPC Endpoint for S3
+✅ Navigate to VPC → Endpoints → Click Create Endpoint.
+✅ Service Name: com.amazonaws.us-east-1.s3 (Type: Gateway).
+✅ VPC: MyVPC
+✅ Attach to Route Table: PrivateRouteTable.
+
+Task 12: List S3 Buckets from Private Instance
+✅ Configure AWS CLI on Bastion:
+
+bash
+Copy
+Edit
+aws configure
+✅ List S3 Buckets:
+
+bash
+Copy
+Edit
+aws s3 ls
+Task 13: Cleanup AWS Resources
+✅ Terminate EC2 instances.
+✅ Delete VPC Endpoint.
+✅ Detach and delete Internet Gateway.
+✅ Delete Route Tables & Security Groups.
+✅ Delete VPC, Subnets.
+
+</details>
+
+
 
 
 
