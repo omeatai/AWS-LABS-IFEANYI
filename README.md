@@ -2375,7 +2375,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 
 </details>
 
-  - Leave other options as default.
+- [ ] Leave other options as default.
 - [ ] Click **Create Flow Log**.
 - [ ] Once created, scroll down and verify the **Flow Logs** section.
 
