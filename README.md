@@ -2536,16 +2536,6 @@ aws configure
 aws s3 ls
 ```
 
-- [ ] 1. create a new bucket
-- [ ] 2. copy files over
-- [ ] 3. delete the old bucket.
-
-```
-aws s3 mb s3://[new-bucket]
-aws s3 sync s3://[old-bucket] s3://[new-bucket]
-aws s3 rb --force s3://[old-bucket]
-```
-
 ## **Task 12: Cleanup AWS Resources**
 
 - [ ] Terminate EC2 instances.
