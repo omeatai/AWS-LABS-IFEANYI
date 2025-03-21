@@ -2400,6 +2400,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 
 - [ ] This project demonstrates how to create an Amazon S3 VPC endpoint and access it from an EC2 instance in a private subnet using a bastion host and VPC Endpoint.
 - [ ] Bastion Host: Publicly accessible EC2 instance for SSH access to private instances.
+- [ ] A Bastion host is also known as a Jump Box.
 - [ ] Bastion Host provides a secure way to access private instances.
 - [ ] Private Endpoint Instance: Privately accessible EC2 instance with no internet access.
 - [ ] Proper security group rules are critical for secure connections.
