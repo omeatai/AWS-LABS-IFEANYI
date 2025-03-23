@@ -2392,7 +2392,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 
 ###
 
-  <img src="https://github.com/user-attachments/assets/ff6c003b-124f-407e-ae2c-d811aed9876f" width="920" height="520" />
+  <img src="https://github.com/user-attachments/assets/62cf12a7-f615-4525-8208-6705253d85f7" width="920" height="520" />
 
 # Project 18: Creating Secure Access to S3 via VPC Endpoint and Bastion Host ✅
 
