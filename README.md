@@ -2388,7 +2388,7 @@ A VPC (Virtual Private Cloud) is like a computer network in an on-premises data 
 
 ###
 
-<a href="" target="_blank"><img src="https://github.com/user-attachments/assets/0bd5010b-45ae-4cf2-9bb3-9d96265aff61" width="720" height="400" /></a>
+<a href="https://youtu.be/GM-FEsRdmaw" target="_blank"><img src="https://github.com/user-attachments/assets/0bd5010b-45ae-4cf2-9bb3-9d96265aff61" width="720" height="400" /></a>
 
 ###
 
