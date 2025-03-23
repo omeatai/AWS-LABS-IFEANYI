@@ -1016,7 +1016,7 @@ Completion:
 </details> 
 
 <details> 
-  <summary>Project 14 - Deploying a Secured Multi-Layered VPC on AWS </summary>
+  <summary>Project 14 - Deploying a Secured Multi-Layered VPC on AWS (with NACL and Security Groups)</summary>
   
   ###
      
@@ -1026,7 +1026,7 @@ Completion:
   
   <img src="https://github.com/user-attachments/assets/29fee6cf-a194-4ea3-be7e-be2071fee8f7" width="920" height="520" />
 
-# Project 14: Deploying a Secured Multi-Layered VPC on AWS ✅
+# Project 14: Deploying a Secured Multi-Layered VPC on AWS (with NACL and Security Groups) ✅
 
 ## **Task 1: Create a New VPC**
 - [ ] Set AWS **Region** to **US East (N. Virginia) (us-east-1)**.
