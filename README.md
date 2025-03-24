@@ -2563,13 +2563,16 @@ aws s3 ls
 
 ## **Overview**
 
-- [ ] This project demonstrates how to create an Amazon S3 VPC endpoint and access it from an EC2 instance in a private subnet using a bastion host and VPC Endpoint.
-- [ ] Bastion Host: Publicly accessible EC2 instance for SSH access to private instances.
-- [ ] A Bastion host is also known as a Jump Box.
-- [ ] Bastion Host provides a secure way to access private instances.
-- [ ] Private Endpoint Instance: Privately accessible EC2 instance with no internet access.
-- [ ] Proper security group rules are critical for secure connections.
-- [ ] VPC Endpoint for S3: Secure connection to S3 without a NAT gateway or internet access.
+- [ ] This project demonstrates how to peer VPCs using a **Transit Gateway** to connect multiple VPCs through a central hub.
+- [ ] You will create **two VPCs**: one with a public subnet and another with a private subnet.
+- [ ] Launch EC2 instances in both VPCs and establish peering between them using **Transit Gateway Attachments**.
+- [ ] Configure route tables to allow traffic flow between the VPCs through the Transit Gateway.
+- [ ] Use a public EC2 instance (Bastion Host) to securely SSH into the private EC2 instance.
+- [ ] Benefits of using a **Transit Gateway** include:
+    - Easy scalability and centralized control.
+    - Enhanced security with encrypted data and no exposure to public internet.
+    - Ability to connect multiple VPCs and on-premises networks.
+- [ ] Transit Gateway simplifies network architecture by eliminating the complexity of VPC peering relationships.
 
 ## **Task 1: Sign in to AWS Management Console**
 - [ ] Click on **Open Console** to redirect to AWS Console.
