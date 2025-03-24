@@ -2730,6 +2730,195 @@ aws s3 ls
 
 </details>
 
+<details>
+  <summary>Project 19 - Creating VPC Peering with Transit Gateway</summary>
 
+###
+
+<a href="https://youtu.be/GM-FEsRdmaw" target="_blank"><img src="https://github.com/user-attachments/assets/0bd5010b-45ae-4cf2-9bb3-9d96265aff61" width="720" height="400" /></a>
+
+###
+
+  <img src="https://github.com/user-attachments/assets/62cf12a7-f615-4525-8208-6705253d85f7" width="920" height="520" />
+
+# Project 19: Creating VPC Peering with Transit Gateway ✅
+
+## **Overview**
+
+- [ ] This project demonstrates how to peer VPCs using a **Transit Gateway** to connect multiple VPCs through a central hub.
+- [ ] You will create **two VPCs**: one with a public subnet and another with a private subnet.
+- [ ] Launch EC2 instances in both VPCs and establish peering between them using **Transit Gateway Attachments**.
+- [ ] Configure route tables to allow traffic flow between the VPCs through the Transit Gateway.
+- [ ] Use a public EC2 instance (Bastion Host) to securely SSH into the private EC2 instance.
+- [ ] Benefits of using a **Transit Gateway** include:
+    - Easy scalability and centralized control.
+    - Enhanced security with encrypted data and no exposure to public internet.
+    - Ability to connect multiple VPCs and on-premises networks.
+- [ ] Transit Gateway simplifies network architecture by eliminating the complexity of VPC peering relationships.
+
+## **Task 1: Sign in to AWS Management Console**
+- [ ] Click on **Open Console** to redirect to AWS Console.
+- [ ] Leave the **Account ID** as default.
+- [ ] Copy your **User Name** and **Password** from the Lab Console.
+- [ ] Sign in and set the default region to **US East (N. Virginia) us-east-1**.
+
+## **Task 2: Create the First VPC**
+- [ ] Navigate to **VPC** via **Services > VPC**.
+- [ ] Go to **Your VPCs** and click on **Create VPC**.
+- [ ] Select **VPC only** and configure:
+    - **Name tag:** `First_VPC`
+    - **IPv4 CIDR block:** `10.0.0.0/24`
+- [ ] Click **Create VPC**.
+- [ ] Select **First_VPC** → **Actions** → **Edit VPC Settings**.
+- [ ] Enable both **DNS resolution** and **DNS hostnames**.
+
+## **Task 3: Create a Public Subnet in First VPC**
+- [ ] Navigate to **Subnets** → **Create Subnet**.
+- [ ] Select **VPC ID**: `First_VPC`.
+- [ ] Configure:
+    - **Subnet name:** `Public_subnet_first_VPC`
+    - **IPv4 CIDR block:** `10.0.0.0/25`
+- [ ] Click **Create subnet**.
+
+## **Task 4: Create and Attach an Internet Gateway**
+- [ ] Navigate to **Internet Gateways** → **Create Internet gateway**.
+- [ ] Name it **IGW** and click **Create**.
+- [ ] Select **IGW** → **Actions** → **Attach to VPC**.
+- [ ] Select **First_VPC** and attach.
+
+## **Task 5: Create a Public Route Table and Associate It**
+- [ ] Navigate to **Route Tables** → **Create Route Table**.
+- [ ] Configure:
+    - **Name:** `PublicRT`
+    - **VPC:** `First_VPC`
+- [ ] Click **Create route table**.
+- [ ] Select **PublicRT** → **Subnet associations** → **Edit subnet associations**.
+- [ ] Select **Public_subnet_first_VPC** and save.
+
+## **Task 6: Add Public Route in the Route Table**
+- [ ] Select **PublicRT** → **Routes tab** → **Edit routes**.
+- [ ] Click **Add route**:
+    - **Destination:** `0.0.0.0/0`
+    - **Target:** Select **Internet Gateway** and choose **IGW**.
+- [ ] Click **Save changes**.
+
+## **Task 7: Launch an EC2 Instance in First VPC**
+- [ ] Navigate to **EC2** → **Launch Instances**.
+- [ ] Configure:
+    - **Name:** `First_VPCs_EC2`
+    - **AMI:** Amazon Linux (Quick Start)
+    - **Instance Type:** `t2.micro`
+    - **Key Pair:** Create `ec2_ssh_key` with `.pem` format.
+    - **VPC:** `First_VPC`
+    - **Auto-assign public IP:** Enable
+    - **Security group:** Create `Public_EC2_SG`
+        - Add **SSH (0.0.0.0/0)**, **HTTP (0.0.0.0/0)**, and **HTTPS (0.0.0.0/0)**.
+    - **User data:** Add the following:
+      
+    ```bash
+    #!/bin/bash
+    sudo su
+    yum update -y
+    yum install httpd -y
+    systemctl start httpd
+    systemctl enable httpd
+    echo "<html><h1>Welcome to Whizlabs Public Server</h1><html>" > /var/www/html/index.html
+    ```
+    
+- [ ] Click **Launch instance**.
+- [ ] Note the **IPv4 Public IP**.
+
+## **Task 8: Create a Second VPC**
+- [ ] Navigate to **VPC** → **Create VPC**.
+- [ ] Select **VPC only** and configure:
+    - **Name tag:** `Second_VPC`
+    - **IPv4 CIDR block:** `20.0.0.0/24`
+- [ ] Click **Create VPC**.
+- [ ] Select **Second_VPC** → **Actions** → **Edit VPC settings**.
+- [ ] Enable both **DNS resolution** and **DNS hostnames**.
+
+## **Task 9: Create a Private Subnet in Second VPC**
+- [ ] Navigate to **Subnets** → **Create Subnet**.
+- [ ] Select **VPC ID**: `Second_VPC`.
+- [ ] Configure:
+    - **Subnet name:** `Private_subnet_second_VPC`
+    - **IPv4 CIDR block:** `20.0.0.0/25`
+- [ ] Click **Create subnet**.
+
+## **Task 10: Launch an EC2 Instance in Second VPC**
+- [ ] Click **Launch Instances**.
+- [ ] Configure:
+    - **Name:** `Second_VPCs_EC2`
+    - **AMI:** Amazon Linux (Quick Start)
+    - **Instance Type:** `t2.micro`
+    - **Key Pair:** Select `ec2_ssh_key`.
+    - **VPC:** `Second_VPC`
+    - **Auto-assign public IP:** Disable
+    - **Security group:** Create `Private_EC2_SG`
+        - Add **SSH (0.0.0.0/0)**.
+- [ ] Click **Launch instance**.
+- [ ] Note the **IPv4 Private IP**.
+
+## **Task 11: Create a Transit Gateway**
+- [ ] Navigate to **VPC** → **Transit Gateways**.
+- [ ] Click on **Create Transit Gateway**.
+- [ ] Configure:
+    - **Name tag:** `DemoTG`
+    - **Description:** `TG for peering two VPCs`
+- [ ] Click **Create transit gateway**.
+
+## **Task 12: Create Transit Gateway Attachments**
+- [ ] Navigate to **Transit Gateway Attachments**.
+- [ ] Click **Create transit gateway attachment**.
+    - **Name tag:** `First_VPC_TGA`
+    - **Transit Gateway ID:** `DemoTG`
+    - **Attachment type:** VPC
+    - **VPC ID:** `First_VPC`
+- [ ] Click **Create transit gateway attachment**.
+- [ ] Repeat for **Second_VPC_TGA** with:
+    - **VPC ID:** `Second_VPC`
+
+## **Task 13: Add Routes in First VPC’s Route Table**
+- [ ] Navigate to **Route Tables**.
+- [ ] Filter by **VPC ID** of **First_VPC** and select **PublicRT**.
+- [ ] Click **Edit routes**.
+- [ ] Add:
+    - **Destination:** `20.0.0.0/24`
+    - **Target:** Transit Gateway
+- [ ] Click **Save changes**.
+
+## **Task 14: Add Routes in Second VPC’s Route Table**
+- [ ] Navigate to **Route Tables**.
+- [ ] Filter by **VPC ID** of **Second_VPC**.
+- [ ] Select the **default route table**.
+- [ ] Click **Edit routes**.
+- [ ] Add:
+    - **Destination:** `10.0.0.0/24`
+    - **Target:** Transit Gateway
+- [ ] Click **Save changes**.
+
+## **Task 15: Test Connectivity Between VPCs**
+- [ ] Connect to **First_VPCs_EC2** via **Session Manager**.
+- [ ] Switch to root user:
+    ```bash
+    sudo su
+    ```
+- [ ] Update packages and enter SSH command:
+    ```bash
+    yum update -y
+    ```
+- [ ] Copy your **.pem** file for SSH access:
+    ```bash
+    nano ec2_ssh_key.pem
+    ```
+- [ ] Adjust permissions and SSH into the second EC2:
+    ```bash
+    chmod 400 ec2_ssh_key.pem
+    ssh ec2-user@<IPv4_private_IP> -i ec2_ssh_key.pem
+    ```
+
+✅ Successfully created VPC Peering with Transit Gateway! 🎉
+
+</details>
 
 
