@@ -2575,9 +2575,6 @@ aws s3 ls
 - [ ] Transit Gateway simplifies network architecture by eliminating the complexity of VPC peering relationships.
 
 ## **Task 1: Sign in to AWS Management Console**
-- [ ] Click on **Open Console** to redirect to AWS Console.
-- [ ] Leave the **Account ID** as default.
-- [ ] Copy your **User Name** and **Password** from the Lab Console.
 - [ ] Sign in and set the default region to **US East (N. Virginia) us-east-1**.
 
 ## **Task 2: Create the First VPC**
