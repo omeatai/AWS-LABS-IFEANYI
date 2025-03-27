@@ -2631,9 +2631,10 @@ aws s3 ls
     - **Advanced details section:**
         - Under the **IAM instance profile**: Select **task232_profile_...** role
         - OR Create Role and ADD Policy **My_Policy_224771.json**
+    -
   
     <details>
-       <summary>View **My_Policy_224771.json**</summary>  
+       <summary>View My_Policy_224771.json</summary>  
     
     ```json
      {
