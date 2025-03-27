@@ -2557,7 +2557,7 @@ aws s3 ls
 
 ###
 
-  <img src="https://github.com/user-attachments/assets/8a98925a-54dc-4fdf-bf0e-119facf7a366" width="920" height="520" />
+  <img src="https://github.com/user-attachments/assets/2875a7ad-25e2-4e79-b5ff-139e27ab645b" width="920" height="520" />
 
 # Project 19: Creating VPC Peering with Transit Gateway ✅
 
