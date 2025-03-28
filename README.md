@@ -2553,7 +2553,7 @@ aws s3 ls
 
 ###
 
-<a href="" target="_blank"><img src="https://github.com/user-attachments/assets/6a6626dc-8912-41a7-8b45-d842303fc02a" width="720" height="400" /></a>
+<a href="https://youtu.be/tnrBy_ta6JM" target="_blank"><img src="https://github.com/user-attachments/assets/6a6626dc-8912-41a7-8b45-d842303fc02a" width="720" height="400" /></a>
 
 ###
 
