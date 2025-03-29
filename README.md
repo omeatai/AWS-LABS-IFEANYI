@@ -3009,3 +3009,68 @@ aws s3 ls
 </details>
 
 
+<details>
+  <summary>Project 20 - Enabling and Exploring Amazon GuardDuty</summary>
+
+###
+
+<a href="https://youtu.be/insert-tutorial-link-here" target="_blank"><img src="https://github.com/user-attachments/assets/guardduty-overview-image-url" width="720" height="400" /></a>
+
+###
+
+  <img src="https://github.com/user-attachments/assets/guardduty-architecture-diagram-image-url" width="920" height="520" />
+
+# Project 20: Enabling and Exploring Amazon GuardDuty ✅
+
+## **Overview**
+
+- [ ] This project involves enabling **Amazon GuardDuty**, a threat detection service that helps safeguard your AWS accounts by identifying malicious activity.
+- [ ] Learn to navigate and configure **GuardDuty** for continuous monitoring and threat detection.
+- [ ] Create **sample findings** to understand the mechanics and utility of GuardDuty findings and severity levels.
+- [ ] Understand how **GuardDuty** seamlessly integrates with other AWS services like AWS Security Hub and Amazon Detective for comprehensive threat management.
+- [ ] Recognize the benefits of **GuardDuty** such as cost-effectiveness, automatic threat detection, and detailed security reports.
+
+## **Task 1: Sign in to AWS Management Console**
+- [ ] Click on **Open Console** to access AWS Console.
+- [ ] Leave **Account ID** as the default.
+- [ ] Use **User Name** and **Password** from the Lab Console to sign in.
+- [ ] Set the default region to **US East (N. Virginia) us-east-1**.
+
+## **Task 2: Enabling Amazon GuardDuty**
+- [ ] Ensure **US East (N. Virginia) us-east-1** is selected in the AWS Management Console.
+- [ ] Navigate to **Services > GuardDuty** under **Security, Identity and Compliance**.
+- [ ] Click on **Get started** and then **Enable GuardDuty**.
+- [ ] Ignore warnings on the **Findings** page due to no current activity.
+
+![GuardDuty Findings Page](https://github.com/user-attachments/assets/guardduty-findings-page-image-url)
+
+## **Task 3: Exploring Amazon GuardDuty**
+### Settings
+- [ ] Click on **Settings** in the left panel.
+- [ ] View the **Detector ID** and understand service roles and findings export options.
+- [ ] Note:
+    - **Suspend GuardDuty:** Halts monitoring but retains existing findings.
+    - **Disable GuardDuty:** Stops monitoring and deletes all configurations and findings.
+    
+### Lists
+- [ ] Click on **Lists** below **Settings**.
+- [ ] Explore **Trusted IP Lists** (whitelisted IPs) and **Threat IP Lists** (known malicious IPs).
+- [ ] Refresh the page if blank.
+
+### Accounts
+- [ ] Click on **Accounts** to view options for inviting other accounts.
+- [ ] Understand the master and member account relationship for up to 1000 member accounts.
+
+## **Task 4: Generating Sample Findings**
+- [ ] Navigate to **Settings**, scroll to the bottom, and click **Generate sample findings**.
+- [ ] Go to **Findings** in the left panel to view generated samples.
+- [ ] Use filter criteria to manage findings.
+- [ ] Click on a sample finding to review parameters such as severity and resource details.
+
+## **Conclusion**
+
+✅ Successfully enabled and explored Amazon GuardDuty! 🎉
+
+</details>
+
+
