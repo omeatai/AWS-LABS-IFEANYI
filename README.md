@@ -3014,11 +3014,11 @@ aws s3 ls
 
 ###
 
-<a href="https://youtu.be/insert-tutorial-link-here" target="_blank"><img src="https://github.com/user-attachments/assets/guardduty-overview-image-url" width="720" height="400" /></a>
+<a href="https://youtu.be/tnrBy_ta6JM" target="_blank"><img src="https://github.com/user-attachments/assets/6a6626dc-8912-41a7-8b45-d842303fc02a" width="720" height="400" /></a>
 
 ###
 
-  <img src="https://github.com/user-attachments/assets/guardduty-architecture-diagram-image-url" width="920" height="520" />
+  <img src="https://github.com/user-attachments/assets/2875a7ad-25e2-4e79-b5ff-139e27ab645b" width="920" height="520" />
 
 # Project 20: Enabling and Exploring Amazon GuardDuty ✅
 
