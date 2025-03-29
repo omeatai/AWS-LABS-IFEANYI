@@ -3032,17 +3032,12 @@ aws s3 ls
 
 ## **Task 1: Sign in to AWS Management Console**
 - [ ] Click on **Open Console** to access AWS Console.
-- [ ] Leave **Account ID** as the default.
-- [ ] Use **User Name** and **Password** from the Lab Console to sign in.
 - [ ] Set the default region to **US East (N. Virginia) us-east-1**.
 
 ## **Task 2: Enabling Amazon GuardDuty**
-- [ ] Ensure **US East (N. Virginia) us-east-1** is selected in the AWS Management Console.
 - [ ] Navigate to **Services > GuardDuty** under **Security, Identity and Compliance**.
 - [ ] Click on **Get started** and then **Enable GuardDuty**.
 - [ ] Ignore warnings on the **Findings** page due to no current activity.
-
-![GuardDuty Findings Page](https://github.com/user-attachments/assets/guardduty-findings-page-image-url)
 
 ## **Task 3: Exploring Amazon GuardDuty**
 ### Settings
