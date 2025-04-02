@@ -3069,3 +3069,89 @@ aws s3 ls
 </details>
 
 
+<details>
+  <summary>Project 21 - Creating & Configuring Amazon Macie Jobs</summary>
+
+###
+
+<a href=""><img src="https://github.com/user-attachments/assets/2cb05b06-f589-4a97-86b7-b5799173658f" width="720" height="400" /></a>
+
+###
+
+  <img src="https://github.com/user-attachments/assets/1e604c5d-f573-4208-9144-78ad290b7117" width="920" height="520" />
+
+# Project 21: Creating & Configuring Amazon Macie Job ✅
+
+## **Overview**
+
+- [ ] This project involves setting up **Amazon Macie**, a service that utilizes machine learning to discover and protect sensitive data in S3 buckets.
+- [ ] Learn how to enable Macie and create a Macie **job** to analyze data using custom data identifiers.
+- [ ] Practice writing a **regular expression** to match specific data patterns and utilize Macie for data classification.
+- [ ] Understand the integration of **Macie** in identifying PII and sensitive information across large datasets.
+
+## **Task 1: Sign in to AWS Management Console**
+- [ ] Click on **Open Console** to access AWS Console.
+- [ ] Leave **Account ID** as the default.
+- [ ] Use **User Name** and **Password** from the Lab Console to sign in.
+- [ ] Set the default region to **US East (N. Virginia) us-east-1**.
+
+## **Task 2: Enable Macie for the Account**
+- [ ] Ensure **US East (N. Virginia) us-east-1** is selected in AWS Management Console.
+- [ ] Navigate to **Services > Amazon Macie** under **Security, Identity & Compliance**.
+- [ ] On the home page, click **Get started**, then **Enable Macie**.
+
+## **Task 3: Create a Macie Job**
+### Step 1: Choose S3 Bucket
+- [ ] Click **Create job**.
+- [ ] If necessary, filter the bucket by clicking **Add filter criteria > Bucket name**.
+- [ ] Type `whizlabs` and select the appropriate bucket name. Click **Next**.
+
+### Step 2: Review S3 Buckets
+- [ ] Keep defaults and click **Next**.
+
+### Step 3: Refine the Scope
+- [ ] In **Sensitive data discovery options**, select **One-time job**.
+- [ ] Under **Additional settings**, list file extensions as `csv`. Click **Include**, then **Next**.
+
+### Step 4: Select Managed Data Identifiers
+- [ ] Selection type: **Recommended**.
+- [ ] Click **Next**.
+
+### Step 5: Custom Data Identifiers
+- [ ] Click **Manage custom identifiers** (enables pop-ups or opens a new tab).
+- [ ] Click **Create** in the new tab.
+- [ ] Enter details:
+    - **Name:** `Whiz`
+    - **Description:** `This identifier finds the data present in the format of AB-01.`
+    - **Regular expression:** `[a-z]{2}-[0-9]{2}`
+- [ ] Click **Submit** to create the Custom identifier.
+- [ ] Return to the original tab, refresh, and select **Whiz**. Click **Next**.
+
+### Step 6: General Settings
+- [ ] Keep **allow lists** default and click **Next**.
+- [ ] Enter job name and description:
+    - **Name:** `WhizJob`
+    - **Description:** `This job scans the bucket starting with 'whizlabs' using a regex pattern.`
+- [ ] Click **Next**.
+
+### Step 7: Review and Create
+- [ ] Review settings and click **Submit**.
+- [ ] Note the job is created successfully.
+
+## **Task 4: Macie Job Run and Findings**
+- [ ] Wait for the job to run (~10 minutes) and change status to **Complete**.
+- [ ] To view findings:
+    - Click on the job.
+    - Select **Show results** > **Show findings**.
+- [ ] If findings are not visible, wait 2 minutes and refresh.
+- [ ] For result details:
+    - Select the finding.
+    - Click **Actions** > **Export (JSON)** to download the report.
+
+## **Conclusion**
+
+✅ Successfully created and configured an Amazon Macie job to detect sensitive data! 🎉
+
+</details>
+
+
