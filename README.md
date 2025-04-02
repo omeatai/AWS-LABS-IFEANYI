@@ -3101,7 +3101,7 @@ aws s3 ls
 ### Step 1: Choose S3 Bucket
 - [ ] Click **Create job**.
 - [ ] If necessary, filter the bucket by clicking **Add filter criteria > Bucket name**.
-- [ ] Type `mylabs` and select the appropriate bucket name. Click **Next**.
+- [ ] Type and select the appropriate bucket name. Click **Next**.
 
 ### Step 2: Review S3 Buckets
 - [ ] Keep defaults and click **Next**.
