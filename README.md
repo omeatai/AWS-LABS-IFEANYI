@@ -3121,7 +3121,7 @@ aws s3 ls
 - [ ] Click **Manage custom identifiers** (enables pop-ups or opens a new tab).
 - [ ] Click **Create** in the new tab.
 - [ ] Enter details:
-    - **Name:** `my`
+    - **Name:** `myIdentifier`
     - **Description:** `This identifier finds the data present in the format of AB-01.`
     - **Regular expression:** `[a-z]{2}-[0-9]{2}`
 - [ ] Click **Submit** to create the Custom identifier.
