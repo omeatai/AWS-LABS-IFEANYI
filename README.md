@@ -3091,12 +3091,9 @@ aws s3 ls
 
 ## **Task 1: Sign in to AWS Management Console**
 - [ ] Click on **Open Console** to access AWS Console.
-- [ ] Leave **Account ID** as the default.
-- [ ] Use **User Name** and **Password** from the Lab Console to sign in.
 - [ ] Set the default region to **US East (N. Virginia) us-east-1**.
 
 ## **Task 2: Enable Macie for the Account**
-- [ ] Ensure **US East (N. Virginia) us-east-1** is selected in AWS Management Console.
 - [ ] Navigate to **Services > Amazon Macie** under **Security, Identity & Compliance**.
 - [ ] On the home page, click **Get started**, then **Enable Macie**.
 
