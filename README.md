@@ -3104,7 +3104,7 @@ aws s3 ls
 ### Step 1: Choose S3 Bucket
 - [ ] Click **Create job**.
 - [ ] If necessary, filter the bucket by clicking **Add filter criteria > Bucket name**.
-- [ ] Type `whizlabs` and select the appropriate bucket name. Click **Next**.
+- [ ] Type `mylabs` and select the appropriate bucket name. Click **Next**.
 
 ### Step 2: Review S3 Buckets
 - [ ] Keep defaults and click **Next**.
@@ -3121,17 +3121,17 @@ aws s3 ls
 - [ ] Click **Manage custom identifiers** (enables pop-ups or opens a new tab).
 - [ ] Click **Create** in the new tab.
 - [ ] Enter details:
-    - **Name:** `Whiz`
+    - **Name:** `my`
     - **Description:** `This identifier finds the data present in the format of AB-01.`
     - **Regular expression:** `[a-z]{2}-[0-9]{2}`
 - [ ] Click **Submit** to create the Custom identifier.
-- [ ] Return to the original tab, refresh, and select **Whiz**. Click **Next**.
+- [ ] Return to the original tab, refresh, and select **my**. Click **Next**.
 
 ### Step 6: General Settings
 - [ ] Keep **allow lists** default and click **Next**.
 - [ ] Enter job name and description:
-    - **Name:** `WhizJob`
-    - **Description:** `This job scans the bucket starting with 'whizlabs' using a regex pattern.`
+    - **Name:** `myJob`
+    - **Description:** `This job scans the bucket starting with 'mylabs' using a regex pattern.`
 - [ ] Click **Next**.
 
 ### Step 7: Review and Create
