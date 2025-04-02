@@ -3074,11 +3074,11 @@ aws s3 ls
 
 ###
 
-<a href=""><img src="https://github.com/user-attachments/assets/2cb05b06-f589-4a97-86b7-b5799173658f" width="720" height="400" /></a>
+<a href=""><img src="https://github.com/user-attachments/assets/f5c5727b-3c0e-46d9-b256-3a4c1790efeb" width="720" height="400" /></a>
 
 ###
 
-  <img src="https://github.com/user-attachments/assets/1e604c5d-f573-4208-9144-78ad290b7117" width="920" height="520" />
+<img src="https://github.com/user-attachments/assets/172d374a-e793-4869-9d11-93b0f6329246" width="920" height="520" />
 
 # Project 21: Creating & Configuring Amazon Macie Job ✅
 
