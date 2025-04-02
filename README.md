@@ -3014,7 +3014,7 @@ aws s3 ls
 
 ###
 
-<a href=""><img src="https://github.com/user-attachments/assets/2cb05b06-f589-4a97-86b7-b5799173658f" width="720" height="400" /></a>
+<a href="https://youtu.be/F2hYC6-F0cA"><img src="https://github.com/user-attachments/assets/2cb05b06-f589-4a97-86b7-b5799173658f" width="720" height="400" /></a>
 
 ###
 
