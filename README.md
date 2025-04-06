@@ -3173,8 +3173,6 @@ aws s3 ls
 
 ## **Task 1: Sign in to AWS Management Console**
 - [ ] Click on **Open Console** to access AWS Console.
-- [ ] Leave **Account ID** as the default.
-- [ ] Use **User Name** and **Password** from the Lab Console to sign in.
 - [ ] Set the default region to **US East (N. Virginia) us-east-1**.
 
 ## **Task 2: Creating a Security Group for the Load Balancer**
