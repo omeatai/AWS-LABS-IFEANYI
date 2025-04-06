@@ -3284,7 +3284,7 @@ aws s3 ls
 - [ ] Attempt to access ALB DNS name using Curl from Bastion Host.
 - [ ] Expect a **403 Forbidden error** showing WAF is functioning.
 
-## **Task 9: Unblocking the IP**
+## **Task 11: Unblocking the IP**
 - [ ] Navigate to **WAF & Shield** → **IP Sets** → `MyIPset`.
 - [ ] Delete your public IP from the set.
 - [ ] Wait, and then retry accessing the ALB DNS name.
