@@ -3192,7 +3192,7 @@ aws s3 ls
 - [ ] Configure `webserver-A`:
     - **AMI:** Amazon Linux 2
     - **Instance Type:** `t2.micro`
-    - **Key Pair:** Create `WhizKey`
+    - **Key Pair:** Create `myKey`
     - **Network Settings:** Auto-assign public IP: `Enable`
     - **Create Security Group:** `webserver-SG`
         - **HTTP** from `LoadBalancer-SG`
