@@ -3152,17 +3152,17 @@ aws s3 ls
 </details>
 
 <details>
-  <summary>Project 22 - Blocking Web Traffic with AWS WAF</summary>
+  <summary>Project 22 - Blocking Web Traffic with AWS WAF and Security Group</summary>
 
 ###
 
-<a href=""><img src="https://github.com/user-attachments/assets/bc9f479d-7be0-42ed-a73a-24fe46ec01bf" width="720" height="400" /></a>
+<a href=""><img src="https://github.com/user-attachments/assets/d7e5c842-be28-484c-8efb-fd8f02808ff1" width="720" height="400" /></a>
 
 ###
 
-<img src="https://github.com/user-attachments/assets/172d374a-e793-4869-9d11-93b0f6329246" width="920" height="520" />
+<img src="https://github.com/user-attachments/assets/c6590199-2969-4244-8347-da1c1c39da09" width="920" height="520" />
 
-# Project 22: Blocking Web Traffic with AWS WAF ✅
+# Project 22: Blocking Web Traffic with AWS WAF and Security Group ✅
 
 ## **Overview**
 
@@ -3233,21 +3233,40 @@ aws s3 ls
     - **Listeners:** HTTP, Port `80`, Forward to `web-server-TG`
 - [ ] Click **Create load balancer**.
 
-## **Task 5: Testing the Load Balancer**
+## **Task 5: Create a Bastion Host Server**
+- [ ] Navigate to **Instances** → **Launch instance**.
+- [ ] Configure `bastion-server`:
+    - **AMI:** Amazon Linux 2
+    - **Instance Type:** `t2.micro`
+    - **Key Pair:** Choose `myKey`
+    - **Network Settings:** Auto-assign public IP: `Enable`
+    - **Create Security Group:** `bastion-SG`
+        - **SSH** from Anywhere
+- [ ] Launch `bastion-server`.
+
+## **Task 6: Testing the Load Balancer**
 - [ ] Navigate to **Load Balancers** and copy DNS name from **Web-server-LB**.
 - [ ] Paste the DNS name in a browser to confirm round-robin response from `server A` and `server B`.
+- [ ] Also SSH into the Bastion-server and use curl to send a GET request to  the DNS name to confirm round-robin response from `server A` and `server B`.
 
-## **Task 6: Creating an IP Set**
+## **Task 7: Block All other IPs with Security Group: Only Allow specific IP or Group of IPs**
+- [ ] Navigate to **Security Group** in **EC2 (Compute)**.
+- [ ] Change the InBound rule of the Load Balancer Security Group from All IPs (0.0.0.0/0) to `Public IP of Bastion Host` or `Your IP address`.
+- [ ] Navigate to **Load Balancers** and copy again the DNS name from **Web-server-LB**.
+- [ ] Paste the DNS name in a browser to confirm round-robin response from `server A` and `server B` is NOT working anymore.
+- [ ] SSH into the Bastion-server and use curl to send a GET request to the DNS name to confirm round-robin response from `server A` and `server B` is still working.
+
+## **Task 8: Creating an IP Set**
 - [ ] Navigate to **WAF & Shield** → **IP Sets**.
 - [ ] Click **Create IP sets** and configure:
     - **Name:** `MyIPset`
     - **Description:** `IP set to block my public IP`
     - **Region:** `US EAST (N. Virginia)`
     - **IP Version:** `IPv4`
-    - **IP address:** Your `Public IP/32`
+    - **IP address:** The Public IP of the Bastion Host or Your `Public IP/32`
 - [ ] Click **Create IP set**.
 
-## **Task 7: Creating a Web ACL**
+## **Task 9: Creating a Web ACL**
 - [ ] Navigate to **WAF dashboard** → **Web ACLs** → Click **Create web ACL**.
 - [ ] Configure:
     - **Resource type:** `Regional resources`
@@ -3261,18 +3280,18 @@ aws s3 ls
     - **Action:** `Block`
 - [ ] Click **Create web ACL**.
 
-## **Task 8: Testing the Working of the WAF**
-- [ ] Attempt to access ALB DNS name in a browser.
+## **Task 10: Testing the Working of the WAF**
+- [ ] Attempt to access ALB DNS name using Curl from Bastion Host.
 - [ ] Expect a **403 Forbidden error** showing WAF is functioning.
 
 ## **Task 9: Unblocking the IP**
 - [ ] Navigate to **WAF & Shield** → **IP Sets** → `MyIPset`.
 - [ ] Delete your public IP from the set.
 - [ ] Wait, and then retry accessing the ALB DNS name.
-- [ ] Confirm access is again available from web servers.
+- [ ] Confirm access is again available from Bastion Host.
 
 ## **Conclusion**
 
-✅ Successfully blocked and managed web traffic using AWS WAF! 🎉
+✅ Successfully blocked and managed web traffic using AWS WAF and Security Group! 🎉
 
 </details>
