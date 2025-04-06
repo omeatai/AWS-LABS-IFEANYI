@@ -3151,4 +3151,130 @@ aws s3 ls
 
 </details>
 
+<details>
+  <summary>Project 22 - Blocking Web Traffic with AWS WAF</summary>
 
+###
+
+<a href="https://youtu.be/AAPtKZ5l2-w"><img src="https://github.com/user-attachments/assets/f5c5727b-3c0e-46d9-b256-3a4c1790efeb" width="720" height="400" /></a>
+
+###
+
+<img src="https://github.com/user-attachments/assets/172d374a-e793-4869-9d11-93b0f6329246" width="920" height="520" />
+
+# Project 22: Blocking Web Traffic with AWS WAF ✅
+
+## **Overview**
+
+- [ ] This project involves configuring AWS WAF to block web traffic and secure web applications against common exploits.
+- [ ] Learn how to set up security rules to block attack patterns such as SQL injection and cross-site scripting.
+- [ ] Deploy AWS WAF with an Application Load Balancer (ALB) to manage traffic distribution to multiple web servers.
+- [ ] Understand web traffic filtering using custom rules, tuning rules, and monitoring traffic via AWS WAF.
+
+## **Task 1: Sign in to AWS Management Console**
+- [ ] Click on **Open Console** to access AWS Console.
+- [ ] Leave **Account ID** as the default.
+- [ ] Use **User Name** and **Password** from the Lab Console to sign in.
+- [ ] Set the default region to **US East (N. Virginia) us-east-1**.
+
+## **Task 2: Creating a Security Group for the Load Balancer**
+- [ ] Navigate to **EC2 Dashboard** → **Security Groups**.
+- [ ] Click **Create security group** and configure:
+    - **Name:** `LoadBalancer-SG`
+    - **Description:** `Security group for the Load balancer`
+    - **VPC:** Leave as default
+- [ ] Add **Inbound Rules**:
+    - **Type:** `HTTP`, **Protocol:** `TCP`, **Port range:** `80`, **Source:** `0.0.0.0/0`
+- [ ] Click **Create**.
+
+## **Task 3: Steps to Create the Web Servers**
+- [ ] Navigate to **Instances** → **Launch instance**.
+- [ ] Configure `webserver-A`:
+    - **AMI:** Amazon Linux 2
+    - **Instance Type:** `t2.micro`
+    - **Key Pair:** Create `WhizKey`
+    - **Network Settings:** Auto-assign public IP: `Enable`
+    - **Create Security Group:** `webserver-SG`
+        - **HTTP** from `LoadBalancer-SG`
+        - **SSH** from Anywhere
+- [ ] Add **User Data** for `webserver-A`:
+    ```bash
+    #!/bin/bash
+    sudo su
+    yum update -y
+    yum install -y httpd
+    systemctl start httpd
+    systemctl enable httpd
+    echo "Response coming from server A" > /var/www/html/index.html
+    ```
+- [ ] Launch `webserver-A`.
+- [ ] Repeat for `webserver-B` with:
+    ```bash
+    #!/bin/bash
+    sudo su
+    yum update -y
+    yum install -y httpd
+    systemctl start httpd
+    systemctl enable httpd
+    echo "Response coming from server B" > /var/www/html/index.html
+    ```
+- [ ] Ensure both instances are running in EC2 Dashboard.
+
+## **Task 4: Creating a Load Balancer**
+- [ ] Navigate to **Target Groups** → Click **Create target group**.
+- [ ] Configure Target Group:
+    - **Name:** `web-server-TG`
+    - **Health Check Path:** `/index.html`
+- [ ] Register both instances and create the target group.
+- [ ] Navigate to **Load Balancers** → Click **Create load balancer**.
+- [ ] Configure Application Load Balancer:
+    - **Name:** `Web-server-LB`
+    - **Scheme:** `Internet-facing`
+    - **IP** Address Type: `IPv4`
+    - **Security Group:** `LoadBalancer-SG`
+    - **Listeners:** HTTP, Port `80`, Forward to `web-server-TG`
+- [ ] Click **Create load balancer**.
+
+## **Task 5: Testing the Load Balancer**
+- [ ] Navigate to **Load Balancers** and copy DNS name from **Web-server-LB**.
+- [ ] Paste the DNS name in a browser to confirm round-robin response from `server A` and `server B`.
+
+## **Task 6: Creating an IP Set**
+- [ ] Navigate to **WAF & Shield** → **IP Sets**.
+- [ ] Click **Create IP sets** and configure:
+    - **Name:** `MyIPset`
+    - **Description:** `IP set to block my public IP`
+    - **Region:** `US EAST (N. Virginia)`
+    - **IP Version:** `IPv4`
+    - **IP address:** Your `Public IP/32`
+- [ ] Click **Create IP set**.
+
+## **Task 7: Creating a Web ACL**
+- [ ] Navigate to **WAF dashboard** → **Web ACLs** → Click **Create web ACL**.
+- [ ] Configure:
+    - **Resource type:** `Regional resources`
+    - **Region:** `US EAST (N. Virginia)`
+    - **Name:** `MywebACL`
+- [ ] Associate **ALB** by Add **AWS resources**.
+- [ ] Under **Rules**, **Add rule**:
+    - **Rule type:** `IP set`
+    - **Name:** `MywebACL-rule`
+    - **IP set:** `MyIPset`
+    - **Action:** `Block`
+- [ ] Click **Create web ACL**.
+
+## **Task 8: Testing the Working of the WAF**
+- [ ] Attempt to access ALB DNS name in a browser.
+- [ ] Expect a **403 Forbidden error** showing WAF is functioning.
+
+## **Task 9: Unblocking the IP**
+- [ ] Navigate to **WAF & Shield** → **IP Sets** → `MyIPset`.
+- [ ] Delete your public IP from the set.
+- [ ] Wait, and then retry accessing the ALB DNS name.
+- [ ] Confirm access is again available from web servers.
+
+## **Conclusion**
+
+✅ Successfully blocked and managed web traffic using AWS WAF! 🎉
+
+</details>
