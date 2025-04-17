@@ -3343,7 +3343,7 @@ aws s3 ls
     yum install httpd -y
     systemctl start httpd
     systemctl enable httpd
-    echo "<html><h1> Welcome to Whizlabs Server 1 </h1></html>" >> /var/www/html/index.html
+    echo "<html><h1> Welcome to Mylabs Server 1 </h1></html>" >> /var/www/html/index.html
     ```
 - [ ] Click **Launch instance** and wait for it to start.
 
@@ -3365,7 +3365,7 @@ aws s3 ls
     yum install httpd -y
     systemctl start httpd
     systemctl enable httpd
-    echo "<html><h1> Welcome to Whizlabs Server 2 </h1></html>" >> /var/www/html/index.html
+    echo "<html><h1> Welcome to Mylabs Server 2 </h1></html>" >> /var/www/html/index.html
     ```
 - [ ] Click **Launch instance** and wait for it to start.
 
