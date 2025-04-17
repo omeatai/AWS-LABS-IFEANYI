@@ -3301,7 +3301,7 @@ aws s3 ls
 
 ###
 
-<a href="https://youtu.be/3Fw1dNrIcuM"><img src="https://github.com/user-attachments/assets/d7e5c842-be28-484c-8efb-fd8f02808ff1" width="720" height="400" /></a>
+<a href=""><img src="https://github.com/user-attachments/assets/3dc8b25a-98e8-4a02-b247-23a26e402e34" width="720" height="400" /></a>
 
 ###
 
