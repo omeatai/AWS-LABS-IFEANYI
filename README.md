@@ -3305,7 +3305,7 @@ aws s3 ls
 
 ###
 
-<img src="https://github.com/user-attachments/assets/c6590199-2969-4244-8347-da1c1c39da09" width="920" height="520" />
+<img src="https://github.com/user-attachments/assets/b253b5c5-a6d9-48c5-93ac-70dc79f40799" width="920" height="520" />
 
 # Project 23: Setting Up ALB with AWS WAF to block SQL Injection, Geo Location and Query string ✅
 
