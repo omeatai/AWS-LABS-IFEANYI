@@ -3467,6 +3467,25 @@ aws s3 ls
 - [ ] Go to **User groups** and click **Create group**.
 - [ ] Set **Group name** to `KMSGroup`.
 - [ ] For permissions, search for and attach the `KMS_Policy`.
+
+<details>
+  <summary>View KMS_Policy</summary>
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "kms:*",
+            "Resource": "*"
+        }
+    ]
+}
+```
+<details>
+  
 - [ ] Click **Create Group**.
 
 ## **Task 3: Create Two Users for Managing KMS**
