@@ -3484,7 +3484,7 @@ aws s3 ls
     ]
 }
 ```
-<details>
+</details>
   
 - [ ] Click **Create Group**.
 
