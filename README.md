@@ -3430,7 +3430,7 @@ aws s3 ls
 </details>
 
 <details>
-  <summary>Project 24 - Encrypting and Decrypting Data with AWS KMS</summary>
+  <summary>Project 24 - Encrypting and Decrypting Data using AWS KMS</summary>
 
 ###
 
@@ -3440,122 +3440,7 @@ aws s3 ls
 
 <img src="https://github.com/user-attachments/assets/b253b5c5-a6d9-48c5-93ac-70dc79f40799" width="920" height="480" />
 
-# Project 24: Encrypting and Decrypting Data with AWS KMS ✅
-
-## **Overview**
-
-- [ ] This project covers the encryption, decryption, and re-encryption of data using **AWS Key Management Service (KMS)**.
-- [ ] AWS KMS offers a managed service that simplifies the creation and control of encryption keys, crucial for safeguarding data at rest.
-- [ ] You will:
-  - [ ] Create a KMS key.
-  - [ ] Manage KMS using user groups and policies.
-  - [ ] Launch an EC2 instance to perform encryption and decryption tasks.
-  - [ ] Securely encrypt data and test decryption processes.
-- [ ] **Key Functions of KMS**:
-  - Integration with AWS services for easy encryption.
-  - Secure management of customer master keys within hardware security modules.
-  - Logging key usage for compliance and auditing.
-  - Certified against SOC and PCI security standards.
-- [ ] This project is crucial for understanding how KMS enhances data security within AWS environments by offering a robust and versatile solution for managing encryption keys.
-
-## **Task 1: Sign in to AWS Management Console**
-- [ ] Click on **Open Console** to redirect to AWS Console.
-- [ ] Ensure **Account ID** remains unchanged.
-- [ ] Use IAM **Username** and **Password** to sign in from the Lab Console.
-- [ ] Set the AWS region to **US East (N. Virginia) us-east-1**.
-
-## **Task 2: Create a User Group for KMS Users and Attach a Policy**
-- [ ] Navigate to **Services > IAM**.
-- [ ] Go to **User groups** → **Create group**.
-- [ ] Configure the group:
-    - **Name:** `KMSGroup`
-    - **Policy:** Search and attach `KMS_Policy`
-- [ ] Click **Create Group**.
-
-## **Task 3: Create Two Users for Managing KMS**
-- [ ] Navigate to **Users** → **Create User**.
-    - **Username:** `KeyManager`
-    - **Password:** `whizlabs@123` (Ensure "User must create a new password" is unchecked)
-    - **Add User to group:** `KMSGroup`
-    - Repeat for user **`KeyEncryption`** with:
-        - **Password:** `123@whizlabs`
-- [ ] Download and save Access Key and Secret Access Key for `KeyEncryption`.
-
-## **Task 4: Creating a KMS Key**
-- [ ] Navigate to **Services > AWS Key Management Service (KMS)**.
-- [ ] Click **Create a key**.
-    - **Key type:** Symmetric
-    - **Key usage:** Encrypt and decrypt
-    - **Alias:** `Admin`
-- [ ] Specify permissions:
-    - **Administrative permissions:** `KeyManager`
-    - **Usage permissions:** `KeyEncryption`
-- [ ] Copy the **Key ID** for later use.
-
-## **Task 5: Launching an EC2 Instance**
-- [ ] Navigate to **Services > EC2**.
-- [ ] Click **Launch Instance** with:
-    - **Name:** `MyEC2Server`
-    - **AMI:** Amazon Linux
-    - **Instance Type:** `t2.micro`
-    - **Key pair:** Create `WhizKey` with `.pem` format
-- [ ] Launch and wait for initialization.
-
-## **Task 6: SSH into the EC2 Instance**
-- [ ] Use SSH to connect to the instance using the `WhizKey` PEM file.
-
-## **Task 7: Perform KMS Encryption and Decryption**
-- [ ] On the EC2 terminal, create a file for encryption:
-    ```bash
-    echo "Welcome to Whizlab" > secret.txt
-    ```
-- [ ] Configure AWS CLI:
-    ```bash
-    aws configure
-    ```
-    - Provide Access Key ID and Secret Access Key from `KeyEncryption`.
-- [ ] Encrypt the file:
-    ```bash
-    aws kms encrypt --key-id <replace-key-id> --plaintext fileb://secret.txt --output text --query CiphertextBlob | base64 --decode > encryptedsecret.txt
-    ```
-- [ ] Verify encryption:
-    ```bash
-    cat encryptedsecret.txt
-    ```
-- [ ] Decrypt the file:
-    ```bash
-    aws kms decrypt --ciphertext-blob fileb://encryptedsecret.txt --output text --query Plaintext | base64 --decode > decryptedsecret.txt
-    ```
-- [ ] Verify decryption:
-    ```bash
-    cat decryptedsecret.txt
-    ```
-- [ ] Re-encrypt the file:
-    ```bash
-    aws kms encrypt --key-id <replace-key-id> --plaintext fileb://decryptedsecret.txt --output text --query CiphertextBlob > newencryptedsecret.txt
-    ```
-- [ ] Verify re-encryption:
-    ```bash
-    cat newencryptedsecret.txt
-    ```
-
-✅ Successfully encrypted, decrypted, and re-encrypted data with AWS KMS! 🎉
-
-</details>
-
-
-<details>
-  <summary>Project 24 - Encrypting, Decrypting, and Re-encrypting Data using AWS KMS</summary>
-
-###
-
-<a href=""><img src="https://github.com/user-attachments/assets/3dc8b25a-98e8-4a02-b247-23a26e402e34" width="720" height="350" /></a>
-
-###
-
-<img src="https://github.com/user-attachments/assets/b253b5c5-a6d9-48c5-93ac-70dc79f40799" width="920" height="480" />
-
-# Project 24: Encrypting, Decrypting, and Re-encrypting Data using AWS KMS ✅
+# Project 24: Encrypting and Decrypting Data using AWS KMS ✅
 
 ## **Overview**
 
@@ -3590,13 +3475,13 @@ aws s3 ls
 - [ ] In **IAM**, go to **Users** and click **Create User**.
     - **User 1:** `KeyManager`
         - Check **Provide user access to the AWS Management Console**.
-        - Password: `whizlabs@123`
+        - Password: `Mylabs@123`
         - Uncheck **User must create a new password at next sign-in**.
         - Add to group: `KMSGroup`
         - Complete creation and return to users list.
     - **User 2:** `KeyEncryption`
         - Check **Provide user access to the AWS Management Console**.
-        - Password: `123@whizlabs`
+        - Password: `123@Mylabs`
         - Uncheck **User must create a new password at next sign-in**.
         - Add to group: `KMSGroup`
         - Complete creation and return to users list.
@@ -3626,21 +3511,21 @@ aws s3 ls
     - **Name:** `MyEC2Server`
     - **AMI:** Amazon Linux (from Quick Start)
     - **Instance type:** `t2.micro`
-    - **Key pair:** Create `WhizKey` (type: RSA, format: .pem)
+    - **Key pair:** Create `MyKey` (type: RSA, format: .pem)
     - Leave all settings as default.
 - [ ] Click **Launch instance**.
 - [ ] Wait for the instance to pass both status checks (**2/2 checks passed**).
 
 ## **Task 6: SSH into the EC2 Instance**
-- [ ] Use your terminal or SSH client to connect (replace `ec2-user@<Public-IP>` and `WhizKey.pem` as appropriate):
+- [ ] Use your terminal or SSH client to connect (replace `ec2-user@<Public-IP>` and `MyKey.pem` as appropriate):
     ```bash
-    ssh -i WhizKey.pem ec2-user@<EC2-PUBLIC-IP>
+    ssh -i MyKey.pem ec2-user@<EC2-PUBLIC-IP>
     ```
 
 ## **Task 7: Perform KMS Encryption and Decryption**
 - [ ] On your EC2 instance, create a file for encryption:
     ```bash
-    echo "Welcome to Whizlab" > secret.txt
+    echo "Welcome to Mylab" > secret.txt
     ```
 - [ ] Configure AWS CLI with the **KeyEncryption** credentials:
     ```bash
