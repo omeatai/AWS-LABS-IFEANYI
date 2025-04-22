@@ -3434,7 +3434,7 @@ aws s3 ls
 
 ###
 
-<a href=""><img src="https://github.com/user-attachments/assets/3dc8b25a-98e8-4a02-b247-23a26e402e34" width="720" height="350" /></a>
+<a href=""><img src="https://github.com/user-attachments/assets/0955529d-1e92-4714-8494-fbd282e31bd3" width="720" height="350" /></a>
 
 ###
 
@@ -3459,9 +3459,7 @@ aws s3 ls
     - Certified against SOC1, SOC2, SOC3, and PCI DSS level 1 standards.
 
 ## **Task 1: Sign in to AWS Management Console**
-- [ ] Click on **Open Console** to access the AWS Management Console.
-- [ ] Use the provided IAM **Username** and **Password** to sign in.
-- [ ] Ensure the **Account ID** remains default.
+- [ ] Use your IAM **Username** and **Password** to sign in.
 - [ ] Set the region to **US East (N. Virginia) us-east-1**.
 
 ## **Task 2: Create a User Group for KMS and Attach Policy**
