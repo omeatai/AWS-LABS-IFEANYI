@@ -3495,13 +3495,15 @@ aws s3 ls
         - Password: `Mylabs@123`
         - Uncheck **User must create a new password at next sign-in**.
         - Add to group: `KMSGroup`
-        - Complete creation and return to users list.
+        - Complete creation and save user details.
+        - Return to users list.
     - **User 2:** `KeyEncryption`
         - Check **Provide user access to the AWS Management Console**.
         - Password: `123@Mylabs`
         - Uncheck **User must create a new password at next sign-in**.
         - Add to group: `KMSGroup`
-        - Complete creation and return to users list.
+        - Complete creation and save user details.
+        - Return to users list.
 - [ ] For **KeyEncryption** user:
     - Go to **Security credentials** tab.
     - Click **Create access key**.
