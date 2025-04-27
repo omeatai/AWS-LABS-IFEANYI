@@ -3438,7 +3438,7 @@ aws s3 ls
 
 ###
 
-<img src="https://github.com/user-attachments/assets/dcec6915-965c-43b9-b4b4-bc56963dd9ce" width="920" height="480" />
+<img src="https://github.com/user-attachments/assets/b8130335-0014-4b17-b35f-e3e7045e48de" width="920" height="480" />
 
 # Project 24: Encrypting and Decrypting Data using AWS KMS ✅
 
