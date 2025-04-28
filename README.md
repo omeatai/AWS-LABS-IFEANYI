@@ -3301,7 +3301,7 @@ aws s3 ls
 
 ###
 
-<a href=""><img src="https://github.com/user-attachments/assets/3dc8b25a-98e8-4a02-b247-23a26e402e34" width="720" height="350" /></a>
+<a href="https://youtu.be/74WRRYqMI8M"><img src="https://github.com/user-attachments/assets/3dc8b25a-98e8-4a02-b247-23a26e402e34" width="720" height="350" /></a>
 
 ###
 
@@ -3434,7 +3434,7 @@ aws s3 ls
 
 ###
 
-<a href="https://youtu.be/M1-2kR5WXrs?si=jZ0b7ad2za9u2Uwy"><img src="https://github.com/user-attachments/assets/0955529d-1e92-4714-8494-fbd282e31bd3" width="720" height="400" /></a>
+<a href="https://youtu.be/M1-2kR5WXrs"><img src="https://github.com/user-attachments/assets/0955529d-1e92-4714-8494-fbd282e31bd3" width="720" height="400" /></a>
 
 ###
 
