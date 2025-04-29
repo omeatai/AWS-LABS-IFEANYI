@@ -3584,3 +3584,165 @@ aws s3 ls
 ✅ Successfully encrypted, decrypted, and re-encrypted data using AWS KMS! 🎉
 
 </details>
+
+<details>
+  <summary>Project 25 - S3 Encryption, EBS/AMI Encryption, and Cross-Region Replication </summary>
+
+###
+
+<a href="https://youtu.be/M1-2kR5WXrs"><img src="https://github.com/user-attachments/assets/0955529d-1e92-4714-8494-fbd282e31bd3" width="720" height="400" /></a>
+
+###
+
+<img src="https://github.com/user-attachments/assets/b8130335-0014-4b17-b35f-e3e7045e48de" width="920" height="480" />
+
+# Project 25: S3 Encryption, EBS/AMI Encryption, and Cross-Region Replication ✅
+
+## **Overview**
+
+- [ ] This project guides you through key AWS security best practices, including:
+    - Creating and managing **AWS KMS (Key Management Service) Keys** with automatic rotation.
+    - Encrypting S3 buckets and objects using customer-managed KMS keys.
+    - Configuring **S3 Cross-Region Replication (CRR)** with versioning and handling encryption differences.
+    - Testing access restrictions and decryption using KMS keys.
+    - Encrypting EBS Volumes, AMIs, and Snapshots using a managed encryption key.
+    - Verifying encryption and secure access for EBS and snapshot resources.
+- [ ] You will gain hands-on experience with secure storage, bucket policies, cross-region architecture, and volume/image protection in AWS.
+
+## **Task 1: Sign in to AWS Management Console**
+- [ ] Click on **Open Console** to be redirected to AWS Console in a new browser tab.
+- [ ] Keep the **Account ID** as default (do not edit/remove it).
+- [ ] Enter your provided **User Name** and **Password** and sign in.
+- [ ] Set the default region to **US East (N. Virginia) us-east-1**.
+
+## **Task 2: Create an AWS KMS Key**
+- [ ] Ensure you are in **US East (N. Virginia) us-east-1**.
+- [ ] Go to **Key Management Service** under **Security, Identity and Compliance**.
+- [ ] Click **Create Key**.
+- [ ] Choose **Key Type:** Symmetric and click **Next**.
+- [ ] Under **Add Labels**:
+    - **Alias:** `Whizkey` (choose a unique name if already exists)
+    - **Description:** KMS key for encryption
+- [ ] Click **Next**.
+- [ ] **Define Key Administrative Permissions**:
+    - **Key Administrators:** Select your IAM user (starting with `Whiz_User_`)
+    - Check **Allow key administrators to delete the key**
+- [ ] Click **Next**.
+- [ ] **Define Key Usage Permissions**:
+    - Select the same username as above.
+- [ ] Click **Next**, review, and **Finish**.
+
+## **Task 3: Enable KMS Key Rotation**
+- [ ] Click on the **Whizkey** alias.
+- [ ] Go to the **Key rotation** tab.
+- [ ] Check **Automatically rotate this CMK every year** and click **Save**.
+
+## **Task 4: Create and Encrypt an S3 Bucket**
+- [ ] Go to **S3** under the **Storage** section.
+- [ ] Click **Create Bucket**.
+    - **Region:** US East (N. Virginia)
+    - **Bucket type:** General purpose
+    - **Bucket name:** `whizsource123` (*use a globally-unique name*)
+    - **Object ownership:** ACLs enabled, Object Writer
+    - **Public access settings:** Uncheck **Block all public access** and acknowledge
+    - **Versioning:** Enable
+    - **Default encryption:**
+        - **Encryption key type:** AWS Key Management Service key (SSE-KMS)
+        - **AWS KMS key:** Select **Whizkey**
+- [ ] Leave other settings as default and click **Create Bucket**.
+
+## **Task 5: Encrypt and Upload an Object to S3**
+- [ ] Click the **whizsource123** bucket.
+- [ ] Click **Upload**.
+- [ ] Click **Add Files** and select a file from your computer.
+- [ ] Scroll down and expand the **Properties** tab:
+    - **Storage class:** One Zone-IA
+    - **Server-side encryption:** Specify an encryption key
+    - **Override default encryption bucket settings**
+    - **Encryption key type:** AWS KMS key (SSE-KMS)
+    - **AWS KMS key:** Select **Whizkey**
+- [ ] Click **Upload**, then **Close**.
+
+## **Task 6: Verify S3 Object Encryption**
+- [ ] Select the uploaded object in **whizsource123**.
+- [ ] Go to **Actions > Make public using ACL**. Click **Make Public** then **Close**.
+- [ ] Click the object. Copy the **Object URL** and paste into a new browser tab.
+    - You will get an error since the file is encrypted with KMS.
+- [ ] Click the object again and this time click **Open** on the top-right.
+    - You will be able to view the file, as the request is authorized to decrypt the object.
+
+## **Task 7: S3 Cross-Region Replication and Versioning**
+- [ ] Change region to **Asia Pacific (Mumbai) ap-south-1**.
+- [ ] In the S3 dashboard, click **Create Bucket**:
+    - **Bucket name:** `whiztarget1` (*must be globally unique*)
+    - **Public access:** Uncheck **Block all public access** and acknowledge
+    - **Versioning:** Enable
+    - Leave other settings as default and click **Create Bucket**.
+- [ ] Switch back to **US East (N. Virginia)** and go to **whizsource123**.
+- [ ] Click the **Management** tab, then **Create Replication rule**:
+    - **Rule name:** `Whizrule1`
+    - **Status:** Enabled
+    - **Scope:** Apply to all objects in the bucket
+    - **Destination:** Choose a bucket in this account > **Browse S3** > select Mumbai bucket
+    - **IAM Role:** Choose `replication_role<random.numbers>`
+    - **Encryption:** Check **Replicate objects encrypted with AWS KMS**, select alias **aws/s3**
+    - **AWS KMS key for destination:** Choose **aws/s3**
+- [ ] Review and **Save** (cancel if prompted for additional configuration).
+- [ ] Upload an object to the source bucket (**whizsource123**).
+- [ ] Check the target bucket (**whiztarget1**) after 3-5 minutes for replication.
+    - If replication fails due to encryption mismatch:
+        - Re-upload to **whizsource123**, expand **Properties**, select **Override default encryption bucket settings**, and for **Encryption key type** choose **Amazon S3 key (SSE-S3)**.
+        - Click **Upload** and check for replication again.
+- [ ] After successful replication, open the replicated object in the target bucket.
+
+## **Task 8: Disable and Re-Enable the KMS Key**
+- [ ] Ensure you are in **US East (N. Virginia)**.
+- [ ] Go to **KMS > Whizkey**.
+- [ ] Click **Key actions > Disable**. Confirm and disable.
+- [ ] Go to **S3 > whizsource123**, click on any object except the most recently uploaded (which may use the S3 master key).
+- [ ] Click **Open**. You should get an access denied error.
+- [ ] Back in **KMS**, click **Whizkey** and **Enable** under Key actions.
+
+## **Task 9: Encrypt an EBS Volume**
+- [ ] Ensure region is **US East (N. Virginia)**.
+- [ ] Navigate to **EC2 > Elastic Block Store > Volumes**.
+- [ ] Click **Create Volume**:
+    - **Volume Type:** General Purpose SSD (gp2)
+    - **Size:** 1 GiB
+    - **Availability Zone:** us-east-1a
+    - **Encryption:** Check (enabled), **Key:** Whizkey
+    - **Tags:** Key = Name, Value = WhizEBS
+- [ ] Click **Create Volume** and **Close**.
+- [ ] Check that **WhizEBS** is created and encrypted with **Whizkey** in description.
+
+## **Task 10: Encrypt AMI and Snapshot**
+- [ ] In **EC2 > Instances**, select the running instance.
+- [ ] Click **Actions > Image and Templates > Create Image**:
+    - **Image name:** WhizUnencrypted
+    - Leave other settings default; Click **Create Image**.
+- [ ] In the navigation panel, click **AMIs**.
+- [ ] Wait for **WhizUnencrypted** to be **available**.
+- [ ] Click **Actions > Copy AMI**:
+    - **Name:** WhizEncrypted
+    - **Destination region:** US East (N. Virginia)
+    - **Encrypt EBS snapshots of AMI copy:** Check
+    - **KMS key:** Choose Whizkey
+    - Click **Copy AMI**.
+- [ ] Wait for **WhizEncrypted** AMI to become **available**.
+- [ ] Copy the AMI ID of **WhizEncrypted**.
+- [ ] In the navigation panel, click **Snapshots** under Elastic Block Store.
+- [ ] In the search, paste the **AMI ID**.
+- [ ] Wait until the snapshot status is **completed**.
+- [ ] Select the snapshot, check the **Description**—it should show encryption using **Whizkey**.
+
+✅ You have now implemented AWS KMS management, S3 + EBS/AMI encryption, and cross-region replication using managed and customer keys! 🎉
+
+</details>
+
+
+
+
+
+
+
+
