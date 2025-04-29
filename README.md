@@ -3610,8 +3610,6 @@ aws s3 ls
 - [ ] You will gain hands-on experience with secure storage, bucket policies, cross-region architecture, and volume/image protection in AWS.
 
 ## **Task 1: Sign in to AWS Management Console**
-- [ ] Click on **Open Console** to be redirected to AWS Console in a new browser tab.
-- [ ] Keep the **Account ID** as default (do not edit/remove it).
 - [ ] Enter your provided **User Name** and **Password** and sign in.
 - [ ] Set the default region to **US East (N. Virginia) us-east-1**.
 
