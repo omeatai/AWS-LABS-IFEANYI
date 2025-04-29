@@ -3608,6 +3608,7 @@ aws s3 ls
     - Encrypting EBS Volumes, AMIs, and Snapshots using a managed encryption key.
     - Verifying encryption and secure access for EBS and snapshot resources.
 - [ ] You will gain hands-on experience with secure storage, bucket policies, cross-region architecture, and volume/image protection in AWS.
+- [ ] You will practice by encrypting and verifying different services like S3, EBS Volume, AMI, etc.
 
 ## **Task 1: Sign in to AWS Management Console**
 - [ ] Enter your provided **User Name** and **Password** and sign in.
