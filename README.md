@@ -3586,7 +3586,7 @@ aws s3 ls
 </details>
 
 <details>
-  <summary>Project 25 - S3 Encryption, EBS/AMI Encryption, and Cross-Region Replication </summary>
+  <summary>Project 25 - Encrypt S3 bucket, EBS Volume and AMI using AWS KMS, with Cross-Region Replication </summary>
 
 ###
 
@@ -3596,7 +3596,7 @@ aws s3 ls
 
 <img src="https://github.com/user-attachments/assets/b8130335-0014-4b17-b35f-e3e7045e48de" width="920" height="480" />
 
-# Project 25: S3 Encryption, EBS/AMI Encryption, and Cross-Region Replication ✅
+# Project 25: Encrypt S3 bucket, EBS Volume and AMI using AWS KMS, with Cross-Region Replication ✅
 
 ## **Overview**
 
