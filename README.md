@@ -3619,11 +3619,11 @@ aws s3 ls
 - [ ] Click **Create Key**.
 - [ ] Choose **Key Type:** Symmetric and click **Next**.
 - [ ] Under **Add Labels**:
-    - **Alias:** `Whizkey` (choose a unique name if already exists)
+    - **Alias:** `Mykey` (choose a unique name if already exists)
     - **Description:** KMS key for encryption
 - [ ] Click **Next**.
 - [ ] **Define Key Administrative Permissions**:
-    - **Key Administrators:** Select your IAM user (starting with `Whiz_User_`)
+    - **Key Administrators:** Select your IAM user (starting with `My_User_`)
     - Check **Allow key administrators to delete the key**
 - [ ] Click **Next**.
 - [ ] **Define Key Usage Permissions**:
@@ -3631,7 +3631,7 @@ aws s3 ls
 - [ ] Click **Next**, review, and **Finish**.
 
 ## **Task 3: Enable KMS Key Rotation**
-- [ ] Click on the **Whizkey** alias.
+- [ ] Click on the **Mykey** alias.
 - [ ] Go to the **Key rotation** tab.
 - [ ] Check **Automatically rotate this CMK every year** and click **Save**.
 
@@ -3640,17 +3640,17 @@ aws s3 ls
 - [ ] Click **Create Bucket**.
     - **Region:** US East (N. Virginia)
     - **Bucket type:** General purpose
-    - **Bucket name:** `whizsource123` (*use a globally-unique name*)
+    - **Bucket name:** `Mysource123` (*use a globally-unique name*)
     - **Object ownership:** ACLs enabled, Object Writer
     - **Public access settings:** Uncheck **Block all public access** and acknowledge
     - **Versioning:** Enable
     - **Default encryption:**
         - **Encryption key type:** AWS Key Management Service key (SSE-KMS)
-        - **AWS KMS key:** Select **Whizkey**
+        - **AWS KMS key:** Select **Mykey**
 - [ ] Leave other settings as default and click **Create Bucket**.
 
 ## **Task 5: Encrypt and Upload an Object to S3**
-- [ ] Click the **whizsource123** bucket.
+- [ ] Click the **Mysource123** bucket.
 - [ ] Click **Upload**.
 - [ ] Click **Add Files** and select a file from your computer.
 - [ ] Scroll down and expand the **Properties** tab:
@@ -3658,11 +3658,11 @@ aws s3 ls
     - **Server-side encryption:** Specify an encryption key
     - **Override default encryption bucket settings**
     - **Encryption key type:** AWS KMS key (SSE-KMS)
-    - **AWS KMS key:** Select **Whizkey**
+    - **AWS KMS key:** Select **Mykey**
 - [ ] Click **Upload**, then **Close**.
 
 ## **Task 6: Verify S3 Object Encryption**
-- [ ] Select the uploaded object in **whizsource123**.
+- [ ] Select the uploaded object in **Mysource123**.
 - [ ] Go to **Actions > Make public using ACL**. Click **Make Public** then **Close**.
 - [ ] Click the object. Copy the **Object URL** and paste into a new browser tab.
     - You will get an error since the file is encrypted with KMS.
@@ -3672,13 +3672,13 @@ aws s3 ls
 ## **Task 7: S3 Cross-Region Replication and Versioning**
 - [ ] Change region to **Asia Pacific (Mumbai) ap-south-1**.
 - [ ] In the S3 dashboard, click **Create Bucket**:
-    - **Bucket name:** `whiztarget1` (*must be globally unique*)
+    - **Bucket name:** `Mytarget1` (*must be globally unique*)
     - **Public access:** Uncheck **Block all public access** and acknowledge
     - **Versioning:** Enable
     - Leave other settings as default and click **Create Bucket**.
-- [ ] Switch back to **US East (N. Virginia)** and go to **whizsource123**.
+- [ ] Switch back to **US East (N. Virginia)** and go to **Mysource123**.
 - [ ] Click the **Management** tab, then **Create Replication rule**:
-    - **Rule name:** `Whizrule1`
+    - **Rule name:** `Myrule1`
     - **Status:** Enabled
     - **Scope:** Apply to all objects in the bucket
     - **Destination:** Choose a bucket in this account > **Browse S3** > select Mumbai bucket
@@ -3686,20 +3686,20 @@ aws s3 ls
     - **Encryption:** Check **Replicate objects encrypted with AWS KMS**, select alias **aws/s3**
     - **AWS KMS key for destination:** Choose **aws/s3**
 - [ ] Review and **Save** (cancel if prompted for additional configuration).
-- [ ] Upload an object to the source bucket (**whizsource123**).
-- [ ] Check the target bucket (**whiztarget1**) after 3-5 minutes for replication.
+- [ ] Upload an object to the source bucket (**Mysource123**).
+- [ ] Check the target bucket (**Mytarget1**) after 3-5 minutes for replication.
     - If replication fails due to encryption mismatch:
-        - Re-upload to **whizsource123**, expand **Properties**, select **Override default encryption bucket settings**, and for **Encryption key type** choose **Amazon S3 key (SSE-S3)**.
+        - Re-upload to **Mysource123**, expand **Properties**, select **Override default encryption bucket settings**, and for **Encryption key type** choose **Amazon S3 key (SSE-S3)**.
         - Click **Upload** and check for replication again.
 - [ ] After successful replication, open the replicated object in the target bucket.
 
 ## **Task 8: Disable and Re-Enable the KMS Key**
 - [ ] Ensure you are in **US East (N. Virginia)**.
-- [ ] Go to **KMS > Whizkey**.
+- [ ] Go to **KMS > Mykey**.
 - [ ] Click **Key actions > Disable**. Confirm and disable.
-- [ ] Go to **S3 > whizsource123**, click on any object except the most recently uploaded (which may use the S3 master key).
+- [ ] Go to **S3 > Mysource123**, click on any object except the most recently uploaded (which may use the S3 master key).
 - [ ] Click **Open**. You should get an access denied error.
-- [ ] Back in **KMS**, click **Whizkey** and **Enable** under Key actions.
+- [ ] Back in **KMS**, click **Mykey** and **Enable** under Key actions.
 
 ## **Task 9: Encrypt an EBS Volume**
 - [ ] Ensure region is **US East (N. Virginia)**.
@@ -3708,30 +3708,30 @@ aws s3 ls
     - **Volume Type:** General Purpose SSD (gp2)
     - **Size:** 1 GiB
     - **Availability Zone:** us-east-1a
-    - **Encryption:** Check (enabled), **Key:** Whizkey
-    - **Tags:** Key = Name, Value = WhizEBS
+    - **Encryption:** Check (enabled), **Key:** Mykey
+    - **Tags:** Key = Name, Value = MyEBS
 - [ ] Click **Create Volume** and **Close**.
-- [ ] Check that **WhizEBS** is created and encrypted with **Whizkey** in description.
+- [ ] Check that **MyEBS** is created and encrypted with **Mykey** in description.
 
 ## **Task 10: Encrypt AMI and Snapshot**
 - [ ] In **EC2 > Instances**, select the running instance.
 - [ ] Click **Actions > Image and Templates > Create Image**:
-    - **Image name:** WhizUnencrypted
+    - **Image name:** MyUnencrypted
     - Leave other settings default; Click **Create Image**.
 - [ ] In the navigation panel, click **AMIs**.
-- [ ] Wait for **WhizUnencrypted** to be **available**.
+- [ ] Wait for **MyUnencrypted** to be **available**.
 - [ ] Click **Actions > Copy AMI**:
-    - **Name:** WhizEncrypted
+    - **Name:** MyEncrypted
     - **Destination region:** US East (N. Virginia)
     - **Encrypt EBS snapshots of AMI copy:** Check
-    - **KMS key:** Choose Whizkey
+    - **KMS key:** Choose Mykey
     - Click **Copy AMI**.
-- [ ] Wait for **WhizEncrypted** AMI to become **available**.
-- [ ] Copy the AMI ID of **WhizEncrypted**.
+- [ ] Wait for **MyEncrypted** AMI to become **available**.
+- [ ] Copy the AMI ID of **MyEncrypted**.
 - [ ] In the navigation panel, click **Snapshots** under Elastic Block Store.
 - [ ] In the search, paste the **AMI ID**.
 - [ ] Wait until the snapshot status is **completed**.
-- [ ] Select the snapshot, check the **Description**—it should show encryption using **Whizkey**.
+- [ ] Select the snapshot, check the **Description**—it should show encryption using **Mykey**.
 
 ✅ You have now implemented AWS KMS management, S3 + EBS/AMI encryption, and cross-region replication using managed and customer keys! 🎉
 
