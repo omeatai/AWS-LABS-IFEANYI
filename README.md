@@ -2,7 +2,7 @@
 
 ## #LABS
 
-### [1 - AWS Cloud LABS](https://github.com/omeatai/AWS-LABS-IFEANYI/blob/main/labs/1.md)
+### [1 - AWS Cloud LABS - PROJECTS HERE](https://github.com/omeatai/AWS-LABS-IFEANYI/blob/main/labs/1.md)
 
 ### AWS CLOUD BASICS
 
