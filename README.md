@@ -33,18 +33,6 @@
 - [ ] [Mastering OpenAI Python APIs: Unleash ChatGPT and GPT4](https://www.udemy.com/course/mastering-openai/)
 - [ ] [Master OpenAI API and ChatGPT API with Python](https://www.udemy.com/course/openai-api-chatgpt-gpt4-with-python-bootcamp/)
 
-### AWS CLOUD CERTS
-
-- [ ] [AWS Certified Cloud Practitioner | Master AWS Fundamentals](https://www.udemy.com/course/aws-certified-cloud-practitioner-master-aws-fundamentals/)
-- [ ] [Ultimate AWS Certified Cloud Practitioner CLF-C02 2025](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
-- [ ] [Amazon Web Services (AWS) Certified - 4 Certifications!](https://www.udemy.com/course/aws-certified-associate-architect-developer-sysops-admin/)
-- [ ] [Ultimate AWS Certified Solutions Architect Associate 2025](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/?couponCode=24T1MT310325G1)
-- [ ] [Ultimate AWS Certified Developer Associate 2025 DVA-C02](https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/)
-- [ ] [Ultimate AWS Certified SysOps Administrator Associate 2025](https://www.udemy.com/course/ultimate-aws-certified-sysops-administrator-associate/)
-- [ ] [Ultimate AWS Certified Security Specialty SCS-C02](https://www.udemy.com/course/ultimate-aws-certified-security-specialty/)
-- [ ] [Ultimate AWS Certified Solutions Architect Professional 2025](https://www.udemy.com/course/aws-solutions-architect-professional/)
-- [ ] [AWS Certified DevOps Engineer Professional 2025 - DOP-C02](https://www.udemy.com/course/aws-certified-devops-engineer-professional-hands-on)
-
 ## AWS CLOUD EXAMS
 
 - [ ] [EXAM TOPICS](https://www.examtopics.com/exams/amazon/)
